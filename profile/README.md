@@ -17,3 +17,12 @@
       <img src="https://img.shields.io/github/sponsors/BaseMax?style=for-the-badge&label=Sponsor%20Max%20Base&labelColor=lightgreen&color=lightblue" alt="Sponsor Max Base"></a>    
   </p>  
 </div>
+
+<div align="center">
+  <p>
+    <a href="https://discord.gg/hKUH56YHXp">
+      <img src="https://img.shields.io/badge/metropolis-discord-lightgreen?style=for-the-badge&labelColor=orange" alt="Join the Metropolis Discord"></a>
+  </p>
+</div>
+
+<hr>
