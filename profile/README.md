@@ -18,6 +18,8 @@
   </p>  
 </div>
 
+<hr>
+
 <div align="center">
   <p>
     <a href="https://discord.gg/hKUH56YHXp">
