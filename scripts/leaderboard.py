@@ -43,7 +43,11 @@ def get_all_pages(url, token=None):
 def fetch_repos(token=None):
     """Fetch all public repos for the organization."""
     url = f"{API_URL}/orgs/{ORG}/repos?type=public"
-    return get_all_pages(url, token)
+    try:
+        return get_all_pages(url, token)
+    except urllib.error.URLError as exc:
+        print(f"Error: Failed to fetch repositories: {exc}", file=sys.stderr)
+        return []
 
 
 def fetch_contributors(repo_name, token=None):
