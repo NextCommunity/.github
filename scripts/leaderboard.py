@@ -3,7 +3,9 @@
 import os
 import re
 import sys
+import time
 import urllib.error
+import urllib.parse
 import urllib.request
 import json
 from bisect import bisect_right
@@ -15,6 +17,18 @@ API_URL = "https://api.github.com"
 README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.md")
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
+SPONSORS_START = "<!-- SPONSORS:START -->"
+SPONSORS_END = "<!-- SPONSORS:END -->"
+
+# Maximum number of sponsor buttons to show in the showcase section.
+MAX_SPONSOR_BUTTONS = 5
+# Only check the top N contributors for sponsors eligibility to avoid
+# excessive API calls.  Most sponsorable contributors will be near the top.
+MAX_SPONSOR_SCAN_DEPTH = 50
+# Path for caching sponsors eligibility results between runs.
+SPONSORS_CACHE_PATH = os.path.join(
+    os.path.dirname(__file__), "..", ".sponsors_cache.json"
+)
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
 
@@ -692,6 +706,149 @@ def build_leaderboard(token=None):
     return sorted_contributors, had_errors, levels_data
 
 
+# --- Sponsor button generation ---
+
+# Rotating color pairs (badge_color, label_color) used for the shields.io
+# sponsor buttons so each contributor gets a distinct look.
+_SPONSOR_COLORS = [
+    ("ff6b6b", "feca57"),
+    ("ff9ff3", "48dbfb"),
+    ("54a0ff", "5f27cd"),
+    ("ee5a24", "10ac84"),
+    ("0abde3", "f368e0"),
+    ("6c5ce7", "fdcb6e"),
+    ("e17055", "00b894"),
+    ("fd79a8", "636e72"),
+]
+
+
+def _badge_escape(text):
+    """Escape characters that are special in shields.io badge URLs.
+
+    Shields.io uses ``-`` as a separator and ``_`` as a space.  Literal
+    hyphens must be doubled and underscores escaped.
+    """
+    return text.replace("-", "--").replace("_", "__")
+
+
+def _load_sponsors_cache():
+    """Load the sponsors eligibility cache from disk.
+
+    Returns a dict mapping GitHub login to a cached boolean result.
+    Returns an empty dict if the cache file does not exist or is invalid.
+    """
+    try:
+        with open(SPONSORS_CACHE_PATH, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+            if isinstance(data, dict):
+                return data
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        pass
+    return {}
+
+
+def _save_sponsors_cache(cache):
+    """Persist the sponsors eligibility cache to disk."""
+    try:
+        with open(SPONSORS_CACHE_PATH, "w", encoding="utf-8") as fh:
+            json.dump(cache, fh, indent=2, sort_keys=True)
+    except OSError as exc:
+        print(f"  Warning: could not write sponsors cache: {exc}")
+
+
+def has_sponsors_page(login, token=None):
+    """Check whether *login* has an active GitHub Sponsors page.
+
+    Uses the ``GET /users/{login}`` endpoint and inspects the
+    ``has_sponsors_listing`` field from the GitHub REST API.
+    Returns ``True`` if the user is sponsorable, ``False`` otherwise (including
+    on network/API errors so that a single failure doesn't block the whole
+    sponsors section).
+    """
+    url = f"{API_URL}/users/{login}"
+    try:
+        data = gh_request(url, token)
+        if isinstance(data, dict):
+            return bool(data.get("has_sponsors_listing", False))
+    except urllib.error.URLError:
+        pass
+    return False
+
+
+def generate_sponsors_html(contributors, token=None):
+    """Generate the HTML for the sponsors showcase buttons.
+
+    Iterates through the top :data:`MAX_SPONSOR_SCAN_DEPTH` ranked
+    contributors and checks each one for an active GitHub Sponsors page.
+    Up to :data:`MAX_SPONSOR_BUTTONS` sponsorable contributors are included.
+    Inclusion and skip decisions are logged with ``print``.
+
+    Previously cached eligibility results are loaded from
+    :data:`SPONSORS_CACHE_PATH` and re-used to avoid redundant API calls.
+    New results are written back to the cache after scanning.
+
+    Returns the inner HTML (without the surrounding markers).
+    """
+    rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
+    lines = [
+        '  <p>',
+        '    <strong>🏆 Featured Leaderboard Sponsors Showcase 🏆</strong><br>',
+        '    <sub>The first {n} contributors on our leaderboard who have '
+        '<a href="https://github.com/sponsors">GitHub Sponsors</a> profiles '
+        'get showcased here — climb the ranks, enable Sponsors, and get '
+        'featured!</sub>'.format(n=MAX_SPONSOR_BUTTONS),
+        '  </p>',
+        '  <p>',
+    ]
+
+    cache = _load_sponsors_cache()
+    shown = 0
+    for rank, contrib in enumerate(contributors[:MAX_SPONSOR_SCAN_DEPTH], start=1):
+        if shown >= MAX_SPONSOR_BUTTONS:
+            break
+        login = contrib["login"]
+        # Use cache when available; otherwise query the API.
+        if login in cache:
+            eligible = cache[login]
+        else:
+            eligible = has_sponsors_page(login, token)
+            cache[login] = eligible
+            # Brief pause between uncached API calls to be polite.
+            time.sleep(0.25)
+        if not eligible:
+            print(f"  Skipping {login} (rank {rank}): no GitHub Sponsors page")
+            continue
+        print(f"  Including {login} (rank {rank}): has GitHub Sponsors page")
+        badge_color, label_color = _SPONSOR_COLORS[
+            shown % len(_SPONSOR_COLORS)
+        ]
+        rank_label = rank_badges.get(rank, "🏅")
+        escaped = _badge_escape(login)
+        label = urllib.parse.quote(
+            f"💖_Sponsor_{escaped}", safe="_-"
+        )
+        message = urllib.parse.quote(
+            f"{rank_label}_Rank_{rank}", safe="_-"
+        )
+        badge_url = (
+            f"https://img.shields.io/badge/"
+            f"{label}-{message}-"
+            f"{badge_color}?style=for-the-badge&labelColor={label_color}"
+        )
+        link = f"https://github.com/sponsors/{login}"
+        if shown > 0:
+            lines.append('    <br>')
+        lines.append(
+            f'    <a href="{link}">\n'
+            f'      <img src="{badge_url}" alt="Sponsor {login}"></a>'
+        )
+        shown += 1
+    _save_sponsors_cache(cache)
+
+    lines.append('  </p>')
+    return "\n".join(lines)
+
+
 def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
@@ -913,34 +1070,57 @@ def generate_markdown(contributors, levels_data):
     return "\n".join(lines)
 
 
-def update_readme(leaderboard_md):
-    """Update the profile README with the leaderboard content."""
+def _replace_section(content, start_marker, end_marker, new_inner):
+    """Replace content between *start_marker* and *end_marker*.
+
+    Returns the updated string.  If both markers are missing the section is
+    appended.  If only one marker is present an error is printed and *None*
+    is returned.
+    """
+    start_idx = content.find(start_marker)
+    end_idx = content.find(end_marker, start_idx) if start_idx != -1 else -1
+    if start_idx != -1 and end_idx != -1:
+        before = content[:start_idx]
+        after = content[end_idx + len(end_marker):]
+        return (
+            f"{before}{start_marker}\n"
+            f"{new_inner}\n"
+            f"{end_marker}{after}"
+        )
+    if start_idx == -1 and end_idx == -1:
+        return (
+            f"{content.rstrip()}\n\n"
+            f"{start_marker}\n"
+            f"{new_inner}\n"
+            f"{end_marker}\n"
+        )
+    print(
+        f"Error: Mismatched markers ({start_marker} / {end_marker}) in {README_PATH}",
+        file=sys.stderr,
+    )
+    return None
+
+
+def update_readme(leaderboard_md, sponsors_html=None):
+    """Update the profile README with the leaderboard and sponsors content."""
     with open(README_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    start_idx = content.find(LEADERBOARD_START)
-    end_idx = content.find(LEADERBOARD_END, start_idx) if start_idx != -1 else -1
-    if start_idx != -1 and end_idx != -1:
-        before = content[:start_idx]
-        after = content[end_idx + len(LEADERBOARD_END) :]
-        new_content = (
-            f"{before}{LEADERBOARD_START}\n"
-            f"{leaderboard_md}\n"
-            f"{LEADERBOARD_END}{after}"
-        )
-    elif start_idx == -1 and end_idx == -1:
-        new_content = (
-            f"{content.rstrip()}\n\n"
-            f"{LEADERBOARD_START}\n"
-            f"{leaderboard_md}\n"
-            f"{LEADERBOARD_END}\n"
-        )
-    else:
-        print(f"Error: Mismatched leaderboard markers in {README_PATH}", file=sys.stderr)
+    # Update sponsors section first (appears earlier in the file).
+    if sponsors_html is not None:
+        result = _replace_section(content, SPONSORS_START, SPONSORS_END, sponsors_html)
+        if result is None:
+            return
+        content = result
+
+    # Update leaderboard section.
+    result = _replace_section(content, LEADERBOARD_START, LEADERBOARD_END, leaderboard_md)
+    if result is None:
         return
+    content = result
 
     with open(README_PATH, "w", encoding="utf-8") as f:
-        f.write(new_content)
+        f.write(content)
 
     print(f"Updated {README_PATH}")
 
@@ -964,7 +1144,9 @@ def main():
         sys.exit(0)
 
     leaderboard_md = generate_markdown(contributors, levels_data)
-    update_readme(leaderboard_md)
+    print("Checking GitHub Sponsors status for top contributors...")
+    sponsors_html = generate_sponsors_html(contributors, token=token)
+    update_readme(leaderboard_md, sponsors_html=sponsors_html)
     print(f"Leaderboard updated with {len(contributors)} contributors.")
 
 
