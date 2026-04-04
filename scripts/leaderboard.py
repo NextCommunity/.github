@@ -52,7 +52,7 @@ MILESTONES = [
 ]
 
 # Curated level samples shown in the Gamification Guide table.
-SAMPLE_LEVELS = [0, 1, 5, 10, 25, 50, 100, 200, 500, 1000]
+SAMPLE_LEVELS = [0, 1, 5, 10, 25, 50, 100, 200, 250, 500, 750, 1000]
 
 # Minimal built-in fallback levels used when the remote JSON cannot be
 # fetched.  Each entry matches the levels.json schema.
@@ -74,9 +74,15 @@ FALLBACK_LEVELS = [
     {"level": 200, "name": "One With The Force", "emoji": "🌌",
      "color": "#6366f1", "rarity": "mythic",
      "description": "Luminous beings are we."},
-    {"level": 500, "name": "Quantum Entity", "emoji": "⚛️",
-     "color": "#7c3aed", "rarity": "mythic",
-     "description": "Existing in all states at once."},
+    {"level": 250, "name": "The Source", "emoji": "🔆",
+     "color": "#ffffff", "rarity": "mythic",
+     "description": "Where the path ends and the cycle restarts."},
+    {"level": 500, "name": "The Creative Director", "emoji": "✨",
+     "color": "#ffffff", "rarity": "mythic",
+     "description": "The vision is complete. Roll credits."},
+    {"level": 750, "name": "Meta-Reality Architect", "emoji": "🏛️",
+     "color": "#fbbf24", "rarity": "mythic",
+     "description": "You designed the cage you live in. It's quite nice."},
     {"level": 1000, "name": "Infinity", "emoji": "♾️", "color": "#000000",
      "rarity": "absolute", "description": "Beyond all limits."},
 ]
@@ -97,6 +103,10 @@ def _peak_rarity_rank(contrib):
 ACHIEVEMENTS = [
     ("🎯", "First Commit", "Make your first contribution",
      lambda c: c["commits"] >= 1),
+    ("✋", "High Five", "Reach 5 commits",
+     lambda c: c["commits"] >= 5),
+    ("🌟", "Rising Star", "Reach 25 commits",
+     lambda c: c["commits"] >= 25),
     ("🌐", "Explorer", "Contribute to 2+ repositories",
      lambda c: c["repos_count"] >= 2),
     ("🏗️", "Architect", "Contribute to 3+ repositories",
@@ -109,14 +119,20 @@ ACHIEVEMENTS = [
      lambda c: c["commits"] >= 250),
     ("⭐", "Superstar", "Reach 500 commits",
      lambda c: c["commits"] >= 500),
+    ("👑", "Elite", "Reach 750 commits",
+     lambda c: c["commits"] >= 750),
     ("🏆", "Thousand Club", "Reach 1000 commits",
      lambda c: c["commits"] >= 1000),
     ("🌱", "Quick Streak", "Commit for 3+ consecutive days",
      lambda c: c["longest_streak"] >= 3),
+    ("📆", "Weekday Warrior", "Commit for 5+ consecutive days",
+     lambda c: c["longest_streak"] >= 5),
     ("📅", "Week Streak", "Commit for 7+ consecutive days",
      lambda c: c["longest_streak"] >= 7),
     ("💫", "Fortnight Streak", "Commit for 14+ consecutive days",
      lambda c: c["longest_streak"] >= 14),
+    ("🗓️", "Three-Week Streak", "Commit for 21+ consecutive days",
+     lambda c: c["longest_streak"] >= 21),
     ("🔥", "Month Streak", "Commit for 30+ consecutive days",
      lambda c: c["longest_streak"] >= 30),
     ("⬜", "Common Ground", "Reach a common-rarity level",

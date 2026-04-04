@@ -40,12 +40,12 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🏴‍☠️ Lv.285 Warlord of the Sea | 🟧 legendary | 285 | `[█████░░░]` 70% → 300 | ⚡ 5d | 🎯 🌐 💪 🚀 🏅 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 |
-| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ⬜ 🟩 🟦 🟪 |
-| 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 🟦 |
-| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🎯 ⬜ 🟩 |
-| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🚩 Lv.289 Revolutionary | 🟪 epic | 289 | `[██████░░]` 78% → 300 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🏅 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 |
+| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 🟦 🟪 |
+| 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 🟦 |
+| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 |
+| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 |
 | 7 | [@tanverified](https://github.com/tanverified) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 |
 | 8 | [@ayushrana182](https://github.com/ayushrana182) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 |
 | 9 | [@rjphares](https://github.com/rjphares) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 |
@@ -135,7 +135,9 @@ Each commit levels you up through themed sagas — from tech to fantasy to sci-f
 | 50 | 💍 Ring-bearer | 🟧 legendary |
 | 100 | ✨ Eru Ilúvatar | 🟥 mythic |
 | 200 | 🌌 One With The Force | 🟥 mythic |
+| 250 | 🔆 The Source | 🟥 mythic |
 | 500 | ✨ The Creative Director | 🟥 mythic |
+| 750 | 🏛️ Meta-Reality Architect | 🟥 mythic |
 | 1000 | ♾️ Infinity | ⬛ absolute |
 
 > There are **999** unique levels to discover!
@@ -161,16 +163,21 @@ The progress bar tracks your advancement toward the next milestone: **10, 20, 30
 | Badge | Achievement | How to Earn |
 |:-----:|-------------|-------------|
 | 🎯 | First Commit | Make your first contribution |
+| ✋ | High Five | Reach 5 commits |
+| 🌟 | Rising Star | Reach 25 commits |
 | 🌐 | Explorer | Contribute to 2+ repositories |
 | 🏗️ | Architect | Contribute to 3+ repositories |
 | 💪 | Dedicated | Reach 50 commits |
 | 🚀 | Rockstar | Reach 100 commits |
 | 🏅 | Quarter Master | Reach 250 commits |
 | ⭐ | Superstar | Reach 500 commits |
+| 👑 | Elite | Reach 750 commits |
 | 🏆 | Thousand Club | Reach 1000 commits |
 | 🌱 | Quick Streak | Commit for 3+ consecutive days |
+| 📆 | Weekday Warrior | Commit for 5+ consecutive days |
 | 📅 | Week Streak | Commit for 7+ consecutive days |
 | 💫 | Fortnight Streak | Commit for 14+ consecutive days |
+| 🗓️ | Three-Week Streak | Commit for 21+ consecutive days |
 | 🔥 | Month Streak | Commit for 30+ consecutive days |
 | ⬜ | Common Ground | Reach a common-rarity level |
 | 🟩 | Uncommon Rising | Reach an uncommon-rarity level |
