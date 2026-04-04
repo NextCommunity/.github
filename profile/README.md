@@ -40,8 +40,8 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | ⚓ Lv.297 Admiral of the Fleet | 🟧 legendary | ✏️ 297 | `[███████░]` 94% → 300 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🏅 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,440 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | ✏️ 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,175 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🌎 Lv.300 King of the World | 🟥 mythic | ✏️ 179 · 🤝 121 | `[░░░░░░░░]` 0% → 400 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🏅 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,470 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | ✏️ 177 · 🤝 1 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,175 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 | 130 |
@@ -105,7 +105,7 @@
 | 63 | [@NS007-dev](https://github.com/NS007-dev) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
 | 64 | [@koolamusic](https://github.com/koolamusic) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
 | 65 | [@ierfaaan](https://github.com/ierfaaan) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 66 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 66 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 0 · 🤝 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
 | 67 | [@JayantGoel001](https://github.com/JayantGoel001) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
 | 68 | [@gakramx](https://github.com/gakramx) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
 | 69 | [@ra1nbow1](https://github.com/ra1nbow1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
