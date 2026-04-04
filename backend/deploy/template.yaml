@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: NextCommunity Leaderboard API on AWS Lambda
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 256
+    Runtime: python3.13
+
+Resources:
+  LeaderboardFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: backend.deploy.lambda_handler.handler
+      CodeUri: ../
+      Environment:
+        Variables:
+          GITHUB_TOKEN: !Ref GitHubToken
+          ORG_NAME: NextCommunity
+          CACHE_TTL: "900"
+      Events:
+        ApiProxy:
+          Type: HttpApi
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+        ApiRoot:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: ANY
+
+Parameters:
+  GitHubToken:
+    Type: String
+    NoEcho: true
+    Description: GitHub personal access token
+
+Outputs:
+  ApiUrl:
+    Description: API Gateway URL
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com"
