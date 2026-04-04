@@ -824,8 +824,12 @@ def generate_sponsors_html(contributors, token=None):
         ]
         rank_label = rank_badges.get(rank, "🏅")
         escaped = _badge_escape(login)
-        label = urllib.parse.quote(f"💖_Sponsor_{escaped}", safe="")
-        message = urllib.parse.quote(f"{rank_label}_Rank_{rank}", safe="")
+        label = urllib.parse.quote(
+            f"💖_Sponsor_{escaped}", safe="_-"
+        )
+        message = urllib.parse.quote(
+            f"{rank_label}_Rank_{rank}", safe="_-"
+        )
         badge_url = (
             f"https://img.shields.io/badge/"
             f"{label}-{message}-"
