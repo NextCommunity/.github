@@ -1,6 +1,7 @@
 """Fetch contributor stats from all NextCommunity repos and update the leaderboard."""
 
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -11,6 +12,11 @@ API_URL = "https://api.github.com"
 README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.md")
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
+
+# Manual email-to-login mapping for contributors who commit with multiple
+# email addresses that may not all be linked to their GitHub account.
+# Add entries like: "alternate@example.com": "github_login"
+EMAIL_ALIASES = {}
 
 
 def gh_request(url, token=None):
@@ -79,42 +85,156 @@ def fetch_repos(token=None):
     return get_all_pages(url, token)
 
 
-def fetch_contributors(repo_name, token=None):
-    """Fetch contributors for a single repo.
+def fetch_commits(repo_name, token=None):
+    """Fetch all commits for a single repo.
 
     Raises urllib.error.URLError on API failure.
     """
-    url = f"{API_URL}/repos/{ORG}/{repo_name}/contributors?anon=0"
+    url = f"{API_URL}/repos/{ORG}/{repo_name}/commits"
     return get_all_pages(url, token)
+
+
+def resolve_login_from_noreply(email):
+    """Extract a GitHub login from a noreply email address.
+
+    Handles both formats:
+      - username@users.noreply.github.com
+      - 12345678+username@users.noreply.github.com
+    """
+    if email.endswith("@users.noreply.github.com"):
+        local = email.split("@")[0]
+        if "+" in local:
+            return local.split("+", 1)[1]
+        return local
+    return None
+
+
+_CO_AUTHOR_RE = re.compile(
+    r"^Co-authored-by:\s*.+?\s*<([^>]+)>\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+
+def parse_co_authors(message):
+    """Extract co-author email addresses from ``Co-authored-by:`` trailers.
+
+    Returns a list of lower-cased, stripped email addresses found in the
+    commit message.
+    """
+    if not message:
+        return []
+    return [m.lower().strip() for m in _CO_AUTHOR_RE.findall(message)]
 
 
 def build_leaderboard(token=None):
     """Aggregate contributor commits across all repos and return sorted list.
+
+    Uses the Commits API to get every commit with its author email and GitHub
+    login.  A two-pass approach builds an email-to-login mapping first, then
+    counts commits per resolved identity so that multiple email addresses
+    belonging to the same person are combined.
+
+    Co-authors specified via ``Co-authored-by:`` trailers in commit messages
+    each receive credit for the commit alongside the primary author.
 
     Raises urllib.error.URLError if the repo listing fails.
     Returns (sorted_contributors, had_errors) where had_errors indicates
     whether any per-repo API failures occurred.
     """
     repos = fetch_repos(token)
-    contributors = {}
     had_errors = False
+
+    # Collect (login_or_none, email, is_bot) for every commit across all repos.
+    # Co-authors extracted from commit messages are added as separate entries
+    # with login=None so they go through email→login resolution.
+    all_commits = []
+    # Track logins and emails identified as bots from API metadata so that
+    # co-author entries resolving to the same identity are also excluded.
+    bot_logins = set()
+    bot_emails = set()
 
     for repo in repos:
         if repo.get("fork"):
             continue
         repo_name = repo["name"]
-        print(f"Fetching contributors for {repo_name}...")
+        print(f"Fetching commits for {repo_name}...")
         try:
-            for contrib in fetch_contributors(repo_name, token):
-                login = contrib.get("login", "")
-                if not login or contrib.get("type") == "Bot":
-                    continue
-                if login not in contributors:
-                    contributors[login] = {"commits": 0, "login": login}
-                contributors[login]["commits"] += contrib.get("contributions", 0)
+            for commit_obj in fetch_commits(repo_name, token):
+                gh_author = commit_obj.get("author")  # GitHub user info
+                commit_detail = commit_obj.get("commit", {})
+                git_author = commit_detail.get("author", {})
+                email = (git_author.get("email") or "").lower().strip()
+
+                login = None
+                if gh_author and gh_author.get("login"):
+                    login = gh_author["login"]
+
+                is_bot = bool(
+                    (gh_author and gh_author.get("type") == "Bot")
+                    or (login and login.endswith("[bot]"))
+                    or (
+                        gh_author
+                        and "/apps/" in (gh_author.get("html_url") or "")
+                    )
+                )
+
+                if is_bot:
+                    if login:
+                        bot_logins.add(login.lower())
+                    if email:
+                        bot_emails.add(email)
+
+                all_commits.append((login, email, is_bot))
+
+                # Credit co-authors from Co-authored-by trailers
+                message = commit_detail.get("message", "")
+                for co_email in parse_co_authors(message):
+                    if co_email != email:
+                        all_commits.append((None, co_email, False))
         except urllib.error.URLError as exc:
-            print(f"Warning: Failed to fetch contributors for {repo_name}: {exc}")
+            print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
+
+    # --- Phase 1: build email → login mapping ---
+    email_to_login = dict(EMAIL_ALIASES)
+
+    for login, email, _ in all_commits:
+        if not email:
+            continue
+        if login and email not in email_to_login:
+            email_to_login[email] = login
+        elif login and email in email_to_login and email_to_login[email] != login:
+            print(
+                f"Warning: email {email} maps to both "
+                f"{email_to_login[email]} and {login}; keeping first"
+            )
+        elif not login and email not in email_to_login:
+            resolved = resolve_login_from_noreply(email)
+            if resolved:
+                email_to_login[email] = resolved
+
+    # --- Phase 2: count commits per resolved identity ---
+    contributors = {}
+    for login, email, is_bot in all_commits:
+        if is_bot:
+            continue
+
+        resolved = login or email_to_login.get(email)
+        if not resolved:
+            continue
+
+        # Skip bots: logins ending with [bot], logins identified as bots
+        # from API metadata, or emails belonging to known bot accounts.
+        if (
+            resolved.endswith("[bot]")
+            or resolved.lower() in bot_logins
+            or email in bot_emails
+        ):
+            continue
+
+        if resolved not in contributors:
+            contributors[resolved] = {"commits": 0, "login": resolved}
+        contributors[resolved]["commits"] += 1
 
     sorted_contributors = sorted(
         contributors.values(), key=lambda c: c["commits"], reverse=True
