@@ -14,11 +14,21 @@
     <a href="https://nextcommunity.github.io/"><img src="https://img.shields.io/badge/Easter-Eggs-ff69b4?labelColor=9b59b6" alt="Easter Eggs"></a>
   </p>
   <p>
+    <strong>🏆 Top 5 Leaderboard Sponsors Showcase 🏆</strong><br>
+    <sub>The first 5 contributors on our leaderboard with GitHub Sponsors get showcased here — climb the ranks and get featured!</sub>
+  </p>
+  <p>
     <a href="https://github.com/sponsors/jbampton">
-      <img src="https://img.shields.io/github/sponsors/jbampton?style=for-the-badge&label=Sponsor%20John%20Bampton&labelColor=orange&color=pink" alt="Sponsor John Bampton"></a>
+      <img src="https://img.shields.io/badge/💖_Sponsor_jbampton-🥇_Rank_1-ff6b6b?style=for-the-badge&labelColor=feca57" alt="Sponsor jbampton"></a><br>
     <a href="https://github.com/sponsors/BaseMax">
-      <img src="https://img.shields.io/github/sponsors/BaseMax?style=for-the-badge&label=Sponsor%20Max%20Base&labelColor=lightgreen&color=lightblue" alt="Sponsor Max Base"></a>    
-  </p>  
+      <img src="https://img.shields.io/badge/💖_Sponsor_BaseMax-🥈_Rank_2-ff9ff3?style=for-the-badge&labelColor=48dbfb" alt="Sponsor BaseMax"></a><br>
+    <a href="https://github.com/sponsors/basalumutgazi">
+      <img src="https://img.shields.io/badge/💖_Sponsor_basalumutgazi-🏅_Rank_5-54a0ff?style=for-the-badge&labelColor=5f27cd" alt="Sponsor basalumutgazi"></a><br>
+    <a href="https://github.com/sponsors/Subham-KRLX">
+      <img src="https://img.shields.io/badge/💖_Sponsor_Subham--KRLX-🏅_Rank_6-ee5a24?style=for-the-badge&labelColor=10ac84" alt="Sponsor Subham-KRLX"></a><br>
+    <a href="https://github.com/sponsors/anufdo">
+      <img src="https://img.shields.io/badge/💖_Sponsor_anufdo-🏅_Rank_15-0abde3?style=for-the-badge&labelColor=f368e0" alt="Sponsor anufdo"></a>
+  </p>
 </div>
 
 <hr>
