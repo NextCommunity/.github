@@ -34,6 +34,8 @@
 
 <!-- LEADERBOARD:START -->
 
+<div align="center">
+
 ## 🏆 Organization Leaderboard
 
 | Rank | Contributor | Commits |
@@ -111,5 +113,7 @@
 | 71 | [@majidabdulred](https://github.com/majidabdulred) | 1 |
 | 72 | [@enimiste](https://github.com/enimiste) | 1 |
 | 73 | [@Muriturca](https://github.com/Muriturca) | 1 |
+
+</div>
 
 <!-- LEADERBOARD:END -->

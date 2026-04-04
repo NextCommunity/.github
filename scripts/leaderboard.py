@@ -126,6 +126,8 @@ def generate_markdown(contributors):
     """Generate a markdown table from the leaderboard data."""
     lines = [
         "",
+        '<div align="center">',
+        "",
         "## 🏆 Organization Leaderboard",
         "",
         "| Rank | Contributor | Commits |",
@@ -135,6 +137,8 @@ def generate_markdown(contributors):
         login = contrib["login"]
         commits = contrib["commits"]
         lines.append(f"| {i} | [@{login}](https://github.com/{login}) | {commits} |")
+    lines.append("")
+    lines.append("</div>")
     lines.append("")
     return "\n".join(lines)
 
