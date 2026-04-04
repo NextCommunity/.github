@@ -17,7 +17,8 @@ def gh_request(url, token=None):
     """Make an authenticated GitHub API request and return parsed JSON."""
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "NextCommunity-Leaderboard-Script"
+        "User-Agent": "NextCommunity-Leaderboard-Script",
+        "X-GitHub-Api-Version": "2022-11-28",
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
