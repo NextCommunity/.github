@@ -12,6 +12,11 @@ README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.m
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 
+# Manual email-to-login mapping for contributors who commit with multiple
+# email addresses that may not all be linked to their GitHub account.
+# Add entries like: "alternate@example.com": "github_login"
+EMAIL_ALIASES = {}
+
 
 def gh_request(url, token=None):
     """Make an authenticated GitHub API request and return parsed JSON."""
@@ -79,42 +84,102 @@ def fetch_repos(token=None):
     return get_all_pages(url, token)
 
 
-def fetch_contributors(repo_name, token=None):
-    """Fetch contributors for a single repo.
+def fetch_commits(repo_name, token=None):
+    """Fetch all commits for a single repo.
 
     Raises urllib.error.URLError on API failure.
     """
-    url = f"{API_URL}/repos/{ORG}/{repo_name}/contributors?anon=0"
+    url = f"{API_URL}/repos/{ORG}/{repo_name}/commits"
     return get_all_pages(url, token)
+
+
+def resolve_login_from_noreply(email):
+    """Extract a GitHub login from a noreply email address.
+
+    Handles both formats:
+      - username@users.noreply.github.com
+      - 12345678+username@users.noreply.github.com
+    """
+    if email.endswith("@users.noreply.github.com"):
+        local = email.split("@")[0]
+        if "+" in local:
+            return local.split("+", 1)[1]
+        return local
+    return None
 
 
 def build_leaderboard(token=None):
     """Aggregate contributor commits across all repos and return sorted list.
+
+    Uses the Commits API to get every commit with its author email and GitHub
+    login.  A two-pass approach builds an email-to-login mapping first, then
+    counts commits per resolved identity so that multiple email addresses
+    belonging to the same person are combined.
 
     Raises urllib.error.URLError if the repo listing fails.
     Returns (sorted_contributors, had_errors) where had_errors indicates
     whether any per-repo API failures occurred.
     """
     repos = fetch_repos(token)
-    contributors = {}
     had_errors = False
+
+    # Collect (login_or_none, email, is_bot) for every commit across all repos
+    all_commits = []
 
     for repo in repos:
         if repo.get("fork"):
             continue
         repo_name = repo["name"]
-        print(f"Fetching contributors for {repo_name}...")
+        print(f"Fetching commits for {repo_name}...")
         try:
-            for contrib in fetch_contributors(repo_name, token):
-                login = contrib.get("login", "")
-                if not login or contrib.get("type") == "Bot":
-                    continue
-                if login not in contributors:
-                    contributors[login] = {"commits": 0, "login": login}
-                contributors[login]["commits"] += contrib.get("contributions", 0)
+            for commit_obj in fetch_commits(repo_name, token):
+                gh_author = commit_obj.get("author")  # GitHub user info
+                commit_detail = commit_obj.get("commit", {})
+                git_author = commit_detail.get("author", {})
+                email = (git_author.get("email") or "").lower().strip()
+
+                login = None
+                if gh_author and gh_author.get("login"):
+                    login = gh_author["login"]
+
+                is_bot = bool(
+                    (gh_author and gh_author.get("type") == "Bot")
+                    or (login and login.endswith("[bot]"))
+                )
+
+                all_commits.append((login, email, is_bot))
         except urllib.error.URLError as exc:
-            print(f"Warning: Failed to fetch contributors for {repo_name}: {exc}")
+            print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
+
+    # --- Phase 1: build email → login mapping ---
+    email_to_login = dict(EMAIL_ALIASES)
+
+    # Learn from commits where GitHub already resolved the author
+    for login, email, _ in all_commits:
+        if login and email and email not in email_to_login:
+            email_to_login[email] = login
+
+    # Resolve GitHub noreply addresses that lack a linked login
+    for _, email, _ in all_commits:
+        if email and email not in email_to_login:
+            resolved = resolve_login_from_noreply(email)
+            if resolved:
+                email_to_login[email] = resolved
+
+    # --- Phase 2: count commits per resolved identity ---
+    contributors = {}
+    for login, email, is_bot in all_commits:
+        if is_bot:
+            continue
+
+        resolved = login or email_to_login.get(email)
+        if not resolved:
+            continue
+
+        if resolved not in contributors:
+            contributors[resolved] = {"commits": 0, "login": resolved}
+        contributors[resolved]["commits"] += 1
 
     sorted_contributors = sorted(
         contributors.values(), key=lambda c: c["commits"], reverse=True
