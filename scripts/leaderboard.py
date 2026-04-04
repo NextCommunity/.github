@@ -156,15 +156,16 @@ def parse_co_authors(message):
 
 
 def compute_level(commits):
-    """Return ``(emoji, title, next_threshold)`` for a commit count.
+    """Return ``(emoji, title, next_level_min_commits)`` for a commit count.
 
-    *next_threshold* is the number of commits needed to reach the next level,
-    or ``None`` if the contributor is already at the maximum level.
+    *next_level_min_commits* is the minimum total commits required for the
+    next level, or ``None`` if the contributor is already at the maximum
+    level.
     """
     for i, (min_commits, emoji, title) in enumerate(LEVELS):
         if commits >= min_commits:
-            next_threshold = LEVELS[i - 1][0] if i > 0 else None
-            return emoji, title, next_threshold
+            next_level_min_commits = LEVELS[i - 1][0] if i > 0 else None
+            return emoji, title, next_level_min_commits
     # Should not happen since the lowest level starts at 1
     return "🌱", "Seedling", LEVELS[-1][0]
 
