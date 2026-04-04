@@ -405,7 +405,7 @@ def compute_current_streak(commit_dates, today=None):
         return 0
     if today is None:
         today = date.today()
-    dates_set = set(commit_dates)
+    dates_set = commit_dates
     # The streak must touch today or yesterday to be "active"
     if today in dates_set:
         start = today
@@ -656,7 +656,6 @@ def build_leaderboard(token=None):
     today = date.today()
     for contrib in contributors.values():
         contrib["repos_count"] = len(contrib["repos"])
-        contrib["repo_names"] = sorted(contrib["repos"])
         commit_dates = contrib["commit_dates"]
         contrib["longest_streak"] = compute_longest_streak(commit_dates)
         contrib["current_streak"] = compute_current_streak(
