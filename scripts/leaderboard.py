@@ -6,6 +6,7 @@ import sys
 import urllib.error
 import urllib.request
 import json
+from bisect import bisect_right
 from datetime import date, timedelta
 
 ORG = "NextCommunity"
@@ -16,36 +17,157 @@ LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
 
+# URL for the canonical level definitions shared with the website.
+LEVELS_JSON_URL = (
+    "https://raw.githubusercontent.com/NextCommunity/"
+    "NextCommunity.github.io/main/src/_data/levels.json"
+)
+
 # Manual email-to-login mapping for contributors who commit with multiple
 # email addresses that may not all be linked to their GitHub account.
 # Add entries like: "alternate@example.com": "github_login"
 EMAIL_ALIASES = {}
 
-# --- Gamification: Levels ---
-# Each entry is (min_commits, emoji, title).  Checked in descending order so
-# the first match wins.
-LEVELS = [
-    (200, "👑", "Legend"),
-    (100, "💎", "Diamond"),
-    (50, "🔥", "On Fire"),
-    (25, "⭐", "Star"),
-    (10, "🌳", "Tree"),
-    (5, "🌿", "Sprout"),
-    (1, "🌱", "Seedling"),
+# --- Gamification: Rarity visual indicators ---
+RARITY_INDICATORS = {
+    "common": "⬜",
+    "uncommon": "🟩",
+    "rare": "🟦",
+    "epic": "🟪",
+    "legendary": "🟧",
+    "mythic": "🟥",
+    "absolute": "⬛",
+}
+
+# Rarity ordering from lowest to highest, derived from the canonical
+# indicator mapping to avoid duplicated rarity definitions.
+RARITY_ORDER = list(RARITY_INDICATORS)
+_RARITY_RANK = {r: i for i, r in enumerate(RARITY_ORDER)}
+
+# Milestones used for the progress bar.  The bar shows how far along a
+# contributor is to the *next* milestone.
+MILESTONES = [
+    10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
+    150, 200, 250, 300, 400, 500, 750, 1000,
+]
+
+# Curated level samples shown in the Gamification Guide table.
+SAMPLE_LEVELS = [0, 1, 5, 10, 25, 50, 100, 200, 250, 500, 750, 1000]
+
+# --- Gamification: Points configuration ---
+# Points are a composite score rewarding commits, streaks, achievements,
+# multi-repo contributions, and rarity progression.
+POINTS_CONFIG = {
+    "per_commit": 10,
+    "per_streak_day": 5,
+    "per_achievement": 15,
+    "per_extra_repo": 20,   # bonus per repo beyond the first
+    "rarity_bonus": {
+        "common": 0,
+        "uncommon": 10,
+        "rare": 25,
+        "epic": 50,
+        "legendary": 100,
+        "mythic": 200,
+        "absolute": 500,
+    },
+}
+
+# Minimal built-in fallback levels used when the remote JSON cannot be
+# fetched.  Each entry matches the levels.json schema.
+FALLBACK_LEVELS = [
+    {"level": 0, "name": "Newbie", "emoji": "🐣", "color": "#94a3b8",
+     "rarity": "common", "description": "Hello World."},
+    {"level": 1, "name": "Script Kid", "emoji": "🛹", "color": "#10b981",
+     "rarity": "common", "description": "Copy-paste from Stack Overflow."},
+    {"level": 5, "name": "Data Miner", "emoji": "💎", "color": "#06b6d4",
+     "rarity": "uncommon", "description": "Sifting through JSON for gold."},
+    {"level": 10, "name": "Architect", "emoji": "👑", "color": "#ef4444",
+     "rarity": "epic", "description": "You dream in UML diagrams."},
+    {"level": 25, "name": "Kingslayer", "emoji": "🗡️", "color": "#facc15",
+     "rarity": "epic", "description": "There are no men like me."},
+    {"level": 50, "name": "Ring-bearer", "emoji": "💍", "color": "#fbbf24",
+     "rarity": "legendary", "description": "Carry it to the fire."},
+    {"level": 100, "name": "Eru Ilúvatar", "emoji": "✨", "color": "#fbbf24",
+     "rarity": "mythic", "description": "The Creator."},
+    {"level": 200, "name": "One With The Force", "emoji": "🌌",
+     "color": "#6366f1", "rarity": "mythic",
+     "description": "Luminous beings are we."},
+    {"level": 250, "name": "The Source", "emoji": "🔆",
+     "color": "#ffffff", "rarity": "mythic",
+     "description": "Where the path ends and the cycle restarts."},
+    {"level": 500, "name": "The Creative Director", "emoji": "✨",
+     "color": "#ffffff", "rarity": "mythic",
+     "description": "The vision is complete. Roll credits."},
+    {"level": 750, "name": "Meta-Reality Architect", "emoji": "🏛️",
+     "color": "#fbbf24", "rarity": "mythic",
+     "description": "You designed the cage you live in. It's quite nice."},
+    {"level": 1000, "name": "Infinity", "emoji": "♾️", "color": "#000000",
+     "rarity": "absolute", "description": "Beyond all limits."},
 ]
 
 # --- Gamification: Achievement definitions ---
 # Each entry is (emoji, label, description, check_function).  The check
 # function receives a contributor dict with keys: commits, repos_count,
-# longest_streak.
+# longest_streak, level_rarity, peak_rarity.
+
+
+def _peak_rarity_rank(contrib):
+    """Return the numeric rank for a contributor's peak rarity."""
+    return _RARITY_RANK.get(
+        contrib.get("peak_rarity", contrib.get("level_rarity")), 0,
+    )
+
+
 ACHIEVEMENTS = [
-    ("🎯", "First Commit", "Make your first contribution", lambda c: c["commits"] >= 1),
-    ("🌐", "Explorer", "Contribute to 2+ repositories", lambda c: c["repos_count"] >= 2),
-    ("🏗️", "Architect", "Contribute to 3+ repositories", lambda c: c["repos_count"] >= 3),
-    ("💪", "Dedicated", "Reach 50 commits", lambda c: c["commits"] >= 50),
-    ("🚀", "Rockstar", "Reach 100 commits", lambda c: c["commits"] >= 100),
-    ("📅", "Week Streak", "Commit for 7+ consecutive days", lambda c: c["longest_streak"] >= 7),
-    ("🔥", "Month Streak", "Commit for 30+ consecutive days", lambda c: c["longest_streak"] >= 30),
+    ("🎯", "First Commit", "Make your first contribution",
+     lambda c: c["commits"] >= 1),
+    ("✋", "High Five", "Reach 5 commits",
+     lambda c: c["commits"] >= 5),
+    ("🌟", "Rising Star", "Reach 25 commits",
+     lambda c: c["commits"] >= 25),
+    ("🌐", "Explorer", "Contribute to 2+ repositories",
+     lambda c: c["repos_count"] >= 2),
+    ("🏗️", "Architect", "Contribute to 3+ repositories",
+     lambda c: c["repos_count"] >= 3),
+    ("💪", "Dedicated", "Reach 50 commits",
+     lambda c: c["commits"] >= 50),
+    ("🚀", "Rockstar", "Reach 100 commits",
+     lambda c: c["commits"] >= 100),
+    ("🏅", "Quarter Master", "Reach 250 commits",
+     lambda c: c["commits"] >= 250),
+    ("⭐", "Superstar", "Reach 500 commits",
+     lambda c: c["commits"] >= 500),
+    ("👑", "Elite", "Reach 750 commits",
+     lambda c: c["commits"] >= 750),
+    ("🏆", "Thousand Club", "Reach 1000 commits",
+     lambda c: c["commits"] >= 1000),
+    ("🌱", "Quick Streak", "Commit for 3+ consecutive days",
+     lambda c: c["longest_streak"] >= 3),
+    ("📆", "Weekday Warrior", "Commit for 5+ consecutive days",
+     lambda c: c["longest_streak"] >= 5),
+    ("📅", "Week Streak", "Commit for 7+ consecutive days",
+     lambda c: c["longest_streak"] >= 7),
+    ("💫", "Fortnight Streak", "Commit for 14+ consecutive days",
+     lambda c: c["longest_streak"] >= 14),
+    ("🗓️", "Three-Week Streak", "Commit for 21+ consecutive days",
+     lambda c: c["longest_streak"] >= 21),
+    ("🔥", "Month Streak", "Commit for 30+ consecutive days",
+     lambda c: c["longest_streak"] >= 30),
+    ("⬜", "Common Ground", "Reach a common-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["common"]),
+    ("🟩", "Uncommon Rising", "Reach an uncommon-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["uncommon"]),
+    ("🟦", "Rare Find", "Reach a rare-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["rare"]),
+    ("🟪", "Epic Coder", "Reach an epic-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["epic"]),
+    ("🟧", "Legendary Dev", "Reach a legendary-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["legendary"]),
+    ("🟥", "Mythic Status", "Reach a mythic-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["mythic"]),
+    ("⬛", "Absolute Power", "Reach an absolute-rarity level",
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["absolute"]),
 ]
 
 
@@ -156,22 +278,97 @@ def parse_co_authors(message):
     return [m.lower().strip() for m in _CO_AUTHOR_RE.findall(message)]
 
 
-def compute_level(commits):
-    """Return ``(emoji, title, current_level_min, next_level_min)`` for a commit count.
+def fetch_levels_json():
+    """Fetch the canonical level definitions from the website repository.
 
-    *current_level_min* is the minimum total commits required for the
-    contributor's current level.
-
-    *next_level_min* is the minimum total commits required for the
-    next level, or ``None`` if the contributor is already at the maximum
-    level.
+    Returns a list of level dicts sorted by level number.  Falls back to
+    :data:`FALLBACK_LEVELS` on any network or parsing error.
     """
-    for i, (min_commits, emoji, title) in enumerate(LEVELS):
-        if commits >= min_commits:
-            next_level_min = LEVELS[i - 1][0] if i > 0 else None
-            return emoji, title, min_commits, next_level_min
-    # Handle commit counts below the lowest defined threshold.
-    return "🌱", "Seedling", 0, LEVELS[-1][0]
+    try:
+        req = urllib.request.Request(
+            LEVELS_JSON_URL,
+            headers={"User-Agent": "NextCommunity-Leaderboard-Script"},
+        )
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        if isinstance(data, list) and data:
+            data.sort(key=lambda d: d.get("level", 0))
+            return data
+        print("Warning: levels.json returned empty or invalid data, using fallback")
+    except urllib.error.URLError as exc:
+        print(f"Warning: Network error fetching levels.json, using fallback: {exc}")
+    except (json.JSONDecodeError, ValueError) as exc:
+        print(f"Warning: Failed to parse levels.json, using fallback: {exc}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"Warning: Unexpected error fetching levels.json, using fallback: {exc}")
+    return list(FALLBACK_LEVELS)
+
+
+# Default level entry used as ultimate fallback.
+_DEFAULT_LEVEL = {
+    "level": 0, "name": "Newbie", "emoji": "🐣",
+    "rarity": "common", "description": "", "color": "#94a3b8",
+}
+
+
+def _build_levels_lookup(levels_data):
+    """Return a dict mapping level number → level dict for fast lookup."""
+    return {entry["level"]: entry for entry in levels_data}
+
+
+def _sorted_level_keys(levels_lookup):
+    """Return sorted level keys for bisect-based lookups."""
+    return sorted(levels_lookup)
+
+
+def compute_level(commits, levels_lookup, _sorted_keys=None):
+    """Return a level-info dict for a commit count using *levels_lookup*.
+
+    Uses bisect for O(log n) lookup.  The level number is the highest
+    defined level ≤ *commits*.  The returned dict has keys: ``level``,
+    ``name``, ``emoji``, ``rarity``, ``description``, ``color``.
+    """
+    if not levels_lookup:
+        return dict(_DEFAULT_LEVEL)
+
+    if _sorted_keys is None:
+        _sorted_keys = _sorted_level_keys(levels_lookup)
+
+    idx = bisect_right(_sorted_keys, commits) - 1
+    if idx < 0:
+        idx = 0
+    level_num = _sorted_keys[idx]
+    return dict(levels_lookup.get(level_num, _DEFAULT_LEVEL))
+
+
+def compute_peak_rarity(commits, levels_lookup, _sorted_keys=None):
+    """Return the highest rarity achieved for defined levels up to *commits*.
+
+    This scans the defined level entries in *levels_lookup* whose level keys
+    are less than or equal to *commits*, then returns the rarity string with
+    the highest rank among those entries.
+
+    *_sorted_keys* is an optional pre-computed sorted list of level keys
+    (from :func:`_sorted_level_keys`).  When provided it avoids redundant
+    sorting across repeated calls.
+    """
+    if not levels_lookup:
+        return _DEFAULT_LEVEL.get("rarity", "common")
+
+    if _sorted_keys is None:
+        _sorted_keys = _sorted_level_keys(levels_lookup)
+
+    best_rarity = "common"
+    best_rank = _RARITY_RANK["common"]
+    for key in _sorted_keys:
+        if key > commits:
+            break
+        entry_rarity = levels_lookup[key].get("rarity", "common")
+        entry_rank = _RARITY_RANK.get(entry_rarity, 0)
+        if entry_rank > best_rank:
+            best_rarity = entry_rarity
+            best_rank = entry_rank
+    return best_rarity
 
 
 def compute_longest_streak(commit_dates):
@@ -199,23 +396,65 @@ def get_achievements(contributor):
     ]
 
 
-def progress_bar(current, level_min, next_level_min, width=8):
-    """Return a text progress bar like ``[████░░░░]``.
+def next_milestone(commits):
+    """Return the next milestone target above *commits*, or ``None`` at max."""
+    for m in MILESTONES:
+        if commits < m:
+            return m
+    return None
 
-    Progress is computed relative to the current level range
-    (level_min → next_level_min) so that reaching a new level resets the
-    bar to 0% instead of showing a misleading drop.
+
+def prev_milestone(commits):
+    """Return the last milestone at or below *commits*, or 0."""
+    prev = 0
+    for m in MILESTONES:
+        if m <= commits:
+            prev = m
+        else:
+            break
+    return prev
+
+
+def progress_bar(commits, width=8):
+    """Return a text progress bar toward the next milestone.
+
+    The bar fills relative to the range between the previous and next
+    milestones so that reaching a milestone resets the bar.
     """
-    if next_level_min is None:
+    target = next_milestone(commits)
+    if target is None:
         return "MAX ✨"
-    span = next_level_min - level_min
+    base = prev_milestone(commits)
+    span = target - base
     if span <= 0:
         return "MAX ✨"
-    progress = current - level_min
+    progress = commits - base
     filled = min((width * progress) // span, width)
     empty = width - filled
     pct = min((100 * progress) // span, 100)
-    return f"`[{'█' * filled}{'░' * empty}]` {pct}%"
+    return f"`[{'█' * filled}{'░' * empty}]` {pct}% → {target}"
+
+
+def compute_points(contributor):
+    """Return a gamified point total for a contributor.
+
+    Points reward multiple dimensions of participation:
+    - Commits (base contribution)
+    - Longest streak (consistency)
+    - Achievements earned (milestones)
+    - Multi-repo contributions (breadth)
+    - Rarity tier reached (progression)
+    """
+    cfg = POINTS_CONFIG
+    pts = contributor["commits"] * cfg["per_commit"]
+    pts += contributor["longest_streak"] * cfg["per_streak_day"]
+    pts += len(contributor["achievements"]) * cfg["per_achievement"]
+    extra_repos = max(contributor["repos_count"] - 1, 0)
+    pts += extra_repos * cfg["per_extra_repo"]
+    pts += cfg["rarity_bonus"].get(
+        contributor.get("peak_rarity", "common"), 0,
+    )
+    return pts
 
 
 def build_leaderboard(token=None):
@@ -358,18 +597,31 @@ def build_leaderboard(token=None):
         elif repo_name == DOTGITHUB_REPO_NAME:
             contributors[resolved]["dotgithub_commits"] += 1
 
+    # Fetch canonical level definitions
+    levels_data = fetch_levels_json()
+    levels_lookup = _build_levels_lookup(levels_data)
+    sorted_keys = _sorted_level_keys(levels_lookup)
+
     # Compute gamification stats for each contributor
     for contrib in contributors.values():
         contrib["repos_count"] = len(contrib["repos"])
         contrib["longest_streak"] = compute_longest_streak(
             contrib["commit_dates"]
         )
-        emoji, title, level_min, next_threshold = compute_level(contrib["commits"])
-        contrib["level_emoji"] = emoji
-        contrib["level_title"] = title
-        contrib["current_level_min"] = level_min
-        contrib["next_level_threshold"] = next_threshold
+        level_info = compute_level(
+            contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
+        )
+        contrib["level_num"] = level_info.get("level", 0)
+        contrib["level_emoji"] = level_info.get("emoji", "🐣")
+        contrib["level_title"] = level_info.get("name", "Newbie")
+        contrib["level_rarity"] = level_info.get("rarity", "common")
+        contrib["level_description"] = level_info.get("description", "")
+        contrib["level_color"] = level_info.get("color", "#94a3b8")
+        contrib["peak_rarity"] = compute_peak_rarity(
+            contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
+        )
         contrib["achievements"] = get_achievements(contrib)
+        contrib["points"] = compute_points(contrib)
         # Clean up non-serializable fields
         del contrib["repos"]
         del contrib["commit_dates"]
@@ -377,10 +629,10 @@ def build_leaderboard(token=None):
     sorted_contributors = sorted(
         contributors.values(), key=lambda c: c["commits"], reverse=True
     )
-    return sorted_contributors, had_errors
+    return sorted_contributors, had_errors, levels_data
 
 
-def generate_markdown(contributors):
+def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
 
@@ -390,47 +642,86 @@ def generate_markdown(contributors):
         "",
         "## 🏆 Organization Leaderboard",
         "",
-        "| Rank | Contributor | Level | Commits | Progress | Streak | Badges |",
-        "|------|-------------|:-----:|:-------:|----------|:------:|--------|",
+        "| Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |",
+        "|------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|",
     ]
     for i, contrib in enumerate(contributors, start=1):
         login = contrib["login"]
         commits = contrib["commits"]
+        level_num = contrib["level_num"]
         level_emoji = contrib["level_emoji"]
         level_title = contrib["level_title"]
-        level_min = contrib["current_level_min"]
-        next_threshold = contrib["next_level_threshold"]
+        level_rarity = contrib["level_rarity"]
         streak = contrib["longest_streak"]
         achievements = contrib["achievements"]
+        points = contrib["points"]
 
         badge = rank_badges.get(i, "")
         rank = f"{i} {badge}" if badge else str(i)
-        level = f"{level_emoji} {level_title}"
-        prog = progress_bar(commits, level_min, next_threshold)
+        level = f"{level_emoji} Lv.{level_num} {level_title}"
+        rarity_indicator = RARITY_INDICATORS.get(level_rarity, "⬜")
+        rarity_display = f"{rarity_indicator} {level_rarity}"
+        prog = progress_bar(commits)
         streak_display = f"⚡ {streak}d" if streak > 0 else "—"
         badges = " ".join(emoji for emoji, _label in achievements)
         if not badges:
             badges = "—"
+        points_display = f"🏅 {points:,}"
 
         lines.append(
             f"| {rank} | [@{login}](https://github.com/{login})"
-            f" | {level} | {commits} | {prog} | {streak_display}"
-            f" | {badges} |"
+            f" | {level} | {rarity_display} | {commits}"
+            f" | {prog} | {streak_display}"
+            f" | {badges} | {points_display} |"
         )
 
-    # Achievement legend
+    # Gamification guide
     lines.append("")
     lines.append("</div>")
     lines.append("")
     lines.append("<details>")
     lines.append('<summary><strong>🎮 Gamification Guide</strong></summary>')
     lines.append("")
-    lines.append("#### Levels")
+    lines.append("#### Level System")
     lines.append("")
-    lines.append("| Level | Commits Required |")
-    lines.append("|-------|:----------------:|")
-    for min_commits, emoji, title in reversed(LEVELS):
-        lines.append(f"| {emoji} {title} | {min_commits}+ |")
+    lines.append(
+        "Each commit levels you up through themed sagas — from tech "
+        "to fantasy to sci-fi. Levels are pulled from the "
+        "[community site](https://nextcommunity.github.io/) and cap "
+        "at the maximum defined level."
+    )
+    lines.append("")
+    lines.append("| Commits | Level | Rarity |")
+    lines.append("|:-------:|-------|:------:|")
+    # Show a curated sample of notable milestone levels
+    levels_lookup = _build_levels_lookup(levels_data)
+    for lvl_num in SAMPLE_LEVELS:
+        if lvl_num in levels_lookup:
+            entry = levels_lookup[lvl_num]
+            ri = RARITY_INDICATORS.get(entry.get("rarity", "common"), "⬜")
+            lines.append(
+                f"| {lvl_num} | {entry['emoji']} {entry['name']}"
+                f" | {ri} {entry.get('rarity', '')} |"
+            )
+    lines.append("")
+    unique_levels = len(levels_lookup)
+    lines.append(f"> There are **{unique_levels}** unique levels to discover!")
+    lines.append("")
+    lines.append("#### Rarity Tiers")
+    lines.append("")
+    lines.append("| Indicator | Rarity |")
+    lines.append("|:---------:|--------|")
+    for rarity, indicator in RARITY_INDICATORS.items():
+        lines.append(f"| {indicator} | {rarity.title()} |")
+    lines.append("")
+    lines.append("#### Milestones")
+    lines.append("")
+    lines.append(
+        "The progress bar tracks your advancement toward the next "
+        "milestone: **"
+        + ", ".join(str(m) for m in MILESTONES)
+        + "** commits."
+    )
     lines.append("")
     lines.append("#### Achievements")
     lines.append("")
@@ -438,6 +729,25 @@ def generate_markdown(contributors):
     lines.append("|:-----:|-------------|-------------|")
     for emoji, label, desc, _check in ACHIEVEMENTS:
         lines.append(f"| {emoji} | {label} | {desc} |")
+    lines.append("")
+    lines.append("#### Points System")
+    lines.append("")
+    lines.append(
+        "Points are a composite score rewarding multiple dimensions "
+        "of participation:"
+    )
+    lines.append("")
+    cfg = POINTS_CONFIG
+    lines.append("| Activity | Points |")
+    lines.append("|----------|-------:|")
+    lines.append(f"| Each commit | +{cfg['per_commit']} |")
+    lines.append(f"| Each streak day | +{cfg['per_streak_day']} |")
+    lines.append(f"| Each achievement earned | +{cfg['per_achievement']} |")
+    lines.append(f"| Each extra repo (beyond first) | +{cfg['per_extra_repo']} |")
+    for rarity, bonus in cfg["rarity_bonus"].items():
+        if bonus > 0:
+            ri = RARITY_INDICATORS.get(rarity, "")
+            lines.append(f"| {ri} {rarity.title()} rarity bonus | +{bonus} |")
     lines.append("")
     lines.append("</details>")
     lines.append("")
@@ -482,7 +792,7 @@ def main():
         print("Warning: GITHUB_TOKEN not set. API rate limits will be very low.")
 
     try:
-        contributors, had_errors = build_leaderboard(token)
+        contributors, had_errors, levels_data = build_leaderboard(token)
     except urllib.error.URLError as exc:
         print(f"Error: API failure while fetching data: {exc}", file=sys.stderr)
         sys.exit(1)
@@ -494,7 +804,7 @@ def main():
         print("No contributors found. The organization may have no public repos or contributors.")
         sys.exit(0)
 
-    leaderboard_md = generate_markdown(contributors)
+    leaderboard_md = generate_markdown(contributors, levels_data)
     update_readme(leaderboard_md)
     print(f"Leaderboard updated with {len(contributors)} contributors.")
 
