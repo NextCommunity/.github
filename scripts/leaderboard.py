@@ -173,14 +173,14 @@ def compute_longest_streak(commit_dates):
     """Return the longest consecutive-day commit streak from a set of dates."""
     if not commit_dates:
         return 0
-    sorted_dates = sorted(commit_dates)
+    sorted_dates = sorted(set(commit_dates))
     longest = 1
     current = 1
     for prev, cur in zip(sorted_dates, sorted_dates[1:]):
         if cur - prev == timedelta(days=1):
             current += 1
             longest = max(longest, current)
-        elif cur != prev:
+        elif cur - prev > timedelta(days=1):
             current = 1
     return longest
 
@@ -196,7 +196,7 @@ def get_achievements(contributor):
 
 def progress_bar(current, target, width=8):
     """Return a text progress bar like ``[████░░░░]``."""
-    if target is None:
+    if target is None or target == 0:
         return "MAX ✨"
     filled = int(round(width * current / target))
     filled = min(filled, width)
