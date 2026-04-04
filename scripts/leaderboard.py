@@ -15,7 +15,10 @@ LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 
 def gh_request(url, token=None):
     """Make an authenticated GitHub API request and return parsed JSON."""
-    headers = {"Accept": "application/vnd.github+json"}
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "NextCommunity-Leaderboard-Script"
+    }
     if token:
         headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(url, headers=headers)
