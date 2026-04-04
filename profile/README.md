@@ -38,84 +38,113 @@
 
 ## 🏆 Organization Leaderboard
 
-| Rank | Contributor | Total Commits | .github.io | .github |
-|------|-------------|:-------------:|:----------:|:-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 250 | 236 | 14 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 178 | 178 | 0 |
-| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 14 | 14 | 0 |
-| 4 | [@iabdr](https://github.com/iabdr) | 7 | 7 | 0 |
-| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 5 | 5 | 0 |
-| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 5 | 5 | 0 |
-| 7 | [@tanverified](https://github.com/tanverified) | 3 | 3 | 0 |
-| 8 | [@ayushrana182](https://github.com/ayushrana182) | 3 | 3 | 0 |
-| 9 | [@rjphares](https://github.com/rjphares) | 3 | 3 | 0 |
-| 10 | [@Anekenonso](https://github.com/Anekenonso) | 3 | 3 | 0 |
-| 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 2 | 2 | 0 |
-| 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 2 | 2 | 0 |
-| 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 2 | 2 | 0 |
-| 14 | [@eugene4545](https://github.com/eugene4545) | 2 | 2 | 0 |
-| 15 | [@anufdo](https://github.com/anufdo) | 2 | 2 | 0 |
-| 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 2 | 2 | 0 |
-| 17 | [@itsjoniur](https://github.com/itsjoniur) | 2 | 2 | 0 |
-| 18 | [@0xMRTT](https://github.com/0xMRTT) | 2 | 2 | 0 |
-| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 2 | 2 | 0 |
-| 20 | [@rtewari056](https://github.com/rtewari056) | 2 | 2 | 0 |
-| 21 | [@yhdesai](https://github.com/yhdesai) | 2 | 2 | 0 |
-| 22 | [@ps-19](https://github.com/ps-19) | 2 | 2 | 0 |
-| 23 | [@abdorah](https://github.com/abdorah) | 2 | 2 | 0 |
-| 24 | [@VictorAraica](https://github.com/VictorAraica) | 2 | 2 | 0 |
-| 25 | [@ajakov](https://github.com/ajakov) | 2 | 2 | 0 |
-| 26 | [@SyeddTaha](https://github.com/SyeddTaha) | 1 | 1 | 0 |
-| 27 | [@okxint](https://github.com/okxint) | 1 | 1 | 0 |
-| 28 | [@muntasiractive](https://github.com/muntasiractive) | 1 | 1 | 0 |
-| 29 | [@DipendraChandel](https://github.com/DipendraChandel) | 1 | 1 | 0 |
-| 30 | [@HITMAN5050](https://github.com/HITMAN5050) | 1 | 1 | 0 |
-| 31 | [@BDadmehr0](https://github.com/BDadmehr0) | 1 | 1 | 0 |
-| 32 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 1 | 1 | 0 |
-| 33 | [@kaifansariw](https://github.com/kaifansariw) | 1 | 1 | 0 |
-| 34 | [@nikultaka](https://github.com/nikultaka) | 1 | 1 | 0 |
-| 35 | [@arthsaAr](https://github.com/arthsaAr) | 1 | 1 | 0 |
-| 36 | [@an1rxdh664](https://github.com/an1rxdh664) | 1 | 1 | 0 |
-| 37 | [@Cima9642](https://github.com/Cima9642) | 1 | 1 | 0 |
-| 38 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 1 | 1 | 0 |
-| 39 | [@MohdRash](https://github.com/MohdRash) | 1 | 1 | 0 |
-| 40 | [@OrionFable](https://github.com/OrionFable) | 1 | 1 | 0 |
-| 41 | [@MutanPlex](https://github.com/MutanPlex) | 1 | 1 | 0 |
-| 42 | [@yazdanhaider](https://github.com/yazdanhaider) | 1 | 1 | 0 |
-| 43 | [@mr-cheffy](https://github.com/mr-cheffy) | 1 | 1 | 0 |
-| 44 | [@mujeebshk](https://github.com/mujeebshk) | 1 | 1 | 0 |
-| 45 | [@sbhatm1213](https://github.com/sbhatm1213) | 1 | 1 | 0 |
-| 46 | [@vinfinity7](https://github.com/vinfinity7) | 1 | 1 | 0 |
-| 47 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 1 | 1 | 0 |
-| 48 | [@mohammadshaad](https://github.com/mohammadshaad) | 1 | 1 | 0 |
-| 49 | [@rubiin](https://github.com/rubiin) | 1 | 1 | 0 |
-| 50 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 1 | 1 | 0 |
-| 51 | [@theashishgavade](https://github.com/theashishgavade) | 1 | 1 | 0 |
-| 52 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 1 | 1 | 0 |
-| 53 | [@MaxianEdison](https://github.com/MaxianEdison) | 1 | 1 | 0 |
-| 54 | [@Barrerson](https://github.com/Barrerson) | 1 | 1 | 0 |
-| 55 | [@NimishKashyap](https://github.com/NimishKashyap) | 1 | 1 | 0 |
-| 56 | [@MaxCkett](https://github.com/MaxCkett) | 1 | 1 | 0 |
-| 57 | [@kenhorlador](https://github.com/kenhorlador) | 1 | 1 | 0 |
-| 58 | [@novalramdhani](https://github.com/novalramdhani) | 1 | 1 | 0 |
-| 59 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 1 | 1 | 0 |
-| 60 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 1 | 1 | 0 |
-| 61 | [@Favourene](https://github.com/Favourene) | 1 | 1 | 0 |
-| 62 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 1 | 1 | 0 |
-| 63 | [@NS007-dev](https://github.com/NS007-dev) | 1 | 1 | 0 |
-| 64 | [@koolamusic](https://github.com/koolamusic) | 1 | 1 | 0 |
-| 65 | [@ierfaaan](https://github.com/ierfaaan) | 1 | 1 | 0 |
-| 66 | [@hunainanis](https://github.com/hunainanis) | 1 | 1 | 0 |
-| 67 | [@JayantGoel001](https://github.com/JayantGoel001) | 1 | 1 | 0 |
-| 68 | [@gakramx](https://github.com/gakramx) | 1 | 1 | 0 |
-| 69 | [@ra1nbow1](https://github.com/ra1nbow1) | 1 | 1 | 0 |
-| 70 | [@prio101](https://github.com/prio101) | 1 | 1 | 0 |
-| 71 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 1 | 1 | 0 |
-| 72 | [@Majalian](https://github.com/Majalian) | 1 | 1 | 0 |
-| 73 | [@majidabdulred](https://github.com/majidabdulred) | 1 | 1 | 0 |
-| 74 | [@enimiste](https://github.com/enimiste) | 1 | 1 | 0 |
-| 75 | [@Muriturca](https://github.com/Muriturca) | 1 | 1 | 0 |
+| Rank | Contributor | Level | Commits | Progress | Streak | Badges |
+|------|-------------|:-----:|:-------:|----------|:------:|--------|
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 👑 Legend | 250 | MAX ✨ | ⚡ 5d | 🎯 🌐 💪 🚀 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 💎 Diamond | 178 | `[██████░░]` 78% | ⚡ 3d | 🎯 💪 🚀 |
+| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🌳 Tree | 14 | `[██░░░░░░]` 26% | ⚡ 2d | 🎯 |
+| 4 | [@iabdr](https://github.com/iabdr) | 🌿 Sprout | 7 | `[███░░░░░]` 40% | ⚡ 1d | 🎯 |
+| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 🌿 Sprout | 5 | `[░░░░░░░░]` 0% | ⚡ 2d | 🎯 |
+| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 🌿 Sprout | 5 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 7 | [@tanverified](https://github.com/tanverified) | 🌱 Seedling | 3 | `[████░░░░]` 50% | ⚡ 1d | 🎯 |
+| 8 | [@ayushrana182](https://github.com/ayushrana182) | 🌱 Seedling | 3 | `[████░░░░]` 50% | ⚡ 1d | 🎯 |
+| 9 | [@rjphares](https://github.com/rjphares) | 🌱 Seedling | 3 | `[████░░░░]` 50% | ⚡ 1d | 🎯 |
+| 10 | [@Anekenonso](https://github.com/Anekenonso) | 🌱 Seedling | 3 | `[████░░░░]` 50% | ⚡ 1d | 🎯 |
+| 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 14 | [@eugene4545](https://github.com/eugene4545) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 15 | [@anufdo](https://github.com/anufdo) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 17 | [@itsjoniur](https://github.com/itsjoniur) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 18 | [@0xMRTT](https://github.com/0xMRTT) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 20 | [@rtewari056](https://github.com/rtewari056) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 21 | [@yhdesai](https://github.com/yhdesai) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 22 | [@ps-19](https://github.com/ps-19) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 23 | [@abdorah](https://github.com/abdorah) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 24 | [@VictorAraica](https://github.com/VictorAraica) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 25 | [@ajakov](https://github.com/ajakov) | 🌱 Seedling | 2 | `[██░░░░░░]` 25% | ⚡ 1d | 🎯 |
+| 26 | [@SyeddTaha](https://github.com/SyeddTaha) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 27 | [@okxint](https://github.com/okxint) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 28 | [@muntasiractive](https://github.com/muntasiractive) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 29 | [@DipendraChandel](https://github.com/DipendraChandel) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 30 | [@HITMAN5050](https://github.com/HITMAN5050) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 31 | [@BDadmehr0](https://github.com/BDadmehr0) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 32 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 33 | [@kaifansariw](https://github.com/kaifansariw) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 34 | [@nikultaka](https://github.com/nikultaka) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 35 | [@arthsaAr](https://github.com/arthsaAr) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 36 | [@an1rxdh664](https://github.com/an1rxdh664) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 37 | [@Cima9642](https://github.com/Cima9642) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 38 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 39 | [@MohdRash](https://github.com/MohdRash) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 40 | [@OrionFable](https://github.com/OrionFable) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 41 | [@MutanPlex](https://github.com/MutanPlex) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 42 | [@yazdanhaider](https://github.com/yazdanhaider) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 43 | [@mr-cheffy](https://github.com/mr-cheffy) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 44 | [@mujeebshk](https://github.com/mujeebshk) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 45 | [@sbhatm1213](https://github.com/sbhatm1213) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 46 | [@vinfinity7](https://github.com/vinfinity7) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 47 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 48 | [@mohammadshaad](https://github.com/mohammadshaad) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 49 | [@rubiin](https://github.com/rubiin) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 50 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 51 | [@theashishgavade](https://github.com/theashishgavade) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 52 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 53 | [@MaxianEdison](https://github.com/MaxianEdison) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 54 | [@Barrerson](https://github.com/Barrerson) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 55 | [@NimishKashyap](https://github.com/NimishKashyap) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 56 | [@MaxCkett](https://github.com/MaxCkett) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 57 | [@kenhorlador](https://github.com/kenhorlador) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 58 | [@novalramdhani](https://github.com/novalramdhani) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 59 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 60 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 61 | [@Favourene](https://github.com/Favourene) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 62 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 63 | [@NS007-dev](https://github.com/NS007-dev) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 64 | [@koolamusic](https://github.com/koolamusic) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 65 | [@ierfaaan](https://github.com/ierfaaan) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 66 | [@hunainanis](https://github.com/hunainanis) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 67 | [@JayantGoel001](https://github.com/JayantGoel001) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 68 | [@gakramx](https://github.com/gakramx) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 69 | [@ra1nbow1](https://github.com/ra1nbow1) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 70 | [@prio101](https://github.com/prio101) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 71 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 72 | [@Majalian](https://github.com/Majalian) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 73 | [@majidabdulred](https://github.com/majidabdulred) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 74 | [@enimiste](https://github.com/enimiste) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
+| 75 | [@Muriturca](https://github.com/Muriturca) | 🌱 Seedling | 1 | `[░░░░░░░░]` 0% | ⚡ 1d | 🎯 |
 
 </div>
+
+<details>
+<summary><strong>🎮 Gamification Guide</strong></summary>
+
+#### Levels
+
+| Level | Commits Required |
+|-------|:----------------:|
+| 🌱 Seedling | 1+ |
+| 🌿 Sprout | 5+ |
+| 🌳 Tree | 10+ |
+| ⭐ Star | 25+ |
+| 🔥 On Fire | 50+ |
+| 💎 Diamond | 100+ |
+| 👑 Legend | 200+ |
+
+#### Achievements
+
+| Badge | Achievement | How to Earn |
+|:-----:|-------------|-------------|
+| 🎯 | First Commit | Make your first contribution |
+| 🌐 | Explorer | Contribute to 2+ repositories |
+| 🏗️ | Architect | Contribute to 3+ repositories |
+| 💪 | Dedicated | Reach 50 commits |
+| 🚀 | Rockstar | Reach 100 commits |
+| 📅 | Week Streak | Commit for 7+ consecutive days |
+| 🔥 | Month Streak | Commit for 30+ consecutive days |
+
+</details>
 
 <!-- LEADERBOARD:END -->
