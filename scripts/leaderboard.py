@@ -475,10 +475,10 @@ def build_leaderboard(token=None):
     repos = fetch_repos(token)
     had_errors = False
 
-    # Collect (login_or_none, email, is_bot, repo_name, commit_date) for
-    # every commit across all repos.  Co-authors extracted from commit
-    # messages are added as separate entries with login=None so they go
-    # through email→login resolution.
+    # Collect (login_or_none, email, is_bot, repo_name, commit_date,
+    # is_coauthor) for every commit across all repos.  Co-authors extracted
+    # from commit messages are added as separate entries with login=None
+    # and is_coauthor=True so they go through email→login resolution.
     all_commits = []
     # Track logins and emails identified as bots from API metadata so that
     # co-author entries resolving to the same identity are also excluded.
