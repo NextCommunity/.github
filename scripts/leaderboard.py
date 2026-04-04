@@ -124,7 +124,7 @@ def update_readme(leaderboard_md):
             f"{LEADERBOARD_END}\n"
         )
 
-    with open(README_PATH, "w") as f:
+    with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
 
     print(f"Updated {README_PATH}")
