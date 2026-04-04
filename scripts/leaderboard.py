@@ -1,6 +1,7 @@
 """Fetch contributor stats from all NextCommunity repos and update the leaderboard."""
 
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -108,6 +109,23 @@ def resolve_login_from_noreply(email):
     return None
 
 
+_CO_AUTHOR_RE = re.compile(
+    r"^Co-authored-by:\s*.+\s+<([^>]+)>\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+
+def parse_co_authors(message):
+    """Extract co-author email addresses from ``Co-authored-by:`` trailers.
+
+    Returns a list of lower-cased, stripped email addresses found in the
+    commit message.
+    """
+    if not message:
+        return []
+    return [m.lower().strip() for m in _CO_AUTHOR_RE.findall(message)]
+
+
 def build_leaderboard(token=None):
     """Aggregate contributor commits across all repos and return sorted list.
 
@@ -116,6 +134,9 @@ def build_leaderboard(token=None):
     counts commits per resolved identity so that multiple email addresses
     belonging to the same person are combined.
 
+    Co-authors specified via ``Co-authored-by:`` trailers in commit messages
+    each receive credit for the commit alongside the primary author.
+
     Raises urllib.error.URLError if the repo listing fails.
     Returns (sorted_contributors, had_errors) where had_errors indicates
     whether any per-repo API failures occurred.
@@ -123,7 +144,9 @@ def build_leaderboard(token=None):
     repos = fetch_repos(token)
     had_errors = False
 
-    # Collect (login_or_none, email, is_bot) for every commit across all repos
+    # Collect (login_or_none, email, is_bot) for every commit across all repos.
+    # Co-authors extracted from commit messages are added as separate entries
+    # with login=None so they go through email→login resolution.
     all_commits = []
 
     for repo in repos:
@@ -152,6 +175,12 @@ def build_leaderboard(token=None):
                 )
 
                 all_commits.append((login, email, is_bot))
+
+                # Credit co-authors from Co-authored-by trailers
+                message = commit_detail.get("message", "")
+                for co_email in parse_co_authors(message):
+                    if co_email != email:
+                        all_commits.append((None, co_email, False))
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
