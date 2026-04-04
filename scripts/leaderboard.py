@@ -726,7 +726,7 @@ def has_sponsors_page(login, token=None):
     """Check whether *login* has an active GitHub Sponsors page.
 
     Uses the ``GET /users/{login}`` endpoint and inspects the
-    ``has_sponsors_listing`` field added by the GitHub REST API (v2022-11-28).
+    ``has_sponsors_listing`` field from the GitHub REST API.
     Returns ``True`` if the user is sponsorable, ``False`` otherwise (including
     on network/API errors so that a single failure doesn't block the whole
     sponsors section).
