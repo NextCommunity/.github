@@ -221,13 +221,25 @@ def fetch_levels_json():
             headers={"User-Agent": "NextCommunity-Leaderboard-Script"},
         )
         with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read())
+            data = json.loads(resp.read().decode("utf-8"))
         if isinstance(data, list) and data:
             data.sort(key=lambda d: d.get("level", 0))
             return data
+        print("Warning: levels.json returned empty or invalid data, using fallback")
+    except urllib.error.URLError as exc:
+        print(f"Warning: Network error fetching levels.json, using fallback: {exc}")
+    except (json.JSONDecodeError, ValueError) as exc:
+        print(f"Warning: Failed to parse levels.json, using fallback: {exc}")
     except Exception as exc:  # noqa: BLE001
-        print(f"Warning: Could not fetch levels.json, using fallback: {exc}")
+        print(f"Warning: Unexpected error fetching levels.json, using fallback: {exc}")
     return list(FALLBACK_LEVELS)
+
+
+# Default level entry used as ultimate fallback.
+_DEFAULT_LEVEL = {
+    "level": 0, "name": "Newbie", "emoji": "🐣",
+    "rarity": "common", "description": "", "color": "#94a3b8",
+}
 
 
 def _build_levels_lookup(levels_data):
@@ -235,26 +247,31 @@ def _build_levels_lookup(levels_data):
     return {entry["level"]: entry for entry in levels_data}
 
 
-def compute_level(commits, levels_lookup):
+def _sorted_level_keys(levels_lookup):
+    """Return sorted level keys for bisect-based lookups."""
+    return sorted(levels_lookup)
+
+
+def compute_level(commits, levels_lookup, _sorted_keys=None):
     """Return a level-info dict for a commit count using *levels_lookup*.
 
-    The level number equals ``min(commits, max_level)``.  The returned dict
-    has keys: ``level``, ``name``, ``emoji``, ``rarity``, ``description``,
-    ``color``.
+    Uses bisect for O(log n) lookup.  The level number is the highest
+    defined level ≤ *commits*.  The returned dict has keys: ``level``,
+    ``name``, ``emoji``, ``rarity``, ``description``, ``color``.
     """
-    max_level = max(levels_lookup) if levels_lookup else 0
-    level_num = min(commits, max_level)
-    if level_num in levels_lookup:
-        return dict(levels_lookup[level_num])
-    # Fallback: find the highest level ≤ commits
-    best = 0
-    for lvl in levels_lookup:
-        if lvl <= commits:
-            best = max(best, lvl)
-    return dict(levels_lookup.get(best, levels_lookup.get(0, {
-        "level": 0, "name": "Newbie", "emoji": "🐣",
-        "rarity": "common", "description": "", "color": "#94a3b8",
-    })))
+    from bisect import bisect_right
+
+    if not levels_lookup:
+        return dict(_DEFAULT_LEVEL)
+
+    if _sorted_keys is None:
+        _sorted_keys = _sorted_level_keys(levels_lookup)
+
+    idx = bisect_right(_sorted_keys, commits) - 1
+    if idx < 0:
+        idx = 0
+    level_num = _sorted_keys[idx]
+    return dict(levels_lookup.get(level_num, _DEFAULT_LEVEL))
 
 
 def compute_longest_streak(commit_dates):
@@ -464,6 +481,7 @@ def build_leaderboard(token=None):
     # Fetch canonical level definitions
     levels_data = fetch_levels_json()
     levels_lookup = _build_levels_lookup(levels_data)
+    sorted_keys = _sorted_level_keys(levels_lookup)
 
     # Compute gamification stats for each contributor
     for contrib in contributors.values():
@@ -471,7 +489,9 @@ def build_leaderboard(token=None):
         contrib["longest_streak"] = compute_longest_streak(
             contrib["commit_dates"]
         )
-        level_info = compute_level(contrib["commits"], levels_lookup)
+        level_info = compute_level(
+            contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
+        )
         contrib["level_num"] = level_info.get("level", 0)
         contrib["level_emoji"] = level_info.get("emoji", "🐣")
         contrib["level_title"] = level_info.get("name", "Newbie")
@@ -540,9 +560,10 @@ def generate_markdown(contributors, levels_data):
     lines.append("#### Level System")
     lines.append("")
     lines.append(
-        "Every commit earns you a new level! Levels are pulled from the "
-        "[community site](https://nextcommunity.github.io/) and span "
-        "themed sagas — from tech to fantasy to sci-fi."
+        "Each commit levels you up through themed sagas — from tech "
+        "to fantasy to sci-fi. Levels are pulled from the "
+        "[community site](https://nextcommunity.github.io/) and cap "
+        "at the maximum defined level."
     )
     lines.append("")
     lines.append("| Commits | Level | Rarity |")
@@ -559,7 +580,8 @@ def generate_markdown(contributors, levels_data):
                 f" | {ri} {entry.get('rarity', '')} |"
             )
     lines.append("")
-    lines.append(f"> There are **{len(levels_data)}** unique levels to discover!")
+    unique_levels = len(levels_lookup)
+    lines.append(f"> There are **{unique_levels}** unique levels to discover!")
     lines.append("")
     lines.append("#### Rarity Tiers")
     lines.append("")
