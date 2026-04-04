@@ -666,7 +666,7 @@ def generate_markdown(contributors, levels_data):
         badges = " ".join(emoji for emoji, _label in achievements)
         if not badges:
             badges = "—"
-        points_display = f"🏅 {points:,}"
+        points_display = f"{points:,}"
 
         lines.append(
             f"| {rank} | [@{login}](https://github.com/{login})"
