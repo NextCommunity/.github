@@ -12,6 +12,8 @@ API_URL = "https://api.github.com"
 README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.md")
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
+SITE_REPO_NAME = "NextCommunity.github.io"
+DOTGITHUB_REPO_NAME = ".github"
 
 # Manual email-to-login mapping for contributors who commit with multiple
 # email addresses that may not all be linked to their GitHub account.
@@ -144,9 +146,10 @@ def build_leaderboard(token=None):
     repos = fetch_repos(token)
     had_errors = False
 
-    # Collect (login_or_none, email, is_bot) for every commit across all repos.
-    # Co-authors extracted from commit messages are added as separate entries
-    # with login=None so they go through email→login resolution.
+    # Collect (login_or_none, email, is_bot, repo_name) for every commit
+    # across all repos.  Co-authors extracted from commit messages are added
+    # as separate entries with login=None so they go through email→login
+    # resolution.
     all_commits = []
     # Track logins and emails identified as bots from API metadata so that
     # co-author entries resolving to the same identity are also excluded.
@@ -184,13 +187,13 @@ def build_leaderboard(token=None):
                     if email:
                         bot_emails.add(email)
 
-                all_commits.append((login, email, is_bot))
+                all_commits.append((login, email, is_bot, repo_name))
 
                 # Credit co-authors from Co-authored-by trailers
                 message = commit_detail.get("message", "")
                 for co_email in parse_co_authors(message):
                     if co_email != email:
-                        all_commits.append((None, co_email, False))
+                        all_commits.append((None, co_email, False, repo_name))
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
@@ -198,7 +201,7 @@ def build_leaderboard(token=None):
     # --- Phase 1: build email → login mapping ---
     email_to_login = dict(EMAIL_ALIASES)
 
-    for login, email, _ in all_commits:
+    for login, email, _, _repo in all_commits:
         if not email:
             continue
         if login and email not in email_to_login:
@@ -215,7 +218,7 @@ def build_leaderboard(token=None):
 
     # --- Phase 2: count commits per resolved identity ---
     contributors = {}
-    for login, email, is_bot in all_commits:
+    for login, email, is_bot, repo_name in all_commits:
         if is_bot:
             continue
 
@@ -233,8 +236,17 @@ def build_leaderboard(token=None):
             continue
 
         if resolved not in contributors:
-            contributors[resolved] = {"commits": 0, "login": resolved}
+            contributors[resolved] = {
+                "commits": 0,
+                "site_commits": 0,
+                "dotgithub_commits": 0,
+                "login": resolved,
+            }
         contributors[resolved]["commits"] += 1
+        if repo_name == SITE_REPO_NAME:
+            contributors[resolved]["site_commits"] += 1
+        elif repo_name == DOTGITHUB_REPO_NAME:
+            contributors[resolved]["dotgithub_commits"] += 1
 
     sorted_contributors = sorted(
         contributors.values(), key=lambda c: c["commits"], reverse=True
@@ -244,19 +256,27 @@ def build_leaderboard(token=None):
 
 def generate_markdown(contributors):
     """Generate a markdown table from the leaderboard data."""
+    rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
     lines = [
         "",
         '<div align="center">',
         "",
         "## 🏆 Organization Leaderboard",
         "",
-        "| Rank | Contributor | Commits |",
-        "|------|-------------|---------|",
+        "| Rank | Contributor | Total Commits | .github.io | .github |",
+        "|------|-------------|:-------------:|:----------:|:-------:|",
     ]
     for i, contrib in enumerate(contributors, start=1):
         login = contrib["login"]
         commits = contrib["commits"]
-        lines.append(f"| {i} | [@{login}](https://github.com/{login}) | {commits} |")
+        site = contrib["site_commits"]
+        dotgh = contrib["dotgithub_commits"]
+        badge = rank_badges.get(i, "")
+        rank = f"{i} {badge}" if badge else str(i)
+        lines.append(
+            f"| {rank} | [@{login}](https://github.com/{login})"
+            f" | {commits} | {site} | {dotgh} |"
+        )
     lines.append("")
     lines.append("</div>")
     lines.append("")
