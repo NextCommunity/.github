@@ -103,7 +103,7 @@ def generate_markdown(contributors):
 
 def update_readme(leaderboard_md):
     """Update the profile README with the leaderboard content."""
-    with open(README_PATH, "r") as f:
+    with open(README_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
     start_idx = content.find(LEADERBOARD_START)
