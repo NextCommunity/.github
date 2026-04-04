@@ -7,6 +7,7 @@ import urllib.error
 import urllib.request
 import json
 from bisect import bisect_right
+from collections import namedtuple
 from datetime import date, timedelta
 
 ORG = "NextCommunity"
@@ -16,6 +17,12 @@ LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
+
+# Self-documenting record for each commit entry collected across all repos.
+CommitRecord = namedtuple(
+    "CommitRecord",
+    ["login", "email", "is_bot", "repo_name", "commit_date", "is_coauthor"],
+)
 
 # URL for the canonical level definitions shared with the website.
 LEVELS_JSON_URL = (
@@ -475,10 +482,10 @@ def build_leaderboard(token=None):
     repos = fetch_repos(token)
     had_errors = False
 
-    # Collect (login_or_none, email, is_bot, repo_name, commit_date,
-    # is_coauthor) for every commit across all repos.  Co-authors extracted
-    # from commit messages are added as separate entries with login=None
-    # and is_coauthor=True so they go through email→login resolution.
+    # Collect CommitRecord entries for every commit across all repos.
+    # Co-authors extracted from commit messages are added as separate
+    # entries with login=None and is_coauthor=True so they go through
+    # email→login resolution.
     all_commits = []
     # Track logins and emails identified as bots from API metadata so that
     # co-author entries resolving to the same identity are also excluded.
@@ -527,18 +534,27 @@ def build_leaderboard(token=None):
                     except ValueError:
                         pass
 
-                all_commits.append(
-                    (login, email, is_bot, repo_name, commit_date, False)
-                )
+                all_commits.append(CommitRecord(
+                    login=login,
+                    email=email,
+                    is_bot=is_bot,
+                    repo_name=repo_name,
+                    commit_date=commit_date,
+                    is_coauthor=False,
+                ))
 
                 # Credit co-authors from Co-authored-by trailers
                 message = commit_detail.get("message", "")
                 for co_email in parse_co_authors(message):
-                    if co_email != email:
-                        all_commits.append(
-                            (None, co_email, False, repo_name, commit_date,
-                             True)
-                        )
+                    if co_email != email and co_email not in bot_emails:
+                        all_commits.append(CommitRecord(
+                            login=None,
+                            email=co_email,
+                            is_bot=False,
+                            repo_name=repo_name,
+                            commit_date=commit_date,
+                            is_coauthor=True,
+                        ))
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
@@ -546,28 +562,28 @@ def build_leaderboard(token=None):
     # --- Phase 1: build email → login mapping ---
     email_to_login = dict(EMAIL_ALIASES)
 
-    for login, email, _, _repo, _date, _coauth in all_commits:
-        if not email:
+    for rec in all_commits:
+        if not rec.email:
             continue
-        if login and email not in email_to_login:
-            email_to_login[email] = login
-        elif login and email in email_to_login and email_to_login[email] != login:
+        if rec.login and rec.email not in email_to_login:
+            email_to_login[rec.email] = rec.login
+        elif rec.login and rec.email in email_to_login and email_to_login[rec.email] != rec.login:
             print(
-                f"Warning: email {email} maps to both "
-                f"{email_to_login[email]} and {login}; keeping first"
+                f"Warning: email {rec.email} maps to both "
+                f"{email_to_login[rec.email]} and {rec.login}; keeping first"
             )
-        elif not login and email not in email_to_login:
-            resolved = resolve_login_from_noreply(email)
+        elif not rec.login and rec.email not in email_to_login:
+            resolved = resolve_login_from_noreply(rec.email)
             if resolved:
-                email_to_login[email] = resolved
+                email_to_login[rec.email] = resolved
 
     # --- Phase 2: count commits per resolved identity ---
     contributors = {}
-    for login, email, is_bot, repo_name, commit_date, is_coauthor in all_commits:
-        if is_bot:
+    for rec in all_commits:
+        if rec.is_bot:
             continue
 
-        resolved = login or email_to_login.get(email)
+        resolved = rec.login or email_to_login.get(rec.email)
         if not resolved:
             continue
 
@@ -576,7 +592,7 @@ def build_leaderboard(token=None):
         if (
             resolved.endswith("[bot]")
             or resolved.lower() in bot_logins
-            or email in bot_emails
+            or rec.email in bot_emails
         ):
             continue
 
@@ -592,16 +608,16 @@ def build_leaderboard(token=None):
                 "commit_dates": set(),
             }
         contributors[resolved]["commits"] += 1
-        if is_coauthor:
+        if rec.is_coauthor:
             contributors[resolved]["coauthored_commits"] += 1
         else:
             contributors[resolved]["authored_commits"] += 1
-        contributors[resolved]["repos"].add(repo_name)
-        if commit_date is not None:
-            contributors[resolved]["commit_dates"].add(commit_date)
-        if repo_name == SITE_REPO_NAME:
+        contributors[resolved]["repos"].add(rec.repo_name)
+        if rec.commit_date is not None:
+            contributors[resolved]["commit_dates"].add(rec.commit_date)
+        if rec.repo_name == SITE_REPO_NAME:
             contributors[resolved]["site_commits"] += 1
-        elif repo_name == DOTGITHUB_REPO_NAME:
+        elif rec.repo_name == DOTGITHUB_REPO_NAME:
             contributors[resolved]["dotgithub_commits"] += 1
 
     # Fetch canonical level definitions
