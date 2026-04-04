@@ -783,7 +783,7 @@ def generate_markdown(contributors, levels_data):
         days_active = contrib["days_active"]
         commits = contrib["commits"]
         cpd = f"{commits / days_active:.1f}" if days_active > 0 else "—"
-        pctile = max(1, round(100 * (total - i + 1) / total)) if total > 0 else 100
+        pctile = max(1, round(100 * i / total)) if total > 0 else 100
 
         # Repo breakdown
         breakdown_parts = []
@@ -893,7 +893,10 @@ def generate_markdown(contributors, levels_data):
     lines.append("| First Commit | Date of the contributor's earliest commit |")
     lines.append("| Last Active | Date of the contributor's most recent commit |")
     lines.append("| Days Active | Total unique days with at least one commit |")
-    lines.append("| Commits/Day | Average commits per active day |")
+    lines.append(
+        "| Commits/Day | Average total commits (authored + co-authored) "
+        "per active day |"
+    )
     lines.append(
         "| Repo Breakdown | Commits split by repository: "
         "🌐 site · ⚙️ .github · 📁 other |"
