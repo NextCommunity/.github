@@ -2,6 +2,7 @@
 
 import os
 import sys
+import urllib.error
 import urllib.request
 import json
 
@@ -50,7 +51,8 @@ def fetch_contributors(repo_name, token=None):
     url = f"{API_URL}/repos/{ORG}/{repo_name}/contributors?anon=0"
     try:
         return get_all_pages(url, token)
-    except Exception:
+    except urllib.error.URLError as exc:
+        print(f"Warning: Failed to fetch contributors for {repo_name}: {exc}")
         return []
 
 
@@ -100,9 +102,11 @@ def update_readme(leaderboard_md):
     with open(README_PATH, "r") as f:
         content = f.read()
 
-    if LEADERBOARD_START in content and LEADERBOARD_END in content:
-        before = content[: content.index(LEADERBOARD_START)]
-        after = content[content.index(LEADERBOARD_END) + len(LEADERBOARD_END) :]
+    start_idx = content.find(LEADERBOARD_START)
+    end_idx = content.find(LEADERBOARD_END, start_idx) if start_idx != -1 else -1
+    if start_idx != -1 and end_idx != -1:
+        before = content[:start_idx]
+        after = content[end_idx + len(LEADERBOARD_END) :]
         new_content = (
             f"{before}{LEADERBOARD_START}\n"
             f"{leaderboard_md}\n"
