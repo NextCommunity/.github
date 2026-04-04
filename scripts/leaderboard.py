@@ -19,7 +19,7 @@ def gh_request(url, token=None):
     if token:
         headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req) as resp:
+    with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read().decode())
 
 
