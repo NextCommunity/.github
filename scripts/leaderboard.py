@@ -116,13 +116,16 @@ def update_readme(leaderboard_md):
             f"{leaderboard_md}\n"
             f"{LEADERBOARD_END}{after}"
         )
-    else:
+    elif start_idx == -1 and end_idx == -1:
         new_content = (
-            f"{content}\n"
+            f"{content.rstrip()}\n\n"
             f"{LEADERBOARD_START}\n"
             f"{leaderboard_md}\n"
             f"{LEADERBOARD_END}\n"
         )
+    else:
+        print(f"Error: Mismatched leaderboard markers in {README_PATH}", file=sys.stderr)
+        return
 
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
