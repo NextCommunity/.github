@@ -145,6 +145,10 @@ def build_leaderboard(token=None):
                 is_bot = bool(
                     (gh_author and gh_author.get("type") == "Bot")
                     or (login and login.endswith("[bot]"))
+                    or (
+                        gh_author
+                        and "/apps/" in (gh_author.get("html_url") or "")
+                    )
                 )
 
                 all_commits.append((login, email, is_bot))
