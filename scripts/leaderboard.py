@@ -189,7 +189,7 @@ def get_achievements(contributor):
     """Return a list of ``(emoji, label)`` tuples the contributor has earned."""
     return [
         (emoji, label)
-        for emoji, label, check in ACHIEVEMENTS
+        for emoji, label, desc, check in ACHIEVEMENTS
         if check(contributor)
     ]
 
