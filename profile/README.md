@@ -15,7 +15,7 @@
   </p>
   <p>
     <strong>🏆 Featured Leaderboard Sponsors Showcase 🏆</strong><br>
-    <sub>The first 5 contributors on our leaderboard who have GitHub Sponsors profiles get showcased here — climb the ranks, enable Sponsors, and get featured!</sub>
+    <sub>The first 5 contributors on our leaderboard who have <a href="https://github.com/sponsors">GitHub Sponsors</a> profiles get showcased here — climb the ranks, enable Sponsors, and get featured!</sub>
   </p>
   <p>
     <a href="https://github.com/sponsors/jbampton">
