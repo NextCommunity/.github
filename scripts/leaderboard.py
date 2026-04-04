@@ -54,6 +54,25 @@ MILESTONES = [
 # Curated level samples shown in the Gamification Guide table.
 SAMPLE_LEVELS = [0, 1, 5, 10, 25, 50, 100, 200, 250, 500, 750, 1000]
 
+# --- Gamification: Points configuration ---
+# Points are a composite score rewarding commits, streaks, achievements,
+# multi-repo contributions, and rarity progression.
+POINTS_CONFIG = {
+    "per_commit": 10,
+    "per_streak_day": 5,
+    "per_achievement": 15,
+    "per_extra_repo": 20,   # bonus per repo beyond the first
+    "rarity_bonus": {
+        "common": 0,
+        "uncommon": 10,
+        "rare": 25,
+        "epic": 50,
+        "legendary": 100,
+        "mythic": 200,
+        "absolute": 500,
+    },
+}
+
 # Minimal built-in fallback levels used when the remote JSON cannot be
 # fetched.  Each entry matches the levels.json schema.
 FALLBACK_LEVELS = [
@@ -416,6 +435,28 @@ def progress_bar(commits, width=8):
     return f"`[{'█' * filled}{'░' * empty}]` {pct}% → {target}"
 
 
+def compute_points(contributor):
+    """Return a gamified point total for a contributor.
+
+    Points reward multiple dimensions of participation:
+    - Commits (base contribution)
+    - Longest streak (consistency)
+    - Achievements earned (milestones)
+    - Multi-repo contributions (breadth)
+    - Rarity tier reached (progression)
+    """
+    cfg = POINTS_CONFIG
+    pts = contributor["commits"] * cfg["per_commit"]
+    pts += contributor["longest_streak"] * cfg["per_streak_day"]
+    pts += len(contributor["achievements"]) * cfg["per_achievement"]
+    extra_repos = max(contributor["repos_count"] - 1, 0)
+    pts += extra_repos * cfg["per_extra_repo"]
+    pts += cfg["rarity_bonus"].get(
+        contributor.get("peak_rarity", "common"), 0,
+    )
+    return pts
+
+
 def build_leaderboard(token=None):
     """Aggregate contributor commits across all repos and return sorted list.
 
@@ -580,6 +621,7 @@ def build_leaderboard(token=None):
             contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
         )
         contrib["achievements"] = get_achievements(contrib)
+        contrib["points"] = compute_points(contrib)
         # Clean up non-serializable fields
         del contrib["repos"]
         del contrib["commit_dates"]
@@ -600,8 +642,8 @@ def generate_markdown(contributors, levels_data):
         "",
         "## 🏆 Organization Leaderboard",
         "",
-        "| Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges |",
-        "|------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|",
+        "| Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |",
+        "|------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|",
     ]
     for i, contrib in enumerate(contributors, start=1):
         login = contrib["login"]
@@ -612,6 +654,7 @@ def generate_markdown(contributors, levels_data):
         level_rarity = contrib["level_rarity"]
         streak = contrib["longest_streak"]
         achievements = contrib["achievements"]
+        points = contrib["points"]
 
         badge = rank_badges.get(i, "")
         rank = f"{i} {badge}" if badge else str(i)
@@ -623,12 +666,13 @@ def generate_markdown(contributors, levels_data):
         badges = " ".join(emoji for emoji, _label in achievements)
         if not badges:
             badges = "—"
+        points_display = f"🏅 {points:,}"
 
         lines.append(
             f"| {rank} | [@{login}](https://github.com/{login})"
             f" | {level} | {rarity_display} | {commits}"
             f" | {prog} | {streak_display}"
-            f" | {badges} |"
+            f" | {badges} | {points_display} |"
         )
 
     # Gamification guide
@@ -685,6 +729,25 @@ def generate_markdown(contributors, levels_data):
     lines.append("|:-----:|-------------|-------------|")
     for emoji, label, desc, _check in ACHIEVEMENTS:
         lines.append(f"| {emoji} | {label} | {desc} |")
+    lines.append("")
+    lines.append("#### Points System")
+    lines.append("")
+    lines.append(
+        "Points are a composite score rewarding multiple dimensions "
+        "of participation:"
+    )
+    lines.append("")
+    cfg = POINTS_CONFIG
+    lines.append("| Activity | Points |")
+    lines.append("|----------|-------:|")
+    lines.append(f"| Each commit | +{cfg['per_commit']} |")
+    lines.append(f"| Each streak day | +{cfg['per_streak_day']} |")
+    lines.append(f"| Each achievement earned | +{cfg['per_achievement']} |")
+    lines.append(f"| Each extra repo (beyond first) | +{cfg['per_extra_repo']} |")
+    for rarity, bonus in cfg["rarity_bonus"].items():
+        if bonus > 0:
+            ri = RARITY_INDICATORS.get(rarity, "")
+            lines.append(f"| {ri} {rarity.title()} rarity bonus | +{bonus} |")
     lines.append("")
     lines.append("</details>")
     lines.append("")
