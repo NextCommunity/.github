@@ -14,8 +14,8 @@
     <a href="https://nextcommunity.github.io/"><img src="https://img.shields.io/badge/Easter-Eggs-ff69b4?labelColor=9b59b6" alt="Easter Eggs"></a>
   </p>
   <p>
-    <strong>🏆 Top 5 Leaderboard Sponsors Showcase 🏆</strong><br>
-    <sub>The first 5 contributors on our leaderboard with GitHub Sponsors get showcased here — climb the ranks and get featured!</sub>
+    <strong>🏆 Featured Leaderboard Sponsors Showcase 🏆</strong><br>
+    <sub>The first 5 contributors on our leaderboard who have GitHub Sponsors profiles get showcased here — climb the ranks, enable Sponsors, and get featured!</sub>
   </p>
   <p>
     <a href="https://github.com/sponsors/jbampton">
