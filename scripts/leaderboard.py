@@ -6,6 +6,7 @@ import sys
 import urllib.error
 import urllib.request
 import json
+from bisect import bisect_right
 from datetime import date, timedelta
 
 ORG = "NextCommunity"
@@ -44,6 +45,9 @@ MILESTONES = [
     10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
     150, 200, 300, 400, 500, 750, 1000,
 ]
+
+# Curated level samples shown in the Gamification Guide table.
+SAMPLE_LEVELS = [0, 1, 5, 10, 25, 50, 100, 200, 500, 1000]
 
 # Minimal built-in fallback levels used when the remote JSON cannot be
 # fetched.  Each entry matches the levels.json schema.
@@ -259,8 +263,6 @@ def compute_level(commits, levels_lookup, _sorted_keys=None):
     defined level ≤ *commits*.  The returned dict has keys: ``level``,
     ``name``, ``emoji``, ``rarity``, ``description``, ``color``.
     """
-    from bisect import bisect_right
-
     if not levels_lookup:
         return dict(_DEFAULT_LEVEL)
 
@@ -569,9 +571,8 @@ def generate_markdown(contributors, levels_data):
     lines.append("| Commits | Level | Rarity |")
     lines.append("|:-------:|-------|:------:|")
     # Show a curated sample of notable milestone levels
-    sample_levels = [0, 1, 5, 10, 25, 50, 100, 200, 500, 1000]
     levels_lookup = _build_levels_lookup(levels_data)
-    for lvl_num in sample_levels:
+    for lvl_num in SAMPLE_LEVELS:
         if lvl_num in levels_lookup:
             entry = levels_lookup[lvl_num]
             ri = RARITY_INDICATORS.get(entry.get("rarity", "common"), "⬜")
