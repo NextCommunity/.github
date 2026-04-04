@@ -40,81 +40,81 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | ⚓ Lv.297 Admiral of the Fleet | 🟧 legendary | 297 | `[███████░]` 94% → 300 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🏅 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,440 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,175 |
-| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
-| 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 🟦 | 175 |
-| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 | 130 |
-| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 | 125 |
-| 7 | [@tanverified](https://github.com/tanverified) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
-| 8 | [@ayushrana182](https://github.com/ayushrana182) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
-| 9 | [@rjphares](https://github.com/rjphares) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
-| 10 | [@Anekenonso](https://github.com/Anekenonso) | 🌌 Lv.3 Void Walker | 🟩 uncommon | 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
-| 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 14 | [@eugene4545](https://github.com/eugene4545) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 15 | [@anufdo](https://github.com/anufdo) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 17 | [@itsjoniur](https://github.com/itsjoniur) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 18 | [@0xMRTT](https://github.com/0xMRTT) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 20 | [@rtewari056](https://github.com/rtewari056) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 21 | [@yhdesai](https://github.com/yhdesai) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 22 | [@ps-19](https://github.com/ps-19) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 23 | [@abdorah](https://github.com/abdorah) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 24 | [@VictorAraica](https://github.com/VictorAraica) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 25 | [@ajakov](https://github.com/ajakov) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
-| 26 | [@SyeddTaha](https://github.com/SyeddTaha) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 27 | [@okxint](https://github.com/okxint) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 28 | [@muntasiractive](https://github.com/muntasiractive) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 29 | [@DipendraChandel](https://github.com/DipendraChandel) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 30 | [@HITMAN5050](https://github.com/HITMAN5050) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 31 | [@BDadmehr0](https://github.com/BDadmehr0) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 32 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 33 | [@kaifansariw](https://github.com/kaifansariw) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 34 | [@nikultaka](https://github.com/nikultaka) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 35 | [@arthsaAr](https://github.com/arthsaAr) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 36 | [@an1rxdh664](https://github.com/an1rxdh664) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 37 | [@Cima9642](https://github.com/Cima9642) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 38 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 39 | [@MohdRash](https://github.com/MohdRash) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 40 | [@OrionFable](https://github.com/OrionFable) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 41 | [@MutanPlex](https://github.com/MutanPlex) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 42 | [@yazdanhaider](https://github.com/yazdanhaider) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 43 | [@mr-cheffy](https://github.com/mr-cheffy) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 44 | [@mujeebshk](https://github.com/mujeebshk) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 45 | [@sbhatm1213](https://github.com/sbhatm1213) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 46 | [@vinfinity7](https://github.com/vinfinity7) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 47 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 48 | [@mohammadshaad](https://github.com/mohammadshaad) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 49 | [@rubiin](https://github.com/rubiin) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 50 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 51 | [@theashishgavade](https://github.com/theashishgavade) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 52 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 53 | [@MaxianEdison](https://github.com/MaxianEdison) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 54 | [@Barrerson](https://github.com/Barrerson) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 55 | [@NimishKashyap](https://github.com/NimishKashyap) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 56 | [@MaxCkett](https://github.com/MaxCkett) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 57 | [@kenhorlador](https://github.com/kenhorlador) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 58 | [@novalramdhani](https://github.com/novalramdhani) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 59 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 60 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 61 | [@Favourene](https://github.com/Favourene) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 62 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 63 | [@NS007-dev](https://github.com/NS007-dev) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 64 | [@koolamusic](https://github.com/koolamusic) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 65 | [@ierfaaan](https://github.com/ierfaaan) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 66 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 67 | [@JayantGoel001](https://github.com/JayantGoel001) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 68 | [@gakramx](https://github.com/gakramx) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 69 | [@ra1nbow1](https://github.com/ra1nbow1) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 70 | [@prio101](https://github.com/prio101) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 71 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 72 | [@Majalian](https://github.com/Majalian) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 73 | [@majidabdulred](https://github.com/majidabdulred) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 74 | [@enimiste](https://github.com/enimiste) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
-| 75 | [@Muriturca](https://github.com/Muriturca) | 🛹 Lv.1 Script Kid | ⬜ common | 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🌎 Lv.300 King of the World | 🟥 mythic | ✏️ 179 · 🤝 121 | `[░░░░░░░░]` 0% → 400 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🏅 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,470 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | ✏️ 177 · 🤝 1 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,175 |
+| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
+| 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 🟦 | 175 |
+| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 | 130 |
+| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 | 125 |
+| 7 | [@tanverified](https://github.com/tanverified) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
+| 8 | [@ayushrana182](https://github.com/ayushrana182) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
+| 9 | [@rjphares](https://github.com/rjphares) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
+| 10 | [@Anekenonso](https://github.com/Anekenonso) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 | 90 |
+| 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 14 | [@eugene4545](https://github.com/eugene4545) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 15 | [@anufdo](https://github.com/anufdo) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 17 | [@itsjoniur](https://github.com/itsjoniur) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 18 | [@0xMRTT](https://github.com/0xMRTT) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 20 | [@rtewari056](https://github.com/rtewari056) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 21 | [@yhdesai](https://github.com/yhdesai) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 22 | [@ps-19](https://github.com/ps-19) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 23 | [@abdorah](https://github.com/abdorah) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 24 | [@VictorAraica](https://github.com/VictorAraica) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 25 | [@ajakov](https://github.com/ajakov) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🎯 ⬜ | 55 |
+| 26 | [@SyeddTaha](https://github.com/SyeddTaha) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 27 | [@okxint](https://github.com/okxint) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 28 | [@muntasiractive](https://github.com/muntasiractive) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 29 | [@DipendraChandel](https://github.com/DipendraChandel) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 30 | [@HITMAN5050](https://github.com/HITMAN5050) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 31 | [@BDadmehr0](https://github.com/BDadmehr0) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 32 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 33 | [@kaifansariw](https://github.com/kaifansariw) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 34 | [@nikultaka](https://github.com/nikultaka) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 35 | [@arthsaAr](https://github.com/arthsaAr) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 36 | [@an1rxdh664](https://github.com/an1rxdh664) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 37 | [@Cima9642](https://github.com/Cima9642) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 38 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 39 | [@MohdRash](https://github.com/MohdRash) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 40 | [@OrionFable](https://github.com/OrionFable) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 41 | [@MutanPlex](https://github.com/MutanPlex) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 42 | [@yazdanhaider](https://github.com/yazdanhaider) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 43 | [@mr-cheffy](https://github.com/mr-cheffy) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 44 | [@mujeebshk](https://github.com/mujeebshk) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 45 | [@sbhatm1213](https://github.com/sbhatm1213) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 46 | [@vinfinity7](https://github.com/vinfinity7) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 47 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 48 | [@mohammadshaad](https://github.com/mohammadshaad) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 49 | [@rubiin](https://github.com/rubiin) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 50 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 51 | [@theashishgavade](https://github.com/theashishgavade) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 52 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 53 | [@MaxianEdison](https://github.com/MaxianEdison) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 54 | [@Barrerson](https://github.com/Barrerson) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 55 | [@NimishKashyap](https://github.com/NimishKashyap) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 56 | [@MaxCkett](https://github.com/MaxCkett) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 57 | [@kenhorlador](https://github.com/kenhorlador) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 58 | [@novalramdhani](https://github.com/novalramdhani) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 59 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 60 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 61 | [@Favourene](https://github.com/Favourene) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 62 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 63 | [@NS007-dev](https://github.com/NS007-dev) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 64 | [@koolamusic](https://github.com/koolamusic) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 65 | [@ierfaaan](https://github.com/ierfaaan) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 66 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 0 · 🤝 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 67 | [@JayantGoel001](https://github.com/JayantGoel001) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 68 | [@gakramx](https://github.com/gakramx) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 69 | [@ra1nbow1](https://github.com/ra1nbow1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 70 | [@prio101](https://github.com/prio101) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 71 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 72 | [@Majalian](https://github.com/Majalian) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 73 | [@majidabdulred](https://github.com/majidabdulred) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 74 | [@enimiste](https://github.com/enimiste) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
+| 75 | [@Muriturca](https://github.com/Muriturca) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🎯 ⬜ | 45 |
 
 </div>
 
