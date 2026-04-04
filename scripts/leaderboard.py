@@ -157,18 +157,21 @@ def parse_co_authors(message):
 
 
 def compute_level(commits):
-    """Return ``(emoji, title, next_level_min_commits)`` for a commit count.
+    """Return ``(emoji, title, current_level_min, next_level_min)`` for a commit count.
 
-    *next_level_min_commits* is the minimum total commits required for the
+    *current_level_min* is the minimum total commits required for the
+    contributor's current level.
+
+    *next_level_min* is the minimum total commits required for the
     next level, or ``None`` if the contributor is already at the maximum
     level.
     """
     for i, (min_commits, emoji, title) in enumerate(LEVELS):
         if commits >= min_commits:
-            next_level_min_commits = LEVELS[i - 1][0] if i > 0 else None
-            return emoji, title, next_level_min_commits
+            next_level_min = LEVELS[i - 1][0] if i > 0 else None
+            return emoji, title, min_commits, next_level_min
     # Should not happen since the lowest level starts at 1
-    return "🌱", "Seedling", LEVELS[-1][0]
+    return "🌱", "Seedling", 1, LEVELS[-1][0]
 
 
 def compute_longest_streak(commit_dates):
@@ -196,13 +199,22 @@ def get_achievements(contributor):
     ]
 
 
-def progress_bar(current, target, width=8):
-    """Return a text progress bar like ``[████░░░░]``."""
-    if target is None or target == 0:
+def progress_bar(current, level_min, next_level_min, width=8):
+    """Return a text progress bar like ``[████░░░░]``.
+
+    Progress is computed relative to the current level range
+    (level_min → next_level_min) so that reaching a new level resets the
+    bar to 0% instead of showing a misleading drop.
+    """
+    if next_level_min is None:
         return "MAX ✨"
-    filled = min((width * current) // target, width)
+    span = next_level_min - level_min
+    if span <= 0:
+        return "MAX ✨"
+    progress = current - level_min
+    filled = min((width * progress) // span, width)
     empty = width - filled
-    pct = min((100 * current) // target, 100)
+    pct = min((100 * progress) // span, 100)
     return f"`[{'█' * filled}{'░' * empty}]` {pct}%"
 
 
@@ -352,9 +364,10 @@ def build_leaderboard(token=None):
         contrib["longest_streak"] = compute_longest_streak(
             contrib["commit_dates"]
         )
-        emoji, title, next_threshold = compute_level(contrib["commits"])
+        emoji, title, level_min, next_threshold = compute_level(contrib["commits"])
         contrib["level_emoji"] = emoji
         contrib["level_title"] = title
+        contrib["current_level_min"] = level_min
         contrib["next_level_threshold"] = next_threshold
         contrib["achievements"] = get_achievements(contrib)
         # Clean up non-serializable fields
@@ -385,6 +398,7 @@ def generate_markdown(contributors):
         commits = contrib["commits"]
         level_emoji = contrib["level_emoji"]
         level_title = contrib["level_title"]
+        level_min = contrib["current_level_min"]
         next_threshold = contrib["next_level_threshold"]
         streak = contrib["longest_streak"]
         achievements = contrib["achievements"]
@@ -392,7 +406,7 @@ def generate_markdown(contributors):
         badge = rank_badges.get(i, "")
         rank = f"{i} {badge}" if badge else str(i)
         level = f"{level_emoji} {level_title}"
-        prog = progress_bar(commits, next_threshold)
+        prog = progress_bar(commits, level_min, next_threshold)
         streak_display = f"⚡ {streak}d" if streak > 0 else "—"
         badges = " ".join(emoji for emoji, _label in achievements)
         if not badges:
