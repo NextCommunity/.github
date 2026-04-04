@@ -155,14 +155,17 @@ def build_leaderboard(token=None):
     # --- Phase 1: build email → login mapping ---
     email_to_login = dict(EMAIL_ALIASES)
 
-    # Learn from commits where GitHub already resolved the author
     for login, email, _ in all_commits:
-        if login and email and email not in email_to_login:
+        if not email:
+            continue
+        if login and email not in email_to_login:
             email_to_login[email] = login
-
-    # Resolve GitHub noreply addresses that lack a linked login
-    for _, email, _ in all_commits:
-        if email and email not in email_to_login:
+        elif login and email in email_to_login and email_to_login[email] != login:
+            print(
+                f"Warning: email {email} maps to both "
+                f"{email_to_login[email]} and {login}; keeping first"
+            )
+        elif not login and email not in email_to_login:
             resolved = resolve_login_from_noreply(email)
             if resolved:
                 email_to_login[email] = resolved
