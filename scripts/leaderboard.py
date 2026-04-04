@@ -31,7 +31,7 @@ def get_all_pages(url, token=None):
         separator = "&" if "?" in url else "?"
         page_url = f"{url}{separator}per_page=100&page={page}"
         data = gh_request(page_url, token)
-        if not data:
+        if not isinstance(data, list) or not data:
             break
         results.extend(data)
         if len(data) < 100:
