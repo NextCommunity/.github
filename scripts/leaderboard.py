@@ -392,7 +392,7 @@ def generate_markdown(contributors):
         rank = f"{i} {badge}" if badge else str(i)
         level = f"{level_emoji} {level_title}"
         prog = progress_bar(commits, next_threshold)
-        streak_display = f"🔥 {streak}d" if streak > 0 else "—"
+        streak_display = f"⚡ {streak}d" if streak > 0 else "—"
         badges = " ".join(emoji for emoji, _label in achievements)
         if not badges:
             badges = "—"
