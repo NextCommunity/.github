@@ -39,6 +39,11 @@ RARITY_INDICATORS = {
     "absolute": "⬛",
 }
 
+# Rarity ordering from lowest to highest, derived from the canonical
+# indicator mapping to avoid duplicated rarity definitions.
+RARITY_ORDER = list(RARITY_INDICATORS)
+_RARITY_RANK = {r: i for i, r in enumerate(RARITY_ORDER)}
+
 # Milestones used for the progress bar.  The bar shows how far along a
 # contributor is to the *next* milestone.
 MILESTONES = [
@@ -79,7 +84,7 @@ FALLBACK_LEVELS = [
 # --- Gamification: Achievement definitions ---
 # Each entry is (emoji, label, description, check_function).  The check
 # function receives a contributor dict with keys: commits, repos_count,
-# longest_streak, level_rarity.
+# longest_streak, level_rarity, peak_rarity.
 ACHIEVEMENTS = [
     ("🎯", "First Commit", "Make your first contribution",
      lambda c: c["commits"] >= 1),
@@ -96,13 +101,13 @@ ACHIEVEMENTS = [
     ("🔥", "Month Streak", "Commit for 30+ consecutive days",
      lambda c: c["longest_streak"] >= 30),
     ("🟦", "Rare Find", "Reach a rare-rarity level",
-     lambda c: c.get("level_rarity") in ("rare", "epic", "legendary", "mythic", "absolute")),
+     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["rare"]),
     ("🟪", "Epic Coder", "Reach an epic-rarity level",
-     lambda c: c.get("level_rarity") in ("epic", "legendary", "mythic", "absolute")),
+     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["epic"]),
     ("🟧", "Legendary Dev", "Reach a legendary-rarity level",
-     lambda c: c.get("level_rarity") in ("legendary", "mythic", "absolute")),
+     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["legendary"]),
     ("🟥", "Mythic Status", "Reach a mythic-rarity level",
-     lambda c: c.get("level_rarity") in ("mythic", "absolute")),
+     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["mythic"]),
 ]
 
 
@@ -274,6 +279,36 @@ def compute_level(commits, levels_lookup, _sorted_keys=None):
         idx = 0
     level_num = _sorted_keys[idx]
     return dict(levels_lookup.get(level_num, _DEFAULT_LEVEL))
+
+
+def compute_peak_rarity(commits, levels_lookup, _sorted_keys=None):
+    """Return the highest rarity achieved for defined levels up to *commits*.
+
+    This scans the defined level entries in *levels_lookup* whose level keys
+    are less than or equal to *commits*, then returns the rarity string with
+    the highest rank among those entries.
+
+    *_sorted_keys* is an optional pre-computed sorted list of level keys
+    (from :func:`_sorted_level_keys`).  When provided it avoids redundant
+    sorting across repeated calls.
+    """
+    if not levels_lookup:
+        return _DEFAULT_LEVEL.get("rarity", "common")
+
+    if _sorted_keys is None:
+        _sorted_keys = _sorted_level_keys(levels_lookup)
+
+    best_rarity = "common"
+    best_rank = _RARITY_RANK["common"]
+    for key in _sorted_keys:
+        if key > commits:
+            break
+        entry_rarity = levels_lookup[key].get("rarity", "common")
+        entry_rank = _RARITY_RANK.get(entry_rarity, 0)
+        if entry_rank > best_rank:
+            best_rarity = entry_rarity
+            best_rank = entry_rank
+    return best_rarity
 
 
 def compute_longest_streak(commit_dates):
@@ -500,6 +535,9 @@ def build_leaderboard(token=None):
         contrib["level_rarity"] = level_info.get("rarity", "common")
         contrib["level_description"] = level_info.get("description", "")
         contrib["level_color"] = level_info.get("color", "#94a3b8")
+        contrib["peak_rarity"] = compute_peak_rarity(
+            contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
+        )
         contrib["achievements"] = get_achievements(contrib)
         # Clean up non-serializable fields
         del contrib["repos"]
