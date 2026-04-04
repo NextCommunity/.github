@@ -15,6 +15,11 @@ API_URL = "https://api.github.com"
 README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.md")
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
+SPONSORS_START = "<!-- SPONSORS:START -->"
+SPONSORS_END = "<!-- SPONSORS:END -->"
+
+# Maximum number of sponsor buttons to show in the showcase section.
+MAX_SPONSOR_BUTTONS = 5
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
 
@@ -692,6 +697,79 @@ def build_leaderboard(token=None):
     return sorted_contributors, had_errors, levels_data
 
 
+# --- Sponsor button generation ---
+
+# Rotating color pairs (badge_color, label_color) used for the shields.io
+# sponsor buttons so each contributor gets a distinct look.
+_SPONSOR_COLORS = [
+    ("ff6b6b", "feca57"),
+    ("ff9ff3", "48dbfb"),
+    ("54a0ff", "5f27cd"),
+    ("ee5a24", "10ac84"),
+    ("0abde3", "f368e0"),
+    ("6c5ce7", "fdcb6e"),
+    ("e17055", "00b894"),
+    ("fd79a8", "636e72"),
+]
+
+
+def _badge_escape(text):
+    """Escape characters that are special in shields.io badge URLs.
+
+    Shields.io uses ``-`` as a separator and ``_`` as a space.  Literal
+    hyphens must be doubled and underscores escaped.
+    """
+    return text.replace("-", "--").replace("_", "__")
+
+
+def generate_sponsors_html(contributors):
+    """Generate the HTML for the sponsors showcase buttons.
+
+    Takes the ranked contributor list and produces up to
+    :data:`MAX_SPONSOR_BUTTONS` shields.io badge buttons linking to each
+    contributor's GitHub Sponsors page.
+
+    Returns the inner HTML (without the surrounding markers).
+    """
+    rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
+    lines = [
+        '  <p>',
+        '    <strong>🏆 Featured Leaderboard Sponsors Showcase 🏆</strong><br>',
+        '    <sub>The first {n} contributors on our leaderboard who have '
+        '<a href="https://github.com/sponsors">GitHub Sponsors</a> profiles '
+        'get showcased here — climb the ranks, enable Sponsors, and get '
+        'featured!</sub>'.format(n=MAX_SPONSOR_BUTTONS),
+        '  </p>',
+        '  <p>',
+    ]
+
+    shown = 0
+    for rank, contrib in enumerate(contributors, start=1):
+        if shown >= MAX_SPONSOR_BUTTONS:
+            break
+        login = contrib["login"]
+        badge_color, label_color = _SPONSOR_COLORS[
+            shown % len(_SPONSOR_COLORS)
+        ]
+        rank_label = rank_badges.get(rank, "🏅")
+        escaped = _badge_escape(login)
+        badge_url = (
+            f"https://img.shields.io/badge/"
+            f"💖_Sponsor_{escaped}-{rank_label}_Rank_{rank}-"
+            f"{badge_color}?style=for-the-badge&labelColor={label_color}"
+        )
+        link = f"https://github.com/sponsors/{login}"
+        sep = "" if shown == MAX_SPONSOR_BUTTONS - 1 else "<br>"
+        lines.append(
+            f'    <a href="{link}">\n'
+            f'      <img src="{badge_url}" alt="Sponsor {login}"></a>{sep}'
+        )
+        shown += 1
+
+    lines.append('  </p>')
+    return "\n".join(lines)
+
+
 def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
@@ -913,34 +991,57 @@ def generate_markdown(contributors, levels_data):
     return "\n".join(lines)
 
 
-def update_readme(leaderboard_md):
-    """Update the profile README with the leaderboard content."""
+def _replace_section(content, start_marker, end_marker, new_inner):
+    """Replace content between *start_marker* and *end_marker*.
+
+    Returns the updated string.  If both markers are missing the section is
+    appended.  If only one marker is present an error is printed and *None*
+    is returned.
+    """
+    start_idx = content.find(start_marker)
+    end_idx = content.find(end_marker, start_idx) if start_idx != -1 else -1
+    if start_idx != -1 and end_idx != -1:
+        before = content[:start_idx]
+        after = content[end_idx + len(end_marker):]
+        return (
+            f"{before}{start_marker}\n"
+            f"{new_inner}\n"
+            f"{end_marker}{after}"
+        )
+    if start_idx == -1 and end_idx == -1:
+        return (
+            f"{content.rstrip()}\n\n"
+            f"{start_marker}\n"
+            f"{new_inner}\n"
+            f"{end_marker}\n"
+        )
+    print(
+        f"Error: Mismatched markers ({start_marker} / {end_marker}) in {README_PATH}",
+        file=sys.stderr,
+    )
+    return None
+
+
+def update_readme(leaderboard_md, sponsors_html=None):
+    """Update the profile README with the leaderboard and sponsors content."""
     with open(README_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    start_idx = content.find(LEADERBOARD_START)
-    end_idx = content.find(LEADERBOARD_END, start_idx) if start_idx != -1 else -1
-    if start_idx != -1 and end_idx != -1:
-        before = content[:start_idx]
-        after = content[end_idx + len(LEADERBOARD_END) :]
-        new_content = (
-            f"{before}{LEADERBOARD_START}\n"
-            f"{leaderboard_md}\n"
-            f"{LEADERBOARD_END}{after}"
-        )
-    elif start_idx == -1 and end_idx == -1:
-        new_content = (
-            f"{content.rstrip()}\n\n"
-            f"{LEADERBOARD_START}\n"
-            f"{leaderboard_md}\n"
-            f"{LEADERBOARD_END}\n"
-        )
-    else:
-        print(f"Error: Mismatched leaderboard markers in {README_PATH}", file=sys.stderr)
+    # Update sponsors section first (appears earlier in the file).
+    if sponsors_html is not None:
+        result = _replace_section(content, SPONSORS_START, SPONSORS_END, sponsors_html)
+        if result is None:
+            return
+        content = result
+
+    # Update leaderboard section.
+    result = _replace_section(content, LEADERBOARD_START, LEADERBOARD_END, leaderboard_md)
+    if result is None:
         return
+    content = result
 
     with open(README_PATH, "w", encoding="utf-8") as f:
-        f.write(new_content)
+        f.write(content)
 
     print(f"Updated {README_PATH}")
 
@@ -964,7 +1065,8 @@ def main():
         sys.exit(0)
 
     leaderboard_md = generate_markdown(contributors, levels_data)
-    update_readme(leaderboard_md)
+    sponsors_html = generate_sponsors_html(contributors)
+    update_readme(leaderboard_md, sponsors_html=sponsors_html)
     print(f"Leaderboard updated with {len(contributors)} contributors.")
 
 
