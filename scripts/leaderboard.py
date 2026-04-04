@@ -110,7 +110,7 @@ def resolve_login_from_noreply(email):
 
 
 _CO_AUTHOR_RE = re.compile(
-    r"^Co-authored-by:\s*.+\s+<([^>]+)>\s*$",
+    r"^Co-authored-by:\s*.+?\s*<([^>]+)>\s*$",
     re.MULTILINE | re.IGNORECASE,
 )
 
