@@ -40,8 +40,8 @@
 
 | Rank | Contributor | Commits |
 |------|-------------|---------|
-| 1 | [@jbampton](https://github.com/jbampton) | 179 |
-| 2 | [@BaseMax](https://github.com/BaseMax) | 177 |
+| 1 | [@jbampton](https://github.com/jbampton) | 258 |
+| 2 | [@BaseMax](https://github.com/BaseMax) | 178 |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 14 |
 | 4 | [@iabdr](https://github.com/iabdr) | 7 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 5 |
@@ -105,15 +105,16 @@
 | 63 | [@NS007-dev](https://github.com/NS007-dev) | 1 |
 | 64 | [@koolamusic](https://github.com/koolamusic) | 1 |
 | 65 | [@ierfaaan](https://github.com/ierfaaan) | 1 |
-| 66 | [@JayantGoel001](https://github.com/JayantGoel001) | 1 |
-| 67 | [@gakramx](https://github.com/gakramx) | 1 |
-| 68 | [@ra1nbow1](https://github.com/ra1nbow1) | 1 |
-| 69 | [@prio101](https://github.com/prio101) | 1 |
-| 70 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 1 |
-| 71 | [@Majalian](https://github.com/Majalian) | 1 |
-| 72 | [@majidabdulred](https://github.com/majidabdulred) | 1 |
-| 73 | [@enimiste](https://github.com/enimiste) | 1 |
-| 74 | [@Muriturca](https://github.com/Muriturca) | 1 |
+| 66 | [@hunainanis](https://github.com/hunainanis) | 1 |
+| 67 | [@JayantGoel001](https://github.com/JayantGoel001) | 1 |
+| 68 | [@gakramx](https://github.com/gakramx) | 1 |
+| 69 | [@ra1nbow1](https://github.com/ra1nbow1) | 1 |
+| 70 | [@prio101](https://github.com/prio101) | 1 |
+| 71 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 1 |
+| 72 | [@Majalian](https://github.com/Majalian) | 1 |
+| 73 | [@majidabdulred](https://github.com/majidabdulred) | 1 |
+| 74 | [@enimiste](https://github.com/enimiste) | 1 |
+| 75 | [@Muriturca](https://github.com/Muriturca) | 1 |
 
 </div>
 

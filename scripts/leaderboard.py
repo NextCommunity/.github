@@ -148,6 +148,10 @@ def build_leaderboard(token=None):
     # Co-authors extracted from commit messages are added as separate entries
     # with login=None so they go through email→login resolution.
     all_commits = []
+    # Track logins and emails identified as bots from API metadata so that
+    # co-author entries resolving to the same identity are also excluded.
+    bot_logins = set()
+    bot_emails = set()
 
     for repo in repos:
         if repo.get("fork"):
@@ -173,6 +177,12 @@ def build_leaderboard(token=None):
                         and "/apps/" in (gh_author.get("html_url") or "")
                     )
                 )
+
+                if is_bot:
+                    if login:
+                        bot_logins.add(login.lower())
+                    if email:
+                        bot_emails.add(email)
 
                 all_commits.append((login, email, is_bot))
 
@@ -211,6 +221,15 @@ def build_leaderboard(token=None):
 
         resolved = login or email_to_login.get(email)
         if not resolved:
+            continue
+
+        # Skip bots: logins ending with [bot], logins identified as bots
+        # from API metadata, or emails belonging to known bot accounts.
+        if (
+            resolved.endswith("[bot]")
+            or resolved.lower() in bot_logins
+            or email in bot_emails
+        ):
             continue
 
         if resolved not in contributors:
