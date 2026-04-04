@@ -40,7 +40,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🎲 Lv.306 Natural 1 Survivor | ⬜ common | ✏️ 179 · 🤝 127 | `[░░░░░░░░]` 6% → 400 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🏅 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,530 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🎲 Lv.306 Natural 1 Survivor | ⬜ common | ✏️ 179 · 🤝 127 | `[░░░░░░░░]` 6% → 400 | ⚡ 5d | 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,530 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | ✏️ 177 · 🤝 1 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,175 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ✋ ⬜ 🟩 🟦 | 175 |
@@ -169,7 +169,7 @@ The progress bar tracks your advancement toward the next milestone: **10, 20, 30
 | 🏗️ | Architect | Contribute to 3+ repositories |
 | 💪 | Dedicated | Reach 50 commits |
 | 🚀 | Rockstar | Reach 100 commits |
-| 🏅 | Quarter Master | Reach 250 commits |
+| 🛡️ | Quarter Master | Reach 250 commits |
 | ⭐ | Superstar | Reach 500 commits |
 | 👑 | Elite | Reach 750 commits |
 | 🏆 | Thousand Club | Reach 1000 commits |
