@@ -40,7 +40,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🏴‍☠️ Lv.285 Warlord of the Sea | 🟧 legendary | 285 | `[██████░░]` 85% → 300 | ⚡ 5d | 🎯 🌐 💪 🚀 💎 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🏴‍☠️ Lv.285 Warlord of the Sea | 🟧 legendary | 285 | `[█████░░░]` 70% → 300 | ⚡ 5d | 🎯 🌐 💪 🚀 🏅 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 ⬜ 🟩 🟦 🟪 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 ⬜ 🟩 🟦 |
@@ -154,7 +154,7 @@ Each commit levels you up through themed sagas — from tech to fantasy to sci-f
 
 #### Milestones
 
-The progress bar tracks your advancement toward the next milestone: **10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150, 200, 300, 400, 500, 750, 1000** commits.
+The progress bar tracks your advancement toward the next milestone: **10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150, 200, 250, 300, 400, 500, 750, 1000** commits.
 
 #### Achievements
 
@@ -165,9 +165,9 @@ The progress bar tracks your advancement toward the next milestone: **10, 20, 30
 | 🏗️ | Architect | Contribute to 3+ repositories |
 | 💪 | Dedicated | Reach 50 commits |
 | 🚀 | Rockstar | Reach 100 commits |
-| 💎 | Quarter Master | Reach 250 commits |
+| 🏅 | Quarter Master | Reach 250 commits |
 | ⭐ | Superstar | Reach 500 commits |
-| 👑 | Thousand Club | Reach 1000 commits |
+| 🏆 | Thousand Club | Reach 1000 commits |
 | 🌱 | Quick Streak | Commit for 3+ consecutive days |
 | 📅 | Week Streak | Commit for 7+ consecutive days |
 | 💫 | Fortnight Streak | Commit for 14+ consecutive days |

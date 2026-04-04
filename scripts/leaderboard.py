@@ -48,7 +48,7 @@ _RARITY_RANK = {r: i for i, r in enumerate(RARITY_ORDER)}
 # contributor is to the *next* milestone.
 MILESTONES = [
     10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-    150, 200, 300, 400, 500, 750, 1000,
+    150, 200, 250, 300, 400, 500, 750, 1000,
 ]
 
 # Curated level samples shown in the Gamification Guide table.
@@ -85,6 +85,15 @@ FALLBACK_LEVELS = [
 # Each entry is (emoji, label, description, check_function).  The check
 # function receives a contributor dict with keys: commits, repos_count,
 # longest_streak, level_rarity, peak_rarity.
+
+
+def _peak_rarity_rank(contrib):
+    """Return the numeric rank for a contributor's peak rarity."""
+    return _RARITY_RANK.get(
+        contrib.get("peak_rarity", contrib.get("level_rarity")), 0,
+    )
+
+
 ACHIEVEMENTS = [
     ("🎯", "First Commit", "Make your first contribution",
      lambda c: c["commits"] >= 1),
@@ -96,11 +105,11 @@ ACHIEVEMENTS = [
      lambda c: c["commits"] >= 50),
     ("🚀", "Rockstar", "Reach 100 commits",
      lambda c: c["commits"] >= 100),
-    ("💎", "Quarter Master", "Reach 250 commits",
+    ("🏅", "Quarter Master", "Reach 250 commits",
      lambda c: c["commits"] >= 250),
     ("⭐", "Superstar", "Reach 500 commits",
      lambda c: c["commits"] >= 500),
-    ("👑", "Thousand Club", "Reach 1000 commits",
+    ("🏆", "Thousand Club", "Reach 1000 commits",
      lambda c: c["commits"] >= 1000),
     ("🌱", "Quick Streak", "Commit for 3+ consecutive days",
      lambda c: c["longest_streak"] >= 3),
@@ -111,19 +120,19 @@ ACHIEVEMENTS = [
     ("🔥", "Month Streak", "Commit for 30+ consecutive days",
      lambda c: c["longest_streak"] >= 30),
     ("⬜", "Common Ground", "Reach a common-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["common"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["common"]),
     ("🟩", "Uncommon Rising", "Reach an uncommon-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["uncommon"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["uncommon"]),
     ("🟦", "Rare Find", "Reach a rare-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["rare"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["rare"]),
     ("🟪", "Epic Coder", "Reach an epic-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["epic"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["epic"]),
     ("🟧", "Legendary Dev", "Reach a legendary-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["legendary"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["legendary"]),
     ("🟥", "Mythic Status", "Reach a mythic-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["mythic"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["mythic"]),
     ("⬛", "Absolute Power", "Reach an absolute-rarity level",
-     lambda c: _RARITY_RANK.get(c.get("peak_rarity", c.get("level_rarity")), 0) >= _RARITY_RANK["absolute"]),
+     lambda c: _peak_rarity_rank(c) >= _RARITY_RANK["absolute"]),
 ]
 
 
