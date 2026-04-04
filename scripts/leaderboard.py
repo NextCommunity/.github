@@ -528,7 +528,7 @@ def build_leaderboard(token=None):
                         pass
 
                 all_commits.append(
-                    (login, email, is_bot, repo_name, commit_date)
+                    (login, email, is_bot, repo_name, commit_date, False)
                 )
 
                 # Credit co-authors from Co-authored-by trailers
@@ -536,7 +536,8 @@ def build_leaderboard(token=None):
                 for co_email in parse_co_authors(message):
                     if co_email != email:
                         all_commits.append(
-                            (None, co_email, False, repo_name, commit_date)
+                            (None, co_email, False, repo_name, commit_date,
+                             True)
                         )
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
@@ -545,7 +546,7 @@ def build_leaderboard(token=None):
     # --- Phase 1: build email → login mapping ---
     email_to_login = dict(EMAIL_ALIASES)
 
-    for login, email, _, _repo, _date in all_commits:
+    for login, email, _, _repo, _date, _coauth in all_commits:
         if not email:
             continue
         if login and email not in email_to_login:
@@ -562,7 +563,7 @@ def build_leaderboard(token=None):
 
     # --- Phase 2: count commits per resolved identity ---
     contributors = {}
-    for login, email, is_bot, repo_name, commit_date in all_commits:
+    for login, email, is_bot, repo_name, commit_date, is_coauthor in all_commits:
         if is_bot:
             continue
 
@@ -582,6 +583,8 @@ def build_leaderboard(token=None):
         if resolved not in contributors:
             contributors[resolved] = {
                 "commits": 0,
+                "authored_commits": 0,
+                "coauthored_commits": 0,
                 "site_commits": 0,
                 "dotgithub_commits": 0,
                 "login": resolved,
@@ -589,6 +592,10 @@ def build_leaderboard(token=None):
                 "commit_dates": set(),
             }
         contributors[resolved]["commits"] += 1
+        if is_coauthor:
+            contributors[resolved]["coauthored_commits"] += 1
+        else:
+            contributors[resolved]["authored_commits"] += 1
         contributors[resolved]["repos"].add(repo_name)
         if commit_date is not None:
             contributors[resolved]["commit_dates"].add(commit_date)
@@ -648,6 +655,8 @@ def generate_markdown(contributors, levels_data):
     for i, contrib in enumerate(contributors, start=1):
         login = contrib["login"]
         commits = contrib["commits"]
+        authored = contrib["authored_commits"]
+        coauthored = contrib["coauthored_commits"]
         level_num = contrib["level_num"]
         level_emoji = contrib["level_emoji"]
         level_title = contrib["level_title"]
@@ -668,9 +677,13 @@ def generate_markdown(contributors, levels_data):
             badges = "—"
         points_display = f"{points:,}"
 
+        commits_display = f"✏️ {authored}"
+        if coauthored > 0:
+            commits_display += f" · 🤝 {coauthored}"
+
         lines.append(
             f"| {rank} | [@{login}](https://github.com/{login})"
-            f" | {level} | {rarity_display} | {commits}"
+            f" | {level} | {rarity_display} | {commits_display}"
             f" | {prog} | {streak_display}"
             f" | {badges} | {points_display} |"
         )
