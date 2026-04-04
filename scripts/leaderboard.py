@@ -35,8 +35,9 @@ LEVELS = [
 ]
 
 # --- Gamification: Achievement definitions ---
-# Each entry is (emoji, label, check_function).  The check function receives
-# a contributor dict with keys: commits, repos_count, longest_streak.
+# Each entry is (emoji, label, description, check_function).  The check
+# function receives a contributor dict with keys: commits, repos_count,
+# longest_streak.
 ACHIEVEMENTS = [
     ("🎯", "First Commit", "Make your first contribution", lambda c: c["commits"] >= 1),
     ("🌐", "Explorer", "Contribute to 2+ repositories", lambda c: c["repos_count"] >= 2),
@@ -199,10 +200,9 @@ def progress_bar(current, target, width=8):
     """Return a text progress bar like ``[████░░░░]``."""
     if target is None or target == 0:
         return "MAX ✨"
-    filled = int(round(width * current / target))
-    filled = min(filled, width)
+    filled = min((width * current) // target, width)
     empty = width - filled
-    pct = int(round(100 * current / target))
+    pct = min((100 * current) // target, 100)
     return f"`[{'█' * filled}{'░' * empty}]` {pct}%"
 
 
@@ -422,17 +422,7 @@ def generate_markdown(contributors):
     lines.append("")
     lines.append("| Badge | Achievement | How to Earn |")
     lines.append("|:-----:|-------------|-------------|")
-    achievement_descriptions = {
-        "First Commit": "Make your first contribution",
-        "Explorer": "Contribute to 2+ repositories",
-        "Architect": "Contribute to 3+ repositories",
-        "Dedicated": "Reach 50 commits",
-        "Rockstar": "Reach 100 commits",
-        "Week Streak": "Commit for 7+ consecutive days",
-        "Month Streak": "Commit for 30+ consecutive days",
-    }
-    for emoji, label, _check in ACHIEVEMENTS:
-        desc = achievement_descriptions.get(label, "")
+    for emoji, label, desc, _check in ACHIEVEMENTS:
         lines.append(f"| {emoji} | {label} | {desc} |")
     lines.append("")
     lines.append("</details>")
