@@ -38,13 +38,13 @@ LEVELS = [
 # Each entry is (emoji, label, check_function).  The check function receives
 # a contributor dict with keys: commits, repos_count, longest_streak.
 ACHIEVEMENTS = [
-    ("🎯", "First Commit", lambda c: c["commits"] >= 1),
-    ("🌐", "Explorer", lambda c: c["repos_count"] >= 2),
-    ("🏗️", "Architect", lambda c: c["repos_count"] >= 3),
-    ("💪", "Dedicated", lambda c: c["commits"] >= 50),
-    ("🚀", "Rockstar", lambda c: c["commits"] >= 100),
-    ("📅", "Week Streak", lambda c: c["longest_streak"] >= 7),
-    ("🔥", "Month Streak", lambda c: c["longest_streak"] >= 30),
+    ("🎯", "First Commit", "Make your first contribution", lambda c: c["commits"] >= 1),
+    ("🌐", "Explorer", "Contribute to 2+ repositories", lambda c: c["repos_count"] >= 2),
+    ("🏗️", "Architect", "Contribute to 3+ repositories", lambda c: c["repos_count"] >= 3),
+    ("💪", "Dedicated", "Reach 50 commits", lambda c: c["commits"] >= 50),
+    ("🚀", "Rockstar", "Reach 100 commits", lambda c: c["commits"] >= 100),
+    ("📅", "Week Streak", "Commit for 7+ consecutive days", lambda c: c["longest_streak"] >= 7),
+    ("🔥", "Month Streak", "Commit for 30+ consecutive days", lambda c: c["longest_streak"] >= 30),
 ]
 
 
