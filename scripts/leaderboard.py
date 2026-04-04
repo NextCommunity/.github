@@ -141,7 +141,7 @@ ACHIEVEMENTS = [
      lambda c: c["commits"] >= 50),
     ("🚀", "Rockstar", "Reach 100 commits",
      lambda c: c["commits"] >= 100),
-    ("🏅", "Quarter Master", "Reach 250 commits",
+    ("🛡️", "Quarter Master", "Reach 250 commits",
      lambda c: c["commits"] >= 250),
     ("⭐", "Superstar", "Reach 500 commits",
      lambda c: c["commits"] >= 500),
