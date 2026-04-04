@@ -738,8 +738,8 @@ def generate_markdown(contributors, levels_data):
     )
     lines.append("")
     cfg = POINTS_CONFIG
-    lines.append(f"| Activity | Points |")
-    lines.append(f"|----------|-------:|")
+    lines.append("| Activity | Points |")
+    lines.append("|----------|-------:|")
     lines.append(f"| Each commit | +{cfg['per_commit']} |")
     lines.append(f"| Each streak day | +{cfg['per_streak_day']} |")
     lines.append(f"| Each achievement earned | +{cfg['per_achievement']} |")
