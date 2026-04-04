@@ -6,17 +6,47 @@ import sys
 import urllib.error
 import urllib.request
 import json
+from datetime import date, timedelta
 
 ORG = "NextCommunity"
 API_URL = "https://api.github.com"
 README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.md")
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
+SITE_REPO_NAME = "NextCommunity.github.io"
+DOTGITHUB_REPO_NAME = ".github"
 
 # Manual email-to-login mapping for contributors who commit with multiple
 # email addresses that may not all be linked to their GitHub account.
 # Add entries like: "alternate@example.com": "github_login"
 EMAIL_ALIASES = {}
+
+# --- Gamification: Levels ---
+# Each entry is (min_commits, emoji, title).  Checked in descending order so
+# the first match wins.
+LEVELS = [
+    (200, "👑", "Legend"),
+    (100, "💎", "Diamond"),
+    (50, "🔥", "On Fire"),
+    (25, "⭐", "Star"),
+    (10, "🌳", "Tree"),
+    (5, "🌿", "Sprout"),
+    (1, "🌱", "Seedling"),
+]
+
+# --- Gamification: Achievement definitions ---
+# Each entry is (emoji, label, description, check_function).  The check
+# function receives a contributor dict with keys: commits, repos_count,
+# longest_streak.
+ACHIEVEMENTS = [
+    ("🎯", "First Commit", "Make your first contribution", lambda c: c["commits"] >= 1),
+    ("🌐", "Explorer", "Contribute to 2+ repositories", lambda c: c["repos_count"] >= 2),
+    ("🏗️", "Architect", "Contribute to 3+ repositories", lambda c: c["repos_count"] >= 3),
+    ("💪", "Dedicated", "Reach 50 commits", lambda c: c["commits"] >= 50),
+    ("🚀", "Rockstar", "Reach 100 commits", lambda c: c["commits"] >= 100),
+    ("📅", "Week Streak", "Commit for 7+ consecutive days", lambda c: c["longest_streak"] >= 7),
+    ("🔥", "Month Streak", "Commit for 30+ consecutive days", lambda c: c["longest_streak"] >= 30),
+]
 
 
 def gh_request(url, token=None):
@@ -126,6 +156,68 @@ def parse_co_authors(message):
     return [m.lower().strip() for m in _CO_AUTHOR_RE.findall(message)]
 
 
+def compute_level(commits):
+    """Return ``(emoji, title, current_level_min, next_level_min)`` for a commit count.
+
+    *current_level_min* is the minimum total commits required for the
+    contributor's current level.
+
+    *next_level_min* is the minimum total commits required for the
+    next level, or ``None`` if the contributor is already at the maximum
+    level.
+    """
+    for i, (min_commits, emoji, title) in enumerate(LEVELS):
+        if commits >= min_commits:
+            next_level_min = LEVELS[i - 1][0] if i > 0 else None
+            return emoji, title, min_commits, next_level_min
+    # Handle commit counts below the lowest defined threshold.
+    return "🌱", "Seedling", 0, LEVELS[-1][0]
+
+
+def compute_longest_streak(commit_dates):
+    """Return the longest consecutive-day commit streak from a set of dates."""
+    if not commit_dates:
+        return 0
+    sorted_dates = sorted(set(commit_dates))
+    longest = 1
+    current = 1
+    for prev, cur in zip(sorted_dates, sorted_dates[1:]):
+        if cur - prev == timedelta(days=1):
+            current += 1
+            longest = max(longest, current)
+        elif cur - prev > timedelta(days=1):
+            current = 1
+    return longest
+
+
+def get_achievements(contributor):
+    """Return a list of ``(emoji, label)`` tuples the contributor has earned."""
+    return [
+        (emoji, label)
+        for emoji, label, _desc, check in ACHIEVEMENTS
+        if check(contributor)
+    ]
+
+
+def progress_bar(current, level_min, next_level_min, width=8):
+    """Return a text progress bar like ``[████░░░░]``.
+
+    Progress is computed relative to the current level range
+    (level_min → next_level_min) so that reaching a new level resets the
+    bar to 0% instead of showing a misleading drop.
+    """
+    if next_level_min is None:
+        return "MAX ✨"
+    span = next_level_min - level_min
+    if span <= 0:
+        return "MAX ✨"
+    progress = current - level_min
+    filled = min((width * progress) // span, width)
+    empty = width - filled
+    pct = min((100 * progress) // span, 100)
+    return f"`[{'█' * filled}{'░' * empty}]` {pct}%"
+
+
 def build_leaderboard(token=None):
     """Aggregate contributor commits across all repos and return sorted list.
 
@@ -144,9 +236,10 @@ def build_leaderboard(token=None):
     repos = fetch_repos(token)
     had_errors = False
 
-    # Collect (login_or_none, email, is_bot) for every commit across all repos.
-    # Co-authors extracted from commit messages are added as separate entries
-    # with login=None so they go through email→login resolution.
+    # Collect (login_or_none, email, is_bot, repo_name, commit_date) for
+    # every commit across all repos.  Co-authors extracted from commit
+    # messages are added as separate entries with login=None so they go
+    # through email→login resolution.
     all_commits = []
     # Track logins and emails identified as bots from API metadata so that
     # co-author entries resolving to the same identity are also excluded.
@@ -184,13 +277,28 @@ def build_leaderboard(token=None):
                     if email:
                         bot_emails.add(email)
 
-                all_commits.append((login, email, is_bot))
+                # Extract commit date for streak tracking
+                commit_date_str = git_author.get("date", "")
+                commit_date = None
+                if commit_date_str:
+                    try:
+                        commit_date = date.fromisoformat(
+                            commit_date_str[:10]
+                        )
+                    except ValueError:
+                        pass
+
+                all_commits.append(
+                    (login, email, is_bot, repo_name, commit_date)
+                )
 
                 # Credit co-authors from Co-authored-by trailers
                 message = commit_detail.get("message", "")
                 for co_email in parse_co_authors(message):
                     if co_email != email:
-                        all_commits.append((None, co_email, False))
+                        all_commits.append(
+                            (None, co_email, False, repo_name, commit_date)
+                        )
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
@@ -198,7 +306,7 @@ def build_leaderboard(token=None):
     # --- Phase 1: build email → login mapping ---
     email_to_login = dict(EMAIL_ALIASES)
 
-    for login, email, _ in all_commits:
+    for login, email, _, _repo, _date in all_commits:
         if not email:
             continue
         if login and email not in email_to_login:
@@ -215,7 +323,7 @@ def build_leaderboard(token=None):
 
     # --- Phase 2: count commits per resolved identity ---
     contributors = {}
-    for login, email, is_bot in all_commits:
+    for login, email, is_bot, repo_name, commit_date in all_commits:
         if is_bot:
             continue
 
@@ -233,8 +341,38 @@ def build_leaderboard(token=None):
             continue
 
         if resolved not in contributors:
-            contributors[resolved] = {"commits": 0, "login": resolved}
+            contributors[resolved] = {
+                "commits": 0,
+                "site_commits": 0,
+                "dotgithub_commits": 0,
+                "login": resolved,
+                "repos": set(),
+                "commit_dates": set(),
+            }
         contributors[resolved]["commits"] += 1
+        contributors[resolved]["repos"].add(repo_name)
+        if commit_date is not None:
+            contributors[resolved]["commit_dates"].add(commit_date)
+        if repo_name == SITE_REPO_NAME:
+            contributors[resolved]["site_commits"] += 1
+        elif repo_name == DOTGITHUB_REPO_NAME:
+            contributors[resolved]["dotgithub_commits"] += 1
+
+    # Compute gamification stats for each contributor
+    for contrib in contributors.values():
+        contrib["repos_count"] = len(contrib["repos"])
+        contrib["longest_streak"] = compute_longest_streak(
+            contrib["commit_dates"]
+        )
+        emoji, title, level_min, next_threshold = compute_level(contrib["commits"])
+        contrib["level_emoji"] = emoji
+        contrib["level_title"] = title
+        contrib["current_level_min"] = level_min
+        contrib["next_level_threshold"] = next_threshold
+        contrib["achievements"] = get_achievements(contrib)
+        # Clean up non-serializable fields
+        del contrib["repos"]
+        del contrib["commit_dates"]
 
     sorted_contributors = sorted(
         contributors.values(), key=lambda c: c["commits"], reverse=True
@@ -243,22 +381,65 @@ def build_leaderboard(token=None):
 
 
 def generate_markdown(contributors):
-    """Generate a markdown table from the leaderboard data."""
+    """Generate a gamified markdown leaderboard from contributor data."""
+    rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
+
     lines = [
         "",
         '<div align="center">',
         "",
         "## 🏆 Organization Leaderboard",
         "",
-        "| Rank | Contributor | Commits |",
-        "|------|-------------|---------|",
+        "| Rank | Contributor | Level | Commits | Progress | Streak | Badges |",
+        "|------|-------------|:-----:|:-------:|----------|:------:|--------|",
     ]
     for i, contrib in enumerate(contributors, start=1):
         login = contrib["login"]
         commits = contrib["commits"]
-        lines.append(f"| {i} | [@{login}](https://github.com/{login}) | {commits} |")
+        level_emoji = contrib["level_emoji"]
+        level_title = contrib["level_title"]
+        level_min = contrib["current_level_min"]
+        next_threshold = contrib["next_level_threshold"]
+        streak = contrib["longest_streak"]
+        achievements = contrib["achievements"]
+
+        badge = rank_badges.get(i, "")
+        rank = f"{i} {badge}" if badge else str(i)
+        level = f"{level_emoji} {level_title}"
+        prog = progress_bar(commits, level_min, next_threshold)
+        streak_display = f"⚡ {streak}d" if streak > 0 else "—"
+        badges = " ".join(emoji for emoji, _label in achievements)
+        if not badges:
+            badges = "—"
+
+        lines.append(
+            f"| {rank} | [@{login}](https://github.com/{login})"
+            f" | {level} | {commits} | {prog} | {streak_display}"
+            f" | {badges} |"
+        )
+
+    # Achievement legend
     lines.append("")
     lines.append("</div>")
+    lines.append("")
+    lines.append("<details>")
+    lines.append('<summary><strong>🎮 Gamification Guide</strong></summary>')
+    lines.append("")
+    lines.append("#### Levels")
+    lines.append("")
+    lines.append("| Level | Commits Required |")
+    lines.append("|-------|:----------------:|")
+    for min_commits, emoji, title in reversed(LEVELS):
+        lines.append(f"| {emoji} {title} | {min_commits}+ |")
+    lines.append("")
+    lines.append("#### Achievements")
+    lines.append("")
+    lines.append("| Badge | Achievement | How to Earn |")
+    lines.append("|:-----:|-------------|-------------|")
+    for emoji, label, desc, _check in ACHIEVEMENTS:
+        lines.append(f"| {emoji} | {label} | {desc} |")
+    lines.append("")
+    lines.append("</details>")
     lines.append("")
     return "\n".join(lines)
 
