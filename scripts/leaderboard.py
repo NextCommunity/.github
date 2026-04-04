@@ -56,6 +56,11 @@ def get_all_pages(url, token=None):
         separator = "&" if "?" in url else "?"
         page_url = f"{url}{separator}per_page=100&page={page}"
         data = gh_request(page_url, token)
+        if isinstance(data, dict):
+            msg = data.get("message", "Unknown error")
+            raise urllib.error.URLError(
+                f"Expected list response from {url}, got error: {msg}"
+            )
         if not isinstance(data, list) or not data:
             break
         results.extend(data)
@@ -66,47 +71,55 @@ def get_all_pages(url, token=None):
 
 
 def fetch_repos(token=None):
-    """Fetch all public repos for the organization."""
+    """Fetch all public repos for the organization.
+
+    Raises urllib.error.URLError on API failure.
+    """
     url = f"{API_URL}/orgs/{ORG}/repos?type=public"
-    try:
-        return get_all_pages(url, token)
-    except urllib.error.URLError as exc:
-        print(f"Error: Failed to fetch repositories: {exc}", file=sys.stderr)
-        return []
+    return get_all_pages(url, token)
 
 
 def fetch_contributors(repo_name, token=None):
-    """Fetch contributors for a single repo."""
+    """Fetch contributors for a single repo.
+
+    Raises urllib.error.URLError on API failure.
+    """
     url = f"{API_URL}/repos/{ORG}/{repo_name}/contributors?anon=0"
-    try:
-        return get_all_pages(url, token)
-    except urllib.error.URLError as exc:
-        print(f"Warning: Failed to fetch contributors for {repo_name}: {exc}")
-        return []
+    return get_all_pages(url, token)
 
 
 def build_leaderboard(token=None):
-    """Aggregate contributor commits across all repos and return sorted list."""
+    """Aggregate contributor commits across all repos and return sorted list.
+
+    Raises urllib.error.URLError if the repo listing fails.
+    Returns (sorted_contributors, had_errors) where had_errors indicates
+    whether any per-repo API failures occurred.
+    """
     repos = fetch_repos(token)
     contributors = {}
+    had_errors = False
 
     for repo in repos:
         if repo.get("fork"):
             continue
         repo_name = repo["name"]
         print(f"Fetching contributors for {repo_name}...")
-        for contrib in fetch_contributors(repo_name, token):
-            login = contrib.get("login", "")
-            if not login or contrib.get("type") == "Bot":
-                continue
-            if login not in contributors:
-                contributors[login] = {"commits": 0, "login": login}
-            contributors[login]["commits"] += contrib.get("contributions", 0)
+        try:
+            for contrib in fetch_contributors(repo_name, token):
+                login = contrib.get("login", "")
+                if not login or contrib.get("type") == "Bot":
+                    continue
+                if login not in contributors:
+                    contributors[login] = {"commits": 0, "login": login}
+                contributors[login]["commits"] += contrib.get("contributions", 0)
+        except urllib.error.URLError as exc:
+            print(f"Warning: Failed to fetch contributors for {repo_name}: {exc}")
+            had_errors = True
 
     sorted_contributors = sorted(
         contributors.values(), key=lambda c: c["commits"], reverse=True
     )
-    return sorted_contributors
+    return sorted_contributors, had_errors
 
 
 def generate_markdown(contributors):
@@ -163,10 +176,18 @@ def main():
     if not token:
         print("Warning: GITHUB_TOKEN not set. API rate limits will be very low.")
 
-    contributors = build_leaderboard(token)
-    if not contributors:
-        print("No contributors found.", file=sys.stderr)
+    try:
+        contributors, had_errors = build_leaderboard(token)
+    except urllib.error.URLError as exc:
+        print(f"Error: API failure while fetching data: {exc}", file=sys.stderr)
         sys.exit(1)
+
+    if not contributors:
+        if had_errors:
+            print("Error: No contributors found due to API failures.", file=sys.stderr)
+            sys.exit(1)
+        print("No contributors found. The organization may have no public repos or contributors.")
+        sys.exit(0)
 
     leaderboard_md = generate_markdown(contributors)
     update_readme(leaderboard_md)
