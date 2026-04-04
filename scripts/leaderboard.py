@@ -394,6 +394,33 @@ def compute_longest_streak(commit_dates):
     return longest
 
 
+def compute_current_streak(commit_dates, today=None):
+    """Return the current active consecutive-day streak ending today or yesterday.
+
+    If the contributor committed today, the streak counts backwards from today.
+    If they last committed yesterday, the streak counts backwards from
+    yesterday.  Otherwise the current streak is 0.
+    """
+    if not commit_dates:
+        return 0
+    if today is None:
+        today = date.today()
+    dates_set = set(commit_dates)
+    # The streak must touch today or yesterday to be "active"
+    if today in dates_set:
+        start = today
+    elif (today - timedelta(days=1)) in dates_set:
+        start = today - timedelta(days=1)
+    else:
+        return 0
+    streak = 0
+    day = start
+    while day in dates_set:
+        streak += 1
+        day -= timedelta(days=1)
+    return streak
+
+
 def get_achievements(contributor):
     """Return a list of ``(emoji, label)`` tuples the contributor has earned."""
     return [
@@ -626,11 +653,22 @@ def build_leaderboard(token=None):
     sorted_keys = _sorted_level_keys(levels_lookup)
 
     # Compute gamification stats for each contributor
+    today = date.today()
     for contrib in contributors.values():
         contrib["repos_count"] = len(contrib["repos"])
-        contrib["longest_streak"] = compute_longest_streak(
-            contrib["commit_dates"]
+        contrib["repo_names"] = sorted(contrib["repos"])
+        commit_dates = contrib["commit_dates"]
+        contrib["longest_streak"] = compute_longest_streak(commit_dates)
+        contrib["current_streak"] = compute_current_streak(
+            commit_dates, today=today,
         )
+        contrib["days_active"] = len(commit_dates)
+        if commit_dates:
+            contrib["first_commit_date"] = min(commit_dates).isoformat()
+            contrib["last_commit_date"] = max(commit_dates).isoformat()
+        else:
+            contrib["first_commit_date"] = "—"
+            contrib["last_commit_date"] = "—"
         level_info = compute_level(
             contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
         )
@@ -658,6 +696,7 @@ def build_leaderboard(token=None):
 def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
+    total = len(contributors)
 
     lines = [
         "",
@@ -677,9 +716,11 @@ def generate_markdown(contributors, levels_data):
         level_emoji = contrib["level_emoji"]
         level_title = contrib["level_title"]
         level_rarity = contrib["level_rarity"]
-        streak = contrib["longest_streak"]
+        longest_streak = contrib["longest_streak"]
+        current_streak = contrib["current_streak"]
         achievements = contrib["achievements"]
         points = contrib["points"]
+        repos_count = contrib["repos_count"]
 
         badge = rank_badges.get(i, "")
         rank = f"{i} {badge}" if badge else str(i)
@@ -687,15 +728,30 @@ def generate_markdown(contributors, levels_data):
         rarity_indicator = RARITY_INDICATORS.get(level_rarity, "⬜")
         rarity_display = f"{rarity_indicator} {level_rarity}"
         prog = progress_bar(commits)
-        streak_display = f"⚡ {streak}d" if streak > 0 else "—"
-        badges = " ".join(emoji for emoji, _label in achievements)
-        if not badges:
+
+        # Streak: show current/longest when they differ
+        if current_streak > 0 and current_streak != longest_streak:
+            streak_display = f"⚡ {current_streak}d / 🏆 {longest_streak}d"
+        elif longest_streak > 0:
+            streak_display = f"⚡ {longest_streak}d"
+        else:
+            streak_display = "—"
+
+        # Badges with achievement count
+        ach_count = len(achievements)
+        badges_emojis = " ".join(emoji for emoji, _label in achievements)
+        if ach_count > 0:
+            badges = f"🏅×{ach_count} {badges_emojis}"
+        else:
             badges = "—"
+
         points_display = f"{points:,}"
 
+        # Commits with repo count annotation
         commits_display = f"✏️ {authored}"
         if coauthored > 0:
             commits_display += f" · 🤝 {coauthored}"
+        commits_display += f" · 📦 {repos_count}"
 
         lines.append(
             f"| {rank} | [@{login}](https://github.com/{login})"
@@ -704,9 +760,56 @@ def generate_markdown(contributors, levels_data):
             f" | {badges} | {points_display} |"
         )
 
-    # Gamification guide
     lines.append("")
     lines.append("</div>")
+    lines.append("")
+
+    # --- Extended Statistics table ---
+    lines.append("<details>")
+    lines.append('<summary><strong>📊 Extended Statistics</strong></summary>')
+    lines.append("")
+    lines.append(
+        "| Rank | Contributor | First Commit | Last Active"
+        " | Days Active | Commits/Day | Repo Breakdown | Percentile |"
+    )
+    lines.append(
+        "|------|-------------|:------------:|:-----------:"
+        "|:-----------:|:-----------:|----------------|:----------:|"
+    )
+    for i, contrib in enumerate(contributors, start=1):
+        login = contrib["login"]
+        first_date = contrib["first_commit_date"]
+        last_date = contrib["last_commit_date"]
+        days_active = contrib["days_active"]
+        commits = contrib["commits"]
+        cpd = f"{commits / days_active:.1f}" if days_active > 0 else "—"
+        pctile = max(1, round(100 * (total - i + 1) / total)) if total > 0 else 100
+
+        # Repo breakdown
+        breakdown_parts = []
+        site_c = contrib["site_commits"]
+        dg_c = contrib["dotgithub_commits"]
+        other_c = commits - site_c - dg_c
+        if site_c > 0:
+            breakdown_parts.append(f"🌐 {site_c}")
+        if dg_c > 0:
+            breakdown_parts.append(f"⚙️ {dg_c}")
+        if other_c > 0:
+            breakdown_parts.append(f"📁 {other_c}")
+        breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
+
+        lines.append(
+            f"| {i} | [@{login}](https://github.com/{login})"
+            f" | {first_date} | {last_date}"
+            f" | {days_active} | {cpd}"
+            f" | {breakdown} | Top {pctile}% |"
+        )
+    lines.append("")
+    lines.append(
+        "> 🌐 = site commits · ⚙️ = .github commits · 📁 = other repos"
+    )
+    lines.append("")
+    lines.append("</details>")
     lines.append("")
     lines.append("<details>")
     lines.append('<summary><strong>🎮 Gamification Guide</strong></summary>')
@@ -777,6 +880,31 @@ def generate_markdown(contributors, levels_data):
         if bonus > 0:
             ri = RARITY_INDICATORS.get(rarity, "")
             lines.append(f"| {ri} {rarity.title()} rarity bonus | +{bonus} |")
+    lines.append("")
+    lines.append("#### Extended Statistics")
+    lines.append("")
+    lines.append(
+        "The **📊 Extended Statistics** section (above) provides "
+        "additional per-contributor metrics:"
+    )
+    lines.append("")
+    lines.append("| Stat | Description |")
+    lines.append("|------|-------------|")
+    lines.append("| First Commit | Date of the contributor's earliest commit |")
+    lines.append("| Last Active | Date of the contributor's most recent commit |")
+    lines.append("| Days Active | Total unique days with at least one commit |")
+    lines.append("| Commits/Day | Average commits per active day |")
+    lines.append(
+        "| Repo Breakdown | Commits split by repository: "
+        "🌐 site · ⚙️ .github · 📁 other |"
+    )
+    lines.append("| Percentile | Contributor's ranking position as a percentile |")
+    lines.append("")
+    lines.append(
+        "The main table also shows: **📦** repo count in the Commits "
+        "column, **⚡/🏆** current vs longest streak, and **🏅×N** "
+        "achievement count alongside badges."
+    )
     lines.append("")
     lines.append("</details>")
     lines.append("")
