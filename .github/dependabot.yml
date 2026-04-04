@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cool-down:
+      default: 7
     groups:
       github-actions-dependencies:
         patterns:
