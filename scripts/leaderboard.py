@@ -722,12 +722,32 @@ def _badge_escape(text):
     return text.replace("-", "--").replace("_", "__")
 
 
-def generate_sponsors_html(contributors):
+def has_sponsors_page(login, token=None):
+    """Check whether *login* has an active GitHub Sponsors page.
+
+    Uses the ``GET /users/{login}`` endpoint and inspects the
+    ``has_sponsors_listing`` field added by the GitHub REST API (v2022-11-28).
+    Returns ``True`` if the user is sponsorable, ``False`` otherwise (including
+    on network/API errors so that a single failure doesn't block the whole
+    sponsors section).
+    """
+    url = f"{API_URL}/users/{login}"
+    try:
+        data = gh_request(url, token)
+        if isinstance(data, dict):
+            return bool(data.get("has_sponsors_listing", False))
+    except urllib.error.URLError:
+        pass
+    return False
+
+
+def generate_sponsors_html(contributors, token=None):
     """Generate the HTML for the sponsors showcase buttons.
 
-    Takes the ranked contributor list and produces up to
-    :data:`MAX_SPONSOR_BUTTONS` shields.io badge buttons linking to each
-    contributor's GitHub Sponsors page.
+    Iterates through the ranked contributor list and checks each one for an
+    active GitHub Sponsors page.  Up to :data:`MAX_SPONSOR_BUTTONS`
+    sponsorable contributors are included.  Contributors without a sponsors
+    page are silently skipped.
 
     Returns the inner HTML (without the surrounding markers).
     """
@@ -748,6 +768,10 @@ def generate_sponsors_html(contributors):
         if shown >= MAX_SPONSOR_BUTTONS:
             break
         login = contrib["login"]
+        if not has_sponsors_page(login, token):
+            print(f"  Skipping {login} (rank {rank}): no GitHub Sponsors page")
+            continue
+        print(f"  Including {login} (rank {rank}): has GitHub Sponsors page")
         badge_color, label_color = _SPONSOR_COLORS[
             shown % len(_SPONSOR_COLORS)
         ]
@@ -1065,7 +1089,8 @@ def main():
         sys.exit(0)
 
     leaderboard_md = generate_markdown(contributors, levels_data)
-    sponsors_html = generate_sponsors_html(contributors)
+    print("Checking GitHub Sponsors status for top contributors...")
+    sponsors_html = generate_sponsors_html(contributors, token=token)
     update_readme(leaderboard_md, sponsors_html=sponsors_html)
     print(f"Leaderboard updated with {len(contributors)} contributors.")
 
