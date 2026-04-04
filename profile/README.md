@@ -40,9 +40,9 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🧹 Lv.276 East Blue Cabin Boy | ⬜ common | 276 | `[██████░░]` 76% → 300 | ⚡ 5d | 🎯 🌐 💪 🚀 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 💪 🚀 🟦 🟪 🟧 |
-| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | ⚔️ Lv.281 Santoryu Master | 🟪 epic | 281 | `[██████░░]` 81% → 300 | ⚡ 5d | 🎯 🌐 💪 🚀 🟦 🟪 🟧 🟥 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | 178 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🎯 💪 🚀 🟦 🟪 🟧 🟥 |
+| 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | 14 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🎯 🟦 🟪 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | 7 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🎯 🟦 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🎯 |
 | 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | 5 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🎯 |
