@@ -170,8 +170,8 @@ def compute_level(commits):
         if commits >= min_commits:
             next_level_min = LEVELS[i - 1][0] if i > 0 else None
             return emoji, title, min_commits, next_level_min
-    # Should not happen since the lowest level starts at 1
-    return "🌱", "Seedling", 1, LEVELS[-1][0]
+    # Handle commit counts below the lowest defined threshold.
+    return "🌱", "Seedling", 0, LEVELS[-1][0]
 
 
 def compute_longest_streak(commit_dates):
@@ -194,7 +194,7 @@ def get_achievements(contributor):
     """Return a list of ``(emoji, label)`` tuples the contributor has earned."""
     return [
         (emoji, label)
-        for emoji, label, desc, check in ACHIEVEMENTS
+        for emoji, label, _desc, check in ACHIEVEMENTS
         if check(contributor)
     ]
 
