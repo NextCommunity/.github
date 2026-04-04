@@ -3,7 +3,9 @@
 import os
 import re
 import sys
+import time
 import urllib.error
+import urllib.parse
 import urllib.request
 import json
 from bisect import bisect_right
@@ -20,6 +22,13 @@ SPONSORS_END = "<!-- SPONSORS:END -->"
 
 # Maximum number of sponsor buttons to show in the showcase section.
 MAX_SPONSOR_BUTTONS = 5
+# Only check the top N contributors for sponsors eligibility to avoid
+# excessive API calls.  Most sponsorable contributors will be near the top.
+MAX_SPONSOR_SCAN_DEPTH = 50
+# Path for caching sponsors eligibility results between runs.
+SPONSORS_CACHE_PATH = os.path.join(
+    os.path.dirname(__file__), "..", ".sponsors_cache.json"
+)
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
 
@@ -722,6 +731,31 @@ def _badge_escape(text):
     return text.replace("-", "--").replace("_", "__")
 
 
+def _load_sponsors_cache():
+    """Load the sponsors eligibility cache from disk.
+
+    Returns a dict mapping GitHub login to a cached boolean result.
+    Returns an empty dict if the cache file does not exist or is invalid.
+    """
+    try:
+        with open(SPONSORS_CACHE_PATH, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+            if isinstance(data, dict):
+                return data
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        pass
+    return {}
+
+
+def _save_sponsors_cache(cache):
+    """Persist the sponsors eligibility cache to disk."""
+    try:
+        with open(SPONSORS_CACHE_PATH, "w", encoding="utf-8") as fh:
+            json.dump(cache, fh, indent=2, sort_keys=True)
+    except OSError as exc:
+        print(f"  Warning: could not write sponsors cache: {exc}")
+
+
 def has_sponsors_page(login, token=None):
     """Check whether *login* has an active GitHub Sponsors page.
 
@@ -744,10 +778,14 @@ def has_sponsors_page(login, token=None):
 def generate_sponsors_html(contributors, token=None):
     """Generate the HTML for the sponsors showcase buttons.
 
-    Iterates through the ranked contributor list and checks each one for an
-    active GitHub Sponsors page.  Up to :data:`MAX_SPONSOR_BUTTONS`
-    sponsorable contributors are included.  Contributors without a sponsors
-    page are silently skipped.
+    Iterates through the top :data:`MAX_SPONSOR_SCAN_DEPTH` ranked
+    contributors and checks each one for an active GitHub Sponsors page.
+    Up to :data:`MAX_SPONSOR_BUTTONS` sponsorable contributors are included.
+    Inclusion and skip decisions are logged with ``print``.
+
+    Previously cached eligibility results are loaded from
+    :data:`SPONSORS_CACHE_PATH` and re-used to avoid redundant API calls.
+    New results are written back to the cache after scanning.
 
     Returns the inner HTML (without the surrounding markers).
     """
@@ -763,12 +801,21 @@ def generate_sponsors_html(contributors, token=None):
         '  <p>',
     ]
 
+    cache = _load_sponsors_cache()
     shown = 0
-    for rank, contrib in enumerate(contributors, start=1):
+    for rank, contrib in enumerate(contributors[:MAX_SPONSOR_SCAN_DEPTH], start=1):
         if shown >= MAX_SPONSOR_BUTTONS:
             break
         login = contrib["login"]
-        if not has_sponsors_page(login, token):
+        # Use cache when available; otherwise query the API.
+        if login in cache:
+            eligible = cache[login]
+        else:
+            eligible = has_sponsors_page(login, token)
+            cache[login] = eligible
+            # Brief pause between uncached API calls to be polite.
+            time.sleep(0.25)
+        if not eligible:
             print(f"  Skipping {login} (rank {rank}): no GitHub Sponsors page")
             continue
         print(f"  Including {login} (rank {rank}): has GitHub Sponsors page")
@@ -777,18 +824,22 @@ def generate_sponsors_html(contributors, token=None):
         ]
         rank_label = rank_badges.get(rank, "🏅")
         escaped = _badge_escape(login)
+        label = urllib.parse.quote(f"💖_Sponsor_{escaped}", safe="")
+        message = urllib.parse.quote(f"{rank_label}_Rank_{rank}", safe="")
         badge_url = (
             f"https://img.shields.io/badge/"
-            f"💖_Sponsor_{escaped}-{rank_label}_Rank_{rank}-"
+            f"{label}-{message}-"
             f"{badge_color}?style=for-the-badge&labelColor={label_color}"
         )
         link = f"https://github.com/sponsors/{login}"
-        sep = "" if shown == MAX_SPONSOR_BUTTONS - 1 else "<br>"
+        if shown > 0:
+            lines.append('    <br>')
         lines.append(
             f'    <a href="{link}">\n'
-            f'      <img src="{badge_url}" alt="Sponsor {login}"></a>{sep}'
+            f'      <img src="{badge_url}" alt="Sponsor {login}"></a>'
         )
         shown += 1
+    _save_sponsors_cache(cache)
 
     lines.append('  </p>')
     return "\n".join(lines)
