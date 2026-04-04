@@ -22,10 +22,31 @@ def gh_request(url, token=None):
     if token:
         headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            status = getattr(resp, "status", None)
+            body = resp.read()
+    except urllib.error.HTTPError as exc:
+        error_body = exc.read().decode("utf-8", errors="replace").strip()
+        message = f"GitHub API request failed with status {exc.code} for {url}"
+        if error_body:
+            message = f"{message}: {error_body}"
+        raise urllib.error.URLError(message) from exc
 
+    if status is not None and not 200 <= status < 300:
+        raise urllib.error.URLError(
+            f"GitHub API request returned unexpected status {status} for {url}"
+        )
 
+    if not body.strip():
+        return {}
+
+    try:
+        return json.loads(body)
+    except json.JSONDecodeError as exc:
+        raise urllib.error.URLError(
+            f"Failed to decode JSON response from {url}: {exc}"
+        ) from exc
 def get_all_pages(url, token=None):
     """Paginate through all results for a GitHub API endpoint."""
     results = []
