@@ -736,7 +736,7 @@ def _badge_escape(text):
     """Escape characters that are special in shields.io badge URLs.
 
     Shields.io uses ``-`` as a separator and ``_`` as a space.  Literal
-    hyphens must be doubled and underscores escaped.
+    hyphens must be doubled and literal underscores must be doubled too.
     """
     return text.replace("-", "--").replace("_", "__")
 
