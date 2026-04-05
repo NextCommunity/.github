@@ -20,15 +20,19 @@
   </p>
   <p>
     <a href="https://github.com/sponsors/jbampton">
-      <img src="https://img.shields.io/badge/💖_Sponsor_jbampton-🥇_Rank_1-ff6b6b?style=for-the-badge&labelColor=feca57" alt="Sponsor jbampton"></a><br>
+      <img src="https://img.shields.io/badge/%F0%9F%92%96_Sponsor_jbampton-%F0%9F%A5%87_Rank_1-ff6b6b?style=for-the-badge&labelColor=feca57" alt="Sponsor jbampton"></a>
+    <br>
     <a href="https://github.com/sponsors/BaseMax">
-      <img src="https://img.shields.io/badge/💖_Sponsor_BaseMax-🥈_Rank_2-ff9ff3?style=for-the-badge&labelColor=48dbfb" alt="Sponsor BaseMax"></a><br>
+      <img src="https://img.shields.io/badge/%F0%9F%92%96_Sponsor_BaseMax-%F0%9F%A5%88_Rank_2-ff9ff3?style=for-the-badge&labelColor=48dbfb" alt="Sponsor BaseMax"></a>
+    <br>
     <a href="https://github.com/sponsors/Subham-KRLX">
-      <img src="https://img.shields.io/badge/💖_Sponsor_Subham--KRLX-🏅_Rank_5-54a0ff?style=for-the-badge&labelColor=5f27cd" alt="Sponsor Subham-KRLX"></a><br>
+      <img src="https://img.shields.io/badge/%F0%9F%92%96_Sponsor_Subham--KRLX-%F0%9F%8F%85_Rank_5-54a0ff?style=for-the-badge&labelColor=5f27cd" alt="Sponsor Subham-KRLX"></a>
+    <br>
     <a href="https://github.com/sponsors/basalumutgazi">
-      <img src="https://img.shields.io/badge/💖_Sponsor_basalumutgazi-🏅_Rank_6-ee5a24?style=for-the-badge&labelColor=10ac84" alt="Sponsor basalumutgazi"></a><br>
+      <img src="https://img.shields.io/badge/%F0%9F%92%96_Sponsor_basalumutgazi-%F0%9F%8F%85_Rank_6-ee5a24?style=for-the-badge&labelColor=10ac84" alt="Sponsor basalumutgazi"></a>
+    <br>
     <a href="https://github.com/sponsors/anufdo">
-      <img src="https://img.shields.io/badge/💖_Sponsor_anufdo-🏅_Rank_15-0abde3?style=for-the-badge&labelColor=f368e0" alt="Sponsor anufdo"></a>
+      <img src="https://img.shields.io/badge/%F0%9F%92%96_Sponsor_anufdo-%F0%9F%8F%85_Rank_15-0abde3?style=for-the-badge&labelColor=f368e0" alt="Sponsor anufdo"></a>
   </p>
 <!-- SPONSORS:END -->
 </div>

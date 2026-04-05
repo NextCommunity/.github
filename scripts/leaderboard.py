@@ -26,9 +26,19 @@ MAX_SPONSOR_BUTTONS = 5
 # excessive API calls.  Most sponsorable contributors will be near the top.
 MAX_SPONSOR_SCAN_DEPTH = 50
 # Path for caching sponsors eligibility results between runs.
-SPONSORS_CACHE_PATH = os.path.join(
-    os.path.dirname(__file__), "..", ".sponsors_cache.json"
-)
+# In GitHub Actions the workspace is recreated each run, so place the cache
+# in RUNNER_TEMP (per-job temp dir) to make it explicit it is single-run only.
+# For local runs the cache lives next to the repo root for reuse between runs.
+_SPONSORS_CACHE_FILENAME = ".sponsors_cache.json"
+if os.environ.get("GITHUB_ACTIONS") == "true":
+    SPONSORS_CACHE_PATH = os.path.join(
+        os.environ.get("RUNNER_TEMP", os.path.dirname(__file__)),
+        _SPONSORS_CACHE_FILENAME,
+    )
+else:
+    SPONSORS_CACHE_PATH = os.path.join(
+        os.path.dirname(__file__), "..", _SPONSORS_CACHE_FILENAME
+    )
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
 
@@ -735,13 +745,19 @@ def _load_sponsors_cache():
     """Load the sponsors eligibility cache from disk.
 
     Returns a dict mapping GitHub login to a cached boolean result.
+    Only entries with a string key and a boolean value are kept; corrupted
+    or invalid entries are silently dropped.
     Returns an empty dict if the cache file does not exist or is invalid.
     """
     try:
         with open(SPONSORS_CACHE_PATH, "r", encoding="utf-8") as fh:
             data = json.load(fh)
             if isinstance(data, dict):
-                return data
+                return {
+                    login: eligible
+                    for login, eligible in data.items()
+                    if isinstance(login, str) and isinstance(eligible, bool)
+                }
     except (FileNotFoundError, json.JSONDecodeError, OSError):
         pass
     return {}
@@ -761,17 +777,25 @@ def has_sponsors_page(login, token=None):
 
     Uses the ``GET /users/{login}`` endpoint and inspects the
     ``has_sponsors_listing`` field from the GitHub REST API.
-    Returns ``True`` if the user is sponsorable, ``False`` otherwise (including
-    on network/API errors so that a single failure doesn't block the whole
-    sponsors section).
+
+    Returns ``True`` if the user is sponsorable, ``False`` if the user
+    definitively has no sponsors listing (including a 404 response).
+    Raises :exc:`urllib.error.URLError` on transient errors (rate limits,
+    network failures, etc.) so that the caller can avoid caching incorrect
+    results.
     """
     url = f"{API_URL}/users/{login}"
     try:
         data = gh_request(url, token)
         if isinstance(data, dict):
             return bool(data.get("has_sponsors_listing", False))
-    except urllib.error.URLError:
-        pass
+    except urllib.error.URLError as exc:
+        # A 404 means the user account was not found — treat as not sponsorable.
+        # All other errors are transient and should be propagated to the caller.
+        cause = getattr(exc, "__cause__", None)
+        if isinstance(cause, urllib.error.HTTPError) and cause.code == 404:
+            return False
+        raise
     return False
 
 
@@ -811,10 +835,19 @@ def generate_sponsors_html(contributors, token=None):
         if login in cache:
             eligible = cache[login]
         else:
-            eligible = has_sponsors_page(login, token)
-            cache[login] = eligible
-            # Brief pause between uncached API calls to be polite.
-            time.sleep(0.25)
+            try:
+                eligible = has_sponsors_page(login, token)
+                # Only cache confirmed positive results.  Negative results are
+                # re-checked on every run so that users who later enable Sponsors
+                # are picked up automatically.  Errors are never cached so that
+                # a transient failure doesn't permanently suppress a sponsor.
+                if eligible:
+                    cache[login] = eligible
+                # Brief pause between uncached API calls to be polite.
+                time.sleep(0.25)
+            except urllib.error.URLError as exc:
+                print(f"  Warning: could not check sponsors for {login}: {exc}")
+                continue
         if not eligible:
             print(f"  Skipping {login} (rank {rank}): no GitHub Sponsors page")
             continue
@@ -844,6 +877,9 @@ def generate_sponsors_html(contributors, token=None):
         )
         shown += 1
     _save_sponsors_cache(cache)
+
+    if shown == 0:
+        return ""
 
     lines.append('  </p>')
     return "\n".join(lines)
