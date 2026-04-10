@@ -19,9 +19,14 @@ SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
 
 # Self-documenting record for each commit entry collected across all repos.
+# ``author_login`` is set to the primary author's login on co-author records
+# so that Phase 2 can detect and skip "self co-authorships" (the same person
+# listed as both the commit author and a Co-authored-by trailer with a
+# different email alias).
 CommitRecord = namedtuple(
     "CommitRecord",
-    ["login", "email", "is_bot", "repo_name", "commit_date", "is_coauthor"],
+    ["login", "email", "is_bot", "repo_name", "commit_date", "is_coauthor", "author_login"],
+    defaults=[None],
 )
 
 # URL for the canonical level definitions shared with the website.
@@ -581,6 +586,7 @@ def build_leaderboard(token=None):
                             repo_name=repo_name,
                             commit_date=commit_date,
                             is_coauthor=True,
+                            author_login=login,
                         ))
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
@@ -621,6 +627,15 @@ def build_leaderboard(token=None):
             or resolved.lower() in bot_logins
             or rec.email in bot_emails
         ):
+            continue
+
+        # Skip "self co-authorships": a commit where the primary author is
+        # also listed as a Co-authored-by trailer using a different email
+        # alias (e.g. their noreply email vs their real email).  Without
+        # this guard, jbampton – or any contributor with multiple email
+        # addresses – would be counted as both author and co-author for
+        # every such commit, inflating coauthored_commits incorrectly.
+        if rec.is_coauthor and rec.author_login and resolved.lower() == rec.author_login.lower():
             continue
 
         if resolved not in contributors:
