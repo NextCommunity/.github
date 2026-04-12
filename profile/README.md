@@ -40,7 +40,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 👜 Lv.316 Bag of Holding | 🟦 rare | ✏️ 179 · 🤝 137 · 📦 2 | `[█░░░░░░░]` 16% → 400 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,630 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 👜 Lv.316 Bag of Holding | 🟦 rare | ✏️ 179 · 🤝 137 · 📦 2 | `[█░░░░░░░]` 16% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 3,630 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👑 Lv.178 Sith Emperor | 🟧 legendary | ✏️ 177 · 🤝 1 · 📦 1 | `[████░░░░]` 56% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,175 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
