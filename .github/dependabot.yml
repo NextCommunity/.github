@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cool-down:
+      default: 7
+    groups:
+      github-actions-dependencies:
+        patterns:
+          - "*"
