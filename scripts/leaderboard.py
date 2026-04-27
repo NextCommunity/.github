@@ -716,10 +716,12 @@ def _contributor_cell(login):
     """Return a pure-HTML table cell with avatar and username link.
 
     ``login`` is validated against GitHub's username pattern before use.
-    Raises ``ValueError`` if the login contains unexpected characters.
+    Returns ``None`` and logs a warning if the login contains unexpected
+    characters, so callers can skip the row rather than crashing.
     """
     if not _GITHUB_LOGIN_RE.match(login):
-        raise ValueError(f"Invalid GitHub login: {login!r}")
+        print(f"WARNING: skipping contributor with invalid GitHub login: {login!r}")
+        return None
     safe_login = urllib.parse.quote(login, safe="")
     escaped_login = html.escape(login)
     return (
@@ -791,6 +793,8 @@ def generate_markdown(contributors, levels_data):
         commits_display += f" · 📦 {repos_count}"
 
         contributor_cell = _contributor_cell(login)
+        if contributor_cell is None:
+            continue
         lines.append(
             f"| {rank} | {contributor_cell}"
             f" | {level} | {rarity_display} | {commits_display}"
@@ -837,6 +841,8 @@ def generate_markdown(contributors, levels_data):
         breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
 
         contributor_cell = _contributor_cell(login)
+        if contributor_cell is None:
+            continue
         lines.append(
             f"| {i} | {contributor_cell}"
             f" | {first_date} | {last_date}"
