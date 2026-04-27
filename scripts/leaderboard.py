@@ -1,9 +1,11 @@
 """Fetch contributor stats from all NextCommunity repos and update the leaderboard."""
 
+import html
 import os
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 import json
 from bisect import bisect_right
@@ -16,6 +18,9 @@ README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.m
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 SITE_REPO_NAME = "NextCommunity.github.io"
+
+# GitHub usernames: alphanumeric and single hyphens, 1-39 characters.
+_GITHUB_LOGIN_RE = re.compile(r"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$")
 DOTGITHUB_REPO_NAME = ".github"
 
 # Self-documenting record for each commit entry collected across all repos.
@@ -708,12 +713,20 @@ def build_leaderboard(token=None):
 
 
 def _contributor_cell(login):
-    """Return a pure-HTML table cell with avatar and username link."""
+    """Return a pure-HTML table cell with avatar and username link.
+
+    ``login`` is validated against GitHub's username pattern before use.
+    Raises ``ValueError`` if the login contains unexpected characters.
+    """
+    if not _GITHUB_LOGIN_RE.match(login):
+        raise ValueError(f"Invalid GitHub login: {login!r}")
+    safe_login = urllib.parse.quote(login, safe="")
+    escaped_login = html.escape(login)
     return (
-        f'<a href="https://github.com/{login}">'
-        f'<img src="https://avatars.githubusercontent.com/{login}?s=64"'
-        f' width="32" height="32" alt="{login}\'s avatar"><br>'
-        f"@{login}</a>"
+        f'<a href="https://github.com/{safe_login}">'
+        f'<img src="https://avatars.githubusercontent.com/{safe_login}?s=64"'
+        f' width="32" height="32" alt="{escaped_login}\'s avatar"><br>'
+        f"@{escaped_login}</a>"
     )
 
 
