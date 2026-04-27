@@ -767,9 +767,13 @@ def generate_markdown(contributors, levels_data):
             commits_display += f" · 🤝 {coauthored}"
         commits_display += f" · 📦 {repos_count}"
 
-        avatar = f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
+        contributor_cell = (
+            f'<a href="https://github.com/{login}">'
+            f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
+            f"@{login}</a>"
+        )
         lines.append(
-            f"| {rank} | {avatar}[@{login}](https://github.com/{login})"
+            f"| {rank} | {contributor_cell}"
             f" | {level} | {rarity_display} | {commits_display}"
             f" | {prog} | {streak_display}"
             f" | {badges} | {points_display} |"
@@ -813,9 +817,13 @@ def generate_markdown(contributors, levels_data):
             breakdown_parts.append(f"📁 {other_c}")
         breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
 
-        avatar = f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
+        contributor_cell = (
+            f'<a href="https://github.com/{login}">'
+            f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
+            f"@{login}</a>"
+        )
         lines.append(
-            f"| {i} | {avatar}[@{login}](https://github.com/{login})"
+            f"| {i} | {contributor_cell}"
             f" | {first_date} | {last_date}"
             f" | {days_active} | {cpd}"
             f" | {breakdown} | Top {pctile}% |"
