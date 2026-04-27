@@ -707,6 +707,16 @@ def build_leaderboard(token=None):
     return sorted_contributors, had_errors, levels_data
 
 
+def _contributor_cell(login):
+    """Return a pure-HTML table cell with avatar and username link."""
+    return (
+        f'<a href="https://github.com/{login}">'
+        f'<img src="https://avatars.githubusercontent.com/{login}?s=64"'
+        f' width="32" height="32" alt="{login}\'s avatar"><br>'
+        f"@{login}</a>"
+    )
+
+
 def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
@@ -767,11 +777,7 @@ def generate_markdown(contributors, levels_data):
             commits_display += f" · 🤝 {coauthored}"
         commits_display += f" · 📦 {repos_count}"
 
-        contributor_cell = (
-            f'<a href="https://github.com/{login}">'
-            f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
-            f"@{login}</a>"
-        )
+        contributor_cell = _contributor_cell(login)
         lines.append(
             f"| {rank} | {contributor_cell}"
             f" | {level} | {rarity_display} | {commits_display}"
@@ -817,11 +823,7 @@ def generate_markdown(contributors, levels_data):
             breakdown_parts.append(f"📁 {other_c}")
         breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
 
-        contributor_cell = (
-            f'<a href="https://github.com/{login}">'
-            f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
-            f"@{login}</a>"
-        )
+        contributor_cell = _contributor_cell(login)
         lines.append(
             f"| {i} | {contributor_cell}"
             f" | {first_date} | {last_date}"
