@@ -19,8 +19,8 @@ LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 SITE_REPO_NAME = "NextCommunity.github.io"
 
-# GitHub usernames: alphanumeric and single hyphens, 1-39 characters.
-_GITHUB_LOGIN_RE = re.compile(r"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$")
+# GitHub usernames: 1-39 alphanumeric chars, interior single hyphens only (no consecutive hyphens).
+_GITHUB_LOGIN_RE = re.compile(r"^(?=.{1,39}$)[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$")
 DOTGITHUB_REPO_NAME = ".github"
 
 # Self-documenting record for each commit entry collected across all repos.
