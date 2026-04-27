@@ -767,7 +767,7 @@ def generate_markdown(contributors, levels_data):
             commits_display += f" · 🤝 {coauthored}"
         commits_display += f" · 📦 {repos_count}"
 
-        avatar = f'<img src="https://github.com/{login}.png" width="32" height="32"><br>'
+        avatar = f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
         lines.append(
             f"| {rank} | {avatar}[@{login}](https://github.com/{login})"
             f" | {level} | {rarity_display} | {commits_display}"
@@ -813,7 +813,7 @@ def generate_markdown(contributors, levels_data):
             breakdown_parts.append(f"📁 {other_c}")
         breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
 
-        avatar = f'<img src="https://github.com/{login}.png" width="32" height="32"><br>'
+        avatar = f'<img src="https://avatars.githubusercontent.com/{login}" width="32" height="32"><br>'
         lines.append(
             f"| {i} | {avatar}[@{login}](https://github.com/{login})"
             f" | {first_date} | {last_date}"
