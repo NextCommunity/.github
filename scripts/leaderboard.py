@@ -7,6 +7,7 @@ import urllib.error
 import urllib.request
 import json
 from bisect import bisect_right
+from collections import namedtuple
 from datetime import date, timedelta
 
 ORG = "NextCommunity"
@@ -16,6 +17,17 @@ LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 SITE_REPO_NAME = "NextCommunity.github.io"
 DOTGITHUB_REPO_NAME = ".github"
+
+# Self-documenting record for each commit entry collected across all repos.
+# ``author_login`` is set to the primary author's login on co-author records
+# so that Phase 2 can detect and skip "self co-authorships" (the same person
+# listed as both the commit author and a Co-authored-by trailer with a
+# different email alias).
+CommitRecord = namedtuple(
+    "CommitRecord",
+    ["login", "email", "is_bot", "repo_name", "commit_date", "is_coauthor", "author_login"],
+    defaults=[None],
+)
 
 # URL for the canonical level definitions shared with the website.
 LEVELS_JSON_URL = (
@@ -134,7 +146,7 @@ ACHIEVEMENTS = [
      lambda c: c["commits"] >= 50),
     ("🚀", "Rockstar", "Reach 100 commits",
      lambda c: c["commits"] >= 100),
-    ("🏅", "Quarter Master", "Reach 250 commits",
+    ("🛡️", "Quarter Master", "Reach 250 commits",
      lambda c: c["commits"] >= 250),
     ("⭐", "Superstar", "Reach 500 commits",
      lambda c: c["commits"] >= 500),
@@ -387,6 +399,33 @@ def compute_longest_streak(commit_dates):
     return longest
 
 
+def compute_current_streak(commit_dates, today=None):
+    """Return the current active consecutive-day streak ending today or yesterday.
+
+    If the contributor committed today, the streak counts backwards from today.
+    If they last committed yesterday, the streak counts backwards from
+    yesterday.  Otherwise the current streak is 0.
+    """
+    if not commit_dates:
+        return 0
+    if today is None:
+        today = date.today()
+    dates_set = commit_dates
+    # The streak must touch today or yesterday to be "active"
+    if today in dates_set:
+        start = today
+    elif (today - timedelta(days=1)) in dates_set:
+        start = today - timedelta(days=1)
+    else:
+        return 0
+    streak = 0
+    day = start
+    while day in dates_set:
+        streak += 1
+        day -= timedelta(days=1)
+    return streak
+
+
 def get_achievements(contributor):
     """Return a list of ``(emoji, label)`` tuples the contributor has earned."""
     return [
@@ -475,10 +514,10 @@ def build_leaderboard(token=None):
     repos = fetch_repos(token)
     had_errors = False
 
-    # Collect (login_or_none, email, is_bot, repo_name, commit_date) for
-    # every commit across all repos.  Co-authors extracted from commit
-    # messages are added as separate entries with login=None so they go
-    # through email→login resolution.
+    # Collect CommitRecord entries for every commit across all repos.
+    # Co-authors extracted from commit messages are added as separate
+    # entries with login=None and is_coauthor=True so they go through
+    # email→login resolution.
     all_commits = []
     # Track logins and emails identified as bots from API metadata so that
     # co-author entries resolving to the same identity are also excluded.
@@ -527,17 +566,28 @@ def build_leaderboard(token=None):
                     except ValueError:
                         pass
 
-                all_commits.append(
-                    (login, email, is_bot, repo_name, commit_date)
-                )
+                all_commits.append(CommitRecord(
+                    login=login,
+                    email=email,
+                    is_bot=is_bot,
+                    repo_name=repo_name,
+                    commit_date=commit_date,
+                    is_coauthor=False,
+                ))
 
                 # Credit co-authors from Co-authored-by trailers
                 message = commit_detail.get("message", "")
                 for co_email in parse_co_authors(message):
-                    if co_email != email:
-                        all_commits.append(
-                            (None, co_email, False, repo_name, commit_date)
-                        )
+                    if co_email != email and co_email not in bot_emails:
+                        all_commits.append(CommitRecord(
+                            login=None,
+                            email=co_email,
+                            is_bot=False,
+                            repo_name=repo_name,
+                            commit_date=commit_date,
+                            is_coauthor=True,
+                            author_login=login,
+                        ))
         except urllib.error.URLError as exc:
             print(f"Warning: Failed to fetch commits for {repo_name}: {exc}")
             had_errors = True
@@ -545,28 +595,28 @@ def build_leaderboard(token=None):
     # --- Phase 1: build email → login mapping ---
     email_to_login = dict(EMAIL_ALIASES)
 
-    for login, email, _, _repo, _date in all_commits:
-        if not email:
+    for rec in all_commits:
+        if not rec.email:
             continue
-        if login and email not in email_to_login:
-            email_to_login[email] = login
-        elif login and email in email_to_login and email_to_login[email] != login:
+        if rec.login and rec.email not in email_to_login:
+            email_to_login[rec.email] = rec.login
+        elif rec.login and rec.email in email_to_login and email_to_login[rec.email] != rec.login:
             print(
-                f"Warning: email {email} maps to both "
-                f"{email_to_login[email]} and {login}; keeping first"
+                f"Warning: email {rec.email} maps to both "
+                f"{email_to_login[rec.email]} and {rec.login}; keeping first"
             )
-        elif not login and email not in email_to_login:
-            resolved = resolve_login_from_noreply(email)
+        elif not rec.login and rec.email not in email_to_login:
+            resolved = resolve_login_from_noreply(rec.email)
             if resolved:
-                email_to_login[email] = resolved
+                email_to_login[rec.email] = resolved
 
     # --- Phase 2: count commits per resolved identity ---
     contributors = {}
-    for login, email, is_bot, repo_name, commit_date in all_commits:
-        if is_bot:
+    for rec in all_commits:
+        if rec.is_bot:
             continue
 
-        resolved = login or email_to_login.get(email)
+        resolved = rec.login or email_to_login.get(rec.email)
         if not resolved:
             continue
 
@@ -575,13 +625,24 @@ def build_leaderboard(token=None):
         if (
             resolved.endswith("[bot]")
             or resolved.lower() in bot_logins
-            or email in bot_emails
+            or rec.email in bot_emails
         ):
+            continue
+
+        # Skip "self co-authorships": a commit where the primary author is
+        # also listed as a Co-authored-by trailer using a different email
+        # alias (e.g. their noreply email vs their real email).  Without
+        # this guard, jbampton – or any contributor with multiple email
+        # addresses – would be counted as both author and co-author for
+        # every such commit, inflating coauthored_commits incorrectly.
+        if rec.is_coauthor and rec.author_login and resolved.lower() == rec.author_login.lower():
             continue
 
         if resolved not in contributors:
             contributors[resolved] = {
                 "commits": 0,
+                "authored_commits": 0,
+                "coauthored_commits": 0,
                 "site_commits": 0,
                 "dotgithub_commits": 0,
                 "login": resolved,
@@ -589,12 +650,16 @@ def build_leaderboard(token=None):
                 "commit_dates": set(),
             }
         contributors[resolved]["commits"] += 1
-        contributors[resolved]["repos"].add(repo_name)
-        if commit_date is not None:
-            contributors[resolved]["commit_dates"].add(commit_date)
-        if repo_name == SITE_REPO_NAME:
+        if rec.is_coauthor:
+            contributors[resolved]["coauthored_commits"] += 1
+        else:
+            contributors[resolved]["authored_commits"] += 1
+        contributors[resolved]["repos"].add(rec.repo_name)
+        if rec.commit_date is not None:
+            contributors[resolved]["commit_dates"].add(rec.commit_date)
+        if rec.repo_name == SITE_REPO_NAME:
             contributors[resolved]["site_commits"] += 1
-        elif repo_name == DOTGITHUB_REPO_NAME:
+        elif rec.repo_name == DOTGITHUB_REPO_NAME:
             contributors[resolved]["dotgithub_commits"] += 1
 
     # Fetch canonical level definitions
@@ -603,11 +668,21 @@ def build_leaderboard(token=None):
     sorted_keys = _sorted_level_keys(levels_lookup)
 
     # Compute gamification stats for each contributor
+    today = date.today()
     for contrib in contributors.values():
         contrib["repos_count"] = len(contrib["repos"])
-        contrib["longest_streak"] = compute_longest_streak(
-            contrib["commit_dates"]
+        commit_dates = contrib["commit_dates"]
+        contrib["longest_streak"] = compute_longest_streak(commit_dates)
+        contrib["current_streak"] = compute_current_streak(
+            commit_dates, today=today,
         )
+        contrib["days_active"] = len(commit_dates)
+        if commit_dates:
+            contrib["first_commit_date"] = min(commit_dates).isoformat()
+            contrib["last_commit_date"] = max(commit_dates).isoformat()
+        else:
+            contrib["first_commit_date"] = "—"
+            contrib["last_commit_date"] = "—"
         level_info = compute_level(
             contrib["commits"], levels_lookup, _sorted_keys=sorted_keys,
         )
@@ -635,6 +710,7 @@ def build_leaderboard(token=None):
 def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
+    total = len(contributors)
 
     lines = [
         "",
@@ -648,13 +724,17 @@ def generate_markdown(contributors, levels_data):
     for i, contrib in enumerate(contributors, start=1):
         login = contrib["login"]
         commits = contrib["commits"]
+        authored = contrib["authored_commits"]
+        coauthored = contrib["coauthored_commits"]
         level_num = contrib["level_num"]
         level_emoji = contrib["level_emoji"]
         level_title = contrib["level_title"]
         level_rarity = contrib["level_rarity"]
-        streak = contrib["longest_streak"]
+        longest_streak = contrib["longest_streak"]
+        current_streak = contrib["current_streak"]
         achievements = contrib["achievements"]
         points = contrib["points"]
+        repos_count = contrib["repos_count"]
 
         badge = rank_badges.get(i, "")
         rank = f"{i} {badge}" if badge else str(i)
@@ -662,22 +742,88 @@ def generate_markdown(contributors, levels_data):
         rarity_indicator = RARITY_INDICATORS.get(level_rarity, "⬜")
         rarity_display = f"{rarity_indicator} {level_rarity}"
         prog = progress_bar(commits)
-        streak_display = f"⚡ {streak}d" if streak > 0 else "—"
-        badges = " ".join(emoji for emoji, _label in achievements)
-        if not badges:
+
+        # Streak: show current/longest when they differ
+        if current_streak > 0 and current_streak != longest_streak:
+            streak_display = f"⚡ {current_streak}d / 🏆 {longest_streak}d"
+        elif longest_streak > 0:
+            streak_display = f"⚡ {longest_streak}d"
+        else:
+            streak_display = "—"
+
+        # Badges with achievement count
+        ach_count = len(achievements)
+        badges_emojis = " ".join(emoji for emoji, _label in achievements)
+        if ach_count > 0:
+            badges = f"🏅×{ach_count} {badges_emojis}"
+        else:
             badges = "—"
-        points_display = f"🏅 {points:,}"
+
+        points_display = f"{points:,}"
+
+        # Commits with repo count annotation
+        commits_display = f"✏️ {authored}"
+        if coauthored > 0:
+            commits_display += f" · 🤝 {coauthored}"
+        commits_display += f" · 📦 {repos_count}"
 
         lines.append(
             f"| {rank} | [@{login}](https://github.com/{login})"
-            f" | {level} | {rarity_display} | {commits}"
+            f" | {level} | {rarity_display} | {commits_display}"
             f" | {prog} | {streak_display}"
             f" | {badges} | {points_display} |"
         )
 
-    # Gamification guide
     lines.append("")
     lines.append("</div>")
+    lines.append("")
+
+    # --- Extended Statistics table ---
+    lines.append("<details>")
+    lines.append('<summary><strong>📊 Extended Statistics</strong></summary>')
+    lines.append("")
+    lines.append(
+        "| Rank | Contributor | First Commit | Last Active"
+        " | Days Active | Commits/Day | Repo Breakdown | Percentile |"
+    )
+    lines.append(
+        "|------|-------------|:------------:|:-----------:"
+        "|:-----------:|:-----------:|----------------|:----------:|"
+    )
+    for i, contrib in enumerate(contributors, start=1):
+        login = contrib["login"]
+        first_date = contrib["first_commit_date"]
+        last_date = contrib["last_commit_date"]
+        days_active = contrib["days_active"]
+        commits = contrib["commits"]
+        cpd = f"{commits / days_active:.1f}" if days_active > 0 else "—"
+        pctile = max(1, round(100 * i / total)) if total > 0 else 100
+
+        # Repo breakdown
+        breakdown_parts = []
+        site_c = contrib["site_commits"]
+        dg_c = contrib["dotgithub_commits"]
+        other_c = commits - site_c - dg_c
+        if site_c > 0:
+            breakdown_parts.append(f"🌐 {site_c}")
+        if dg_c > 0:
+            breakdown_parts.append(f"⚙️ {dg_c}")
+        if other_c > 0:
+            breakdown_parts.append(f"📁 {other_c}")
+        breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
+
+        lines.append(
+            f"| {i} | [@{login}](https://github.com/{login})"
+            f" | {first_date} | {last_date}"
+            f" | {days_active} | {cpd}"
+            f" | {breakdown} | Top {pctile}% |"
+        )
+    lines.append("")
+    lines.append(
+        "> 🌐 = site commits · ⚙️ = .github commits · 📁 = other repos"
+    )
+    lines.append("")
+    lines.append("</details>")
     lines.append("")
     lines.append("<details>")
     lines.append('<summary><strong>🎮 Gamification Guide</strong></summary>')
@@ -748,6 +894,34 @@ def generate_markdown(contributors, levels_data):
         if bonus > 0:
             ri = RARITY_INDICATORS.get(rarity, "")
             lines.append(f"| {ri} {rarity.title()} rarity bonus | +{bonus} |")
+    lines.append("")
+    lines.append("#### Extended Statistics")
+    lines.append("")
+    lines.append(
+        "The **📊 Extended Statistics** section (above) provides "
+        "additional per-contributor metrics:"
+    )
+    lines.append("")
+    lines.append("| Stat | Description |")
+    lines.append("|------|-------------|")
+    lines.append("| First Commit | Date of the contributor's earliest commit |")
+    lines.append("| Last Active | Date of the contributor's most recent commit |")
+    lines.append("| Days Active | Total unique days with at least one commit |")
+    lines.append(
+        "| Commits/Day | Average total commits (authored + co-authored) "
+        "per active day |"
+    )
+    lines.append(
+        "| Repo Breakdown | Commits split by repository: "
+        "🌐 site · ⚙️ .github · 📁 other |"
+    )
+    lines.append("| Percentile | Contributor's ranking position as a percentile |")
+    lines.append("")
+    lines.append(
+        "The main table also shows: **📦** repo count in the Commits "
+        "column, **⚡/🏆** current vs longest streak, and **🏅×N** "
+        "achievement count alongside badges."
+    )
     lines.append("")
     lines.append("</details>")
     lines.append("")
