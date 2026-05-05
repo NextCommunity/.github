@@ -36,7 +36,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🐻 Lv.368 Stormcloak Rebel | 🟦 rare | ✏️ 192 · 🤝 176 · 📦 2 | `[█████░░░]` 68% → 400 | ⚡ 3d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,150 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🐻 Lv.368 Stormcloak Rebel | 🟦 rare | ✏️ 192 · 🤝 176 · 📦 2 | `[█████░░░]` 68% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,150 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌎 Lv.179 World Eater | 🟥 mythic | ✏️ 177 · 🤝 2 · 📦 1 | `[████░░░░]` 58% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,185 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
