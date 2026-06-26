@@ -20,6 +20,7 @@
 <hr>
 
 <div align="center">
+  <h2>Join The Multi-Project Discord Server</h2>
   <p>
     <a href="https://discord.gg/hKUH56YHXp">
       <img src="https://img.shields.io/badge/metropolis_retro-discord-lightgreen?style=for-the-badge&labelColor=orange" alt="Join the Metropolis Discord"></a>
