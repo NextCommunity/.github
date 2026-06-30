@@ -37,8 +37,8 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🌙 Lv.379 Moon-and-Star | 🟧 legendary | ✏️ 200 · 🤝 179 · 📦 2 | `[██████░░]` 79% → 400 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,260 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌌 Lv.188 World Between Worlds | 🟥 mythic | ✏️ 182 · 🤝 6 · 📦 1 | `[██████░░]` 76% → 200 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,275 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🌙 Lv.379 Moon-and-Star | 🟧 legendary | ✏️ 200 · 🤝 179 · 📦 2 | `[██████░░]` 79% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,260 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌌 Lv.188 World Between Worlds | 🟥 mythic | ✏️ 182 · 🤝 6 · 📦 1 | `[██████░░]` 76% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,275 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🏅×4 🎯 ✋ ⬜ 🟩 | 130 |
