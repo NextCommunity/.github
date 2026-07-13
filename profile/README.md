@@ -38,7 +38,7 @@
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
 | 1 🥇 | [@jbampton](https://github.com/jbampton) | 🏛️ Lv.380 Tribunal Member | 🟥 mythic | ✏️ 200 · 🤝 180 · 📦 2 | `[██████░░]` 80% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,270 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌌 Lv.188 World Between Worlds | 🟥 mythic | ✏️ 182 · 🤝 6 · 📦 1 | `[██████░░]` 76% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,275 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👁️ Lv.189 Cosmic Sentinel | 🟧 legendary | ✏️ 182 · 🤝 7 · 📦 1 | `[██████░░]` 78% → 200 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,285 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🏅×4 🎯 ✋ ⬜ 🟩 | 130 |
@@ -126,7 +126,7 @@
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
 | 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-07-06 | 61 | 6.2 | 🌐 284 · ⚙️ 96 | Top 1% |
-| 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-06-28 | 64 | 2.9 | 🌐 188 | Top 2% |
+| 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-07-12 | 65 | 2.9 | 🌐 189 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 4% |
 | 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 5% |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-01-29 | 3 | 1.7 | 🌐 5 | Top 6% |
