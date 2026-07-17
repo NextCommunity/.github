@@ -37,7 +37,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🏛️ Lv.380 Tribunal Member | 🟥 mythic | ✏️ 200 · 🤝 180 · 📦 2 | `[██████░░]` 80% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,270 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 📜 Lv.381 Vivec's Poet | 🟧 legendary | ✏️ 200 · 🤝 181 · 📦 2 | `[██████░░]` 81% → 400 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,280 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👁️ Lv.189 Cosmic Sentinel | 🟧 legendary | ✏️ 182 · 🤝 7 · 📦 1 | `[██████░░]` 78% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,285 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
@@ -62,61 +62,62 @@
 | 23 | [@abdorah](https://github.com/abdorah) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 24 | [@VictorAraica](https://github.com/VictorAraica) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 25 | [@ajakov](https://github.com/ajakov) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 26 | [@louzt](https://github.com/louzt) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 27 | [@surbhibadhe](https://github.com/surbhibadhe) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 28 | [@SaishWadnere](https://github.com/SaishWadnere) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 29 | [@GulshanJha00](https://github.com/GulshanJha00) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 30 | [@2005rishabh](https://github.com/2005rishabh) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 31 | [@SyeddTaha](https://github.com/SyeddTaha) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 32 | [@okxint](https://github.com/okxint) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 33 | [@muntasiractive](https://github.com/muntasiractive) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 34 | [@DipendraChandel](https://github.com/DipendraChandel) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 35 | [@HITMAN5050](https://github.com/HITMAN5050) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 36 | [@BDadmehr0](https://github.com/BDadmehr0) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 37 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 38 | [@kaifansariw](https://github.com/kaifansariw) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 39 | [@nikultaka](https://github.com/nikultaka) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 40 | [@arthsaAr](https://github.com/arthsaAr) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 41 | [@an1rxdh664](https://github.com/an1rxdh664) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 42 | [@Cima9642](https://github.com/Cima9642) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 43 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 44 | [@MohdRash](https://github.com/MohdRash) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 45 | [@OrionFable](https://github.com/OrionFable) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 46 | [@MutanPlex](https://github.com/MutanPlex) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 47 | [@yazdanhaider](https://github.com/yazdanhaider) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 48 | [@mr-cheffy](https://github.com/mr-cheffy) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 49 | [@mujeebshk](https://github.com/mujeebshk) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 50 | [@sbhatm1213](https://github.com/sbhatm1213) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 51 | [@vinfinity7](https://github.com/vinfinity7) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 52 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 53 | [@mohammadshaad](https://github.com/mohammadshaad) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 54 | [@rubiin](https://github.com/rubiin) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 55 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 56 | [@theashishgavade](https://github.com/theashishgavade) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 57 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 58 | [@MaxianEdison](https://github.com/MaxianEdison) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 59 | [@Barrerson](https://github.com/Barrerson) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 60 | [@NimishKashyap](https://github.com/NimishKashyap) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 61 | [@MaxCkett](https://github.com/MaxCkett) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 62 | [@kenhorlador](https://github.com/kenhorlador) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 63 | [@novalramdhani](https://github.com/novalramdhani) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 64 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 65 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 66 | [@Favourene](https://github.com/Favourene) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 67 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 68 | [@NS007-dev](https://github.com/NS007-dev) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 69 | [@koolamusic](https://github.com/koolamusic) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 70 | [@ierfaaan](https://github.com/ierfaaan) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 71 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 0 · 🤝 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 72 | [@JayantGoel001](https://github.com/JayantGoel001) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 73 | [@gakramx](https://github.com/gakramx) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 74 | [@ra1nbow1](https://github.com/ra1nbow1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 75 | [@prio101](https://github.com/prio101) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 76 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 77 | [@Majalian](https://github.com/Majalian) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 78 | [@majidabdulred](https://github.com/majidabdulred) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 79 | [@enimiste](https://github.com/enimiste) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 80 | [@Muriturca](https://github.com/Muriturca) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 26 | [@e-1-s-4](https://github.com/e-1-s-4) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 27 | [@louzt](https://github.com/louzt) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 28 | [@surbhibadhe](https://github.com/surbhibadhe) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 29 | [@SaishWadnere](https://github.com/SaishWadnere) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 30 | [@GulshanJha00](https://github.com/GulshanJha00) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 31 | [@2005rishabh](https://github.com/2005rishabh) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 32 | [@SyeddTaha](https://github.com/SyeddTaha) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 33 | [@okxint](https://github.com/okxint) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 34 | [@muntasiractive](https://github.com/muntasiractive) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 35 | [@DipendraChandel](https://github.com/DipendraChandel) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 36 | [@HITMAN5050](https://github.com/HITMAN5050) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 37 | [@BDadmehr0](https://github.com/BDadmehr0) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 38 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 39 | [@kaifansariw](https://github.com/kaifansariw) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 40 | [@nikultaka](https://github.com/nikultaka) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 41 | [@arthsaAr](https://github.com/arthsaAr) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 42 | [@an1rxdh664](https://github.com/an1rxdh664) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 43 | [@Cima9642](https://github.com/Cima9642) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 44 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 45 | [@MohdRash](https://github.com/MohdRash) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 46 | [@OrionFable](https://github.com/OrionFable) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 47 | [@MutanPlex](https://github.com/MutanPlex) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 48 | [@yazdanhaider](https://github.com/yazdanhaider) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 49 | [@mr-cheffy](https://github.com/mr-cheffy) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 50 | [@mujeebshk](https://github.com/mujeebshk) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 51 | [@sbhatm1213](https://github.com/sbhatm1213) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 52 | [@vinfinity7](https://github.com/vinfinity7) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 53 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 54 | [@mohammadshaad](https://github.com/mohammadshaad) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 55 | [@rubiin](https://github.com/rubiin) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 56 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 57 | [@theashishgavade](https://github.com/theashishgavade) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 58 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 59 | [@MaxianEdison](https://github.com/MaxianEdison) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 60 | [@Barrerson](https://github.com/Barrerson) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 61 | [@NimishKashyap](https://github.com/NimishKashyap) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 62 | [@MaxCkett](https://github.com/MaxCkett) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 63 | [@kenhorlador](https://github.com/kenhorlador) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 64 | [@novalramdhani](https://github.com/novalramdhani) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 65 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 66 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 67 | [@Favourene](https://github.com/Favourene) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 68 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 69 | [@NS007-dev](https://github.com/NS007-dev) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 70 | [@koolamusic](https://github.com/koolamusic) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 71 | [@ierfaaan](https://github.com/ierfaaan) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 72 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 0 · 🤝 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 73 | [@JayantGoel001](https://github.com/JayantGoel001) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 74 | [@gakramx](https://github.com/gakramx) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 75 | [@ra1nbow1](https://github.com/ra1nbow1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 76 | [@prio101](https://github.com/prio101) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 77 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 78 | [@Majalian](https://github.com/Majalian) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 79 | [@majidabdulred](https://github.com/majidabdulred) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 80 | [@enimiste](https://github.com/enimiste) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 81 | [@Muriturca](https://github.com/Muriturca) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 
 </div>
 
@@ -125,12 +126,12 @@
 
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
-| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-07-06 | 61 | 6.2 | 🌐 284 · ⚙️ 96 | Top 1% |
+| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-07-17 | 62 | 6.1 | 🌐 285 · ⚙️ 96 | Top 1% |
 | 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-07-12 | 65 | 2.9 | 🌐 189 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 4% |
 | 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 5% |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-01-29 | 3 | 1.7 | 🌐 5 | Top 6% |
-| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 2021-06-14 | 2026-01-26 | 2 | 2.5 | 🌐 5 | Top 8% |
+| 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 2021-06-14 | 2026-01-26 | 2 | 2.5 | 🌐 5 | Top 7% |
 | 7 | [@tanverified](https://github.com/tanverified) | 2025-07-23 | 2025-07-23 | 1 | 3.0 | 🌐 3 | Top 9% |
 | 8 | [@ayushrana182](https://github.com/ayushrana182) | 2021-06-17 | 2021-08-24 | 2 | 1.5 | 🌐 3 | Top 10% |
 | 9 | [@rjphares](https://github.com/rjphares) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 11% |
@@ -138,73 +139,74 @@
 | 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 2025-04-01 | 2025-04-01 | 1 | 2.0 | 🌐 2 | Top 14% |
 | 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 2024-11-08 | 2024-11-08 | 1 | 2.0 | 🌐 2 | Top 15% |
 | 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 2024-09-20 | 2024-09-20 | 1 | 2.0 | 🌐 2 | Top 16% |
-| 14 | [@eugene4545](https://github.com/eugene4545) | 2024-06-02 | 2024-08-19 | 2 | 1.0 | 🌐 2 | Top 18% |
+| 14 | [@eugene4545](https://github.com/eugene4545) | 2024-06-02 | 2024-08-19 | 2 | 1.0 | 🌐 2 | Top 17% |
 | 15 | [@anufdo](https://github.com/anufdo) | 2024-05-18 | 2024-07-13 | 2 | 1.0 | 🌐 2 | Top 19% |
 | 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 2022-11-02 | 2022-11-02 | 1 | 2.0 | 🌐 2 | Top 20% |
 | 17 | [@itsjoniur](https://github.com/itsjoniur) | 2022-09-03 | 2022-09-03 | 1 | 2.0 | 🌐 2 | Top 21% |
 | 18 | [@0xMRTT](https://github.com/0xMRTT) | 2022-08-07 | 2022-08-07 | 1 | 2.0 | 🌐 2 | Top 22% |
-| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 2022-01-23 | 2022-01-23 | 1 | 2.0 | 🌐 2 | Top 24% |
+| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 2022-01-23 | 2022-01-23 | 1 | 2.0 | 🌐 2 | Top 23% |
 | 20 | [@rtewari056](https://github.com/rtewari056) | 2021-10-11 | 2021-10-11 | 1 | 2.0 | 🌐 2 | Top 25% |
 | 21 | [@yhdesai](https://github.com/yhdesai) | 2021-08-31 | 2021-08-31 | 1 | 2.0 | 🌐 2 | Top 26% |
-| 22 | [@ps-19](https://github.com/ps-19) | 2021-08-06 | 2021-08-06 | 1 | 2.0 | 🌐 2 | Top 28% |
-| 23 | [@abdorah](https://github.com/abdorah) | 2021-06-19 | 2021-06-23 | 2 | 1.0 | 🌐 2 | Top 29% |
+| 22 | [@ps-19](https://github.com/ps-19) | 2021-08-06 | 2021-08-06 | 1 | 2.0 | 🌐 2 | Top 27% |
+| 23 | [@abdorah](https://github.com/abdorah) | 2021-06-19 | 2021-06-23 | 2 | 1.0 | 🌐 2 | Top 28% |
 | 24 | [@VictorAraica](https://github.com/VictorAraica) | 2021-06-18 | 2021-06-18 | 1 | 2.0 | 🌐 2 | Top 30% |
 | 25 | [@ajakov](https://github.com/ajakov) | 2021-06-17 | 2021-06-17 | 1 | 2.0 | 🌐 2 | Top 31% |
-| 26 | [@louzt](https://github.com/louzt) | 2026-07-06 | 2026-07-06 | 1 | 1.0 | 🌐 1 | Top 32% |
-| 27 | [@surbhibadhe](https://github.com/surbhibadhe) | 2026-06-11 | 2026-06-11 | 1 | 1.0 | 🌐 1 | Top 34% |
-| 28 | [@SaishWadnere](https://github.com/SaishWadnere) | 2026-05-03 | 2026-05-03 | 1 | 1.0 | 🌐 1 | Top 35% |
-| 29 | [@GulshanJha00](https://github.com/GulshanJha00) | 2026-05-03 | 2026-05-03 | 1 | 1.0 | 🌐 1 | Top 36% |
-| 30 | [@2005rishabh](https://github.com/2005rishabh) | 2026-05-02 | 2026-05-02 | 1 | 1.0 | 🌐 1 | Top 38% |
-| 31 | [@SyeddTaha](https://github.com/SyeddTaha) | 2026-04-03 | 2026-04-03 | 1 | 1.0 | 🌐 1 | Top 39% |
-| 32 | [@okxint](https://github.com/okxint) | 2026-03-22 | 2026-03-22 | 1 | 1.0 | 🌐 1 | Top 40% |
-| 33 | [@muntasiractive](https://github.com/muntasiractive) | 2026-03-05 | 2026-03-05 | 1 | 1.0 | 🌐 1 | Top 41% |
-| 34 | [@DipendraChandel](https://github.com/DipendraChandel) | 2026-02-04 | 2026-02-04 | 1 | 1.0 | 🌐 1 | Top 42% |
-| 35 | [@HITMAN5050](https://github.com/HITMAN5050) | 2026-02-03 | 2026-02-03 | 1 | 1.0 | 🌐 1 | Top 44% |
-| 36 | [@BDadmehr0](https://github.com/BDadmehr0) | 2026-02-01 | 2026-02-01 | 1 | 1.0 | 🌐 1 | Top 45% |
-| 37 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 46% |
-| 38 | [@kaifansariw](https://github.com/kaifansariw) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 48% |
-| 39 | [@nikultaka](https://github.com/nikultaka) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 49% |
-| 40 | [@arthsaAr](https://github.com/arthsaAr) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 50% |
-| 41 | [@an1rxdh664](https://github.com/an1rxdh664) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 51% |
-| 42 | [@Cima9642](https://github.com/Cima9642) | 2026-01-27 | 2026-01-27 | 1 | 1.0 | 🌐 1 | Top 52% |
-| 43 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 2025-10-14 | 2025-10-14 | 1 | 1.0 | 🌐 1 | Top 54% |
-| 44 | [@MohdRash](https://github.com/MohdRash) | 2025-09-22 | 2025-09-22 | 1 | 1.0 | 🌐 1 | Top 55% |
-| 45 | [@OrionFable](https://github.com/OrionFable) | 2025-03-26 | 2025-03-26 | 1 | 1.0 | 🌐 1 | Top 56% |
-| 46 | [@MutanPlex](https://github.com/MutanPlex) | 2024-10-27 | 2024-10-27 | 1 | 1.0 | 🌐 1 | Top 58% |
-| 47 | [@yazdanhaider](https://github.com/yazdanhaider) | 2024-08-24 | 2024-08-24 | 1 | 1.0 | 🌐 1 | Top 59% |
-| 48 | [@mr-cheffy](https://github.com/mr-cheffy) | 2024-08-07 | 2024-08-07 | 1 | 1.0 | 🌐 1 | Top 60% |
-| 49 | [@mujeebshk](https://github.com/mujeebshk) | 2024-06-07 | 2024-06-07 | 1 | 1.0 | 🌐 1 | Top 61% |
-| 50 | [@sbhatm1213](https://github.com/sbhatm1213) | 2024-05-18 | 2024-05-18 | 1 | 1.0 | 🌐 1 | Top 62% |
-| 51 | [@vinfinity7](https://github.com/vinfinity7) | 2023-10-25 | 2023-10-25 | 1 | 1.0 | 🌐 1 | Top 64% |
-| 52 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 2023-10-23 | 2023-10-23 | 1 | 1.0 | 🌐 1 | Top 65% |
-| 53 | [@mohammadshaad](https://github.com/mohammadshaad) | 2023-05-29 | 2023-05-29 | 1 | 1.0 | 🌐 1 | Top 66% |
-| 54 | [@rubiin](https://github.com/rubiin) | 2023-05-22 | 2023-05-22 | 1 | 1.0 | 🌐 1 | Top 68% |
-| 55 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 2023-03-03 | 2023-03-03 | 1 | 1.0 | 🌐 1 | Top 69% |
-| 56 | [@theashishgavade](https://github.com/theashishgavade) | 2022-08-13 | 2022-08-13 | 1 | 1.0 | 🌐 1 | Top 70% |
-| 57 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 2022-04-17 | 2022-04-17 | 1 | 1.0 | 🌐 1 | Top 71% |
-| 58 | [@MaxianEdison](https://github.com/MaxianEdison) | 2022-03-02 | 2022-03-02 | 1 | 1.0 | 🌐 1 | Top 72% |
-| 59 | [@Barrerson](https://github.com/Barrerson) | 2022-02-11 | 2022-02-11 | 1 | 1.0 | 🌐 1 | Top 74% |
-| 60 | [@NimishKashyap](https://github.com/NimishKashyap) | 2022-02-07 | 2022-02-07 | 1 | 1.0 | 🌐 1 | Top 75% |
-| 61 | [@MaxCkett](https://github.com/MaxCkett) | 2022-02-06 | 2022-02-06 | 1 | 1.0 | 🌐 1 | Top 76% |
-| 62 | [@kenhorlador](https://github.com/kenhorlador) | 2022-02-02 | 2022-02-02 | 1 | 1.0 | 🌐 1 | Top 78% |
-| 63 | [@novalramdhani](https://github.com/novalramdhani) | 2022-01-18 | 2022-01-18 | 1 | 1.0 | 🌐 1 | Top 79% |
-| 64 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 2021-12-30 | 2021-12-30 | 1 | 1.0 | 🌐 1 | Top 80% |
-| 65 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 2021-12-30 | 2021-12-30 | 1 | 1.0 | 🌐 1 | Top 81% |
-| 66 | [@Favourene](https://github.com/Favourene) | 2021-10-30 | 2021-10-30 | 1 | 1.0 | 🌐 1 | Top 82% |
-| 67 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 2021-10-10 | 2021-10-10 | 1 | 1.0 | 🌐 1 | Top 84% |
-| 68 | [@NS007-dev](https://github.com/NS007-dev) | 2021-09-11 | 2021-09-11 | 1 | 1.0 | 🌐 1 | Top 85% |
-| 69 | [@koolamusic](https://github.com/koolamusic) | 2021-08-30 | 2021-08-30 | 1 | 1.0 | 🌐 1 | Top 86% |
-| 70 | [@ierfaaan](https://github.com/ierfaaan) | 2021-08-06 | 2021-08-06 | 1 | 1.0 | 🌐 1 | Top 88% |
-| 71 | [@hunainanis](https://github.com/hunainanis) | 2021-06-25 | 2021-06-25 | 1 | 1.0 | 🌐 1 | Top 89% |
-| 72 | [@JayantGoel001](https://github.com/JayantGoel001) | 2021-06-25 | 2021-06-25 | 1 | 1.0 | 🌐 1 | Top 90% |
-| 73 | [@gakramx](https://github.com/gakramx) | 2021-06-19 | 2021-06-19 | 1 | 1.0 | 🌐 1 | Top 91% |
-| 74 | [@ra1nbow1](https://github.com/ra1nbow1) | 2021-06-18 | 2021-06-18 | 1 | 1.0 | 🌐 1 | Top 92% |
-| 75 | [@prio101](https://github.com/prio101) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 94% |
-| 76 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 95% |
-| 77 | [@Majalian](https://github.com/Majalian) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 96% |
-| 78 | [@majidabdulred](https://github.com/majidabdulred) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 98% |
-| 79 | [@enimiste](https://github.com/enimiste) | 2021-06-15 | 2021-06-15 | 1 | 1.0 | 🌐 1 | Top 99% |
-| 80 | [@Muriturca](https://github.com/Muriturca) | 2021-06-14 | 2021-06-14 | 1 | 1.0 | 🌐 1 | Top 100% |
+| 26 | [@e-1-s-4](https://github.com/e-1-s-4) | 2026-07-17 | 2026-07-17 | 1 | 1.0 | 🌐 1 | Top 32% |
+| 27 | [@louzt](https://github.com/louzt) | 2026-07-06 | 2026-07-06 | 1 | 1.0 | 🌐 1 | Top 33% |
+| 28 | [@surbhibadhe](https://github.com/surbhibadhe) | 2026-06-11 | 2026-06-11 | 1 | 1.0 | 🌐 1 | Top 35% |
+| 29 | [@SaishWadnere](https://github.com/SaishWadnere) | 2026-05-03 | 2026-05-03 | 1 | 1.0 | 🌐 1 | Top 36% |
+| 30 | [@GulshanJha00](https://github.com/GulshanJha00) | 2026-05-03 | 2026-05-03 | 1 | 1.0 | 🌐 1 | Top 37% |
+| 31 | [@2005rishabh](https://github.com/2005rishabh) | 2026-05-02 | 2026-05-02 | 1 | 1.0 | 🌐 1 | Top 38% |
+| 32 | [@SyeddTaha](https://github.com/SyeddTaha) | 2026-04-03 | 2026-04-03 | 1 | 1.0 | 🌐 1 | Top 40% |
+| 33 | [@okxint](https://github.com/okxint) | 2026-03-22 | 2026-03-22 | 1 | 1.0 | 🌐 1 | Top 41% |
+| 34 | [@muntasiractive](https://github.com/muntasiractive) | 2026-03-05 | 2026-03-05 | 1 | 1.0 | 🌐 1 | Top 42% |
+| 35 | [@DipendraChandel](https://github.com/DipendraChandel) | 2026-02-04 | 2026-02-04 | 1 | 1.0 | 🌐 1 | Top 43% |
+| 36 | [@HITMAN5050](https://github.com/HITMAN5050) | 2026-02-03 | 2026-02-03 | 1 | 1.0 | 🌐 1 | Top 44% |
+| 37 | [@BDadmehr0](https://github.com/BDadmehr0) | 2026-02-01 | 2026-02-01 | 1 | 1.0 | 🌐 1 | Top 46% |
+| 38 | [@Yadavpreethi](https://github.com/Yadavpreethi) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 47% |
+| 39 | [@kaifansariw](https://github.com/kaifansariw) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 48% |
+| 40 | [@nikultaka](https://github.com/nikultaka) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 49% |
+| 41 | [@arthsaAr](https://github.com/arthsaAr) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 51% |
+| 42 | [@an1rxdh664](https://github.com/an1rxdh664) | 2026-01-28 | 2026-01-28 | 1 | 1.0 | 🌐 1 | Top 52% |
+| 43 | [@Cima9642](https://github.com/Cima9642) | 2026-01-27 | 2026-01-27 | 1 | 1.0 | 🌐 1 | Top 53% |
+| 44 | [@NeuroPeakX](https://github.com/NeuroPeakX) | 2025-10-14 | 2025-10-14 | 1 | 1.0 | 🌐 1 | Top 54% |
+| 45 | [@MohdRash](https://github.com/MohdRash) | 2025-09-22 | 2025-09-22 | 1 | 1.0 | 🌐 1 | Top 56% |
+| 46 | [@OrionFable](https://github.com/OrionFable) | 2025-03-26 | 2025-03-26 | 1 | 1.0 | 🌐 1 | Top 57% |
+| 47 | [@MutanPlex](https://github.com/MutanPlex) | 2024-10-27 | 2024-10-27 | 1 | 1.0 | 🌐 1 | Top 58% |
+| 48 | [@yazdanhaider](https://github.com/yazdanhaider) | 2024-08-24 | 2024-08-24 | 1 | 1.0 | 🌐 1 | Top 59% |
+| 49 | [@mr-cheffy](https://github.com/mr-cheffy) | 2024-08-07 | 2024-08-07 | 1 | 1.0 | 🌐 1 | Top 60% |
+| 50 | [@mujeebshk](https://github.com/mujeebshk) | 2024-06-07 | 2024-06-07 | 1 | 1.0 | 🌐 1 | Top 62% |
+| 51 | [@sbhatm1213](https://github.com/sbhatm1213) | 2024-05-18 | 2024-05-18 | 1 | 1.0 | 🌐 1 | Top 63% |
+| 52 | [@vinfinity7](https://github.com/vinfinity7) | 2023-10-25 | 2023-10-25 | 1 | 1.0 | 🌐 1 | Top 64% |
+| 53 | [@Sweetdevil144](https://github.com/Sweetdevil144) | 2023-10-23 | 2023-10-23 | 1 | 1.0 | 🌐 1 | Top 65% |
+| 54 | [@mohammadshaad](https://github.com/mohammadshaad) | 2023-05-29 | 2023-05-29 | 1 | 1.0 | 🌐 1 | Top 67% |
+| 55 | [@rubiin](https://github.com/rubiin) | 2023-05-22 | 2023-05-22 | 1 | 1.0 | 🌐 1 | Top 68% |
+| 56 | [@pratik-wadhai](https://github.com/pratik-wadhai) | 2023-03-03 | 2023-03-03 | 1 | 1.0 | 🌐 1 | Top 69% |
+| 57 | [@theashishgavade](https://github.com/theashishgavade) | 2022-08-13 | 2022-08-13 | 1 | 1.0 | 🌐 1 | Top 70% |
+| 58 | [@GabrielTheophilo](https://github.com/GabrielTheophilo) | 2022-04-17 | 2022-04-17 | 1 | 1.0 | 🌐 1 | Top 72% |
+| 59 | [@MaxianEdison](https://github.com/MaxianEdison) | 2022-03-02 | 2022-03-02 | 1 | 1.0 | 🌐 1 | Top 73% |
+| 60 | [@Barrerson](https://github.com/Barrerson) | 2022-02-11 | 2022-02-11 | 1 | 1.0 | 🌐 1 | Top 74% |
+| 61 | [@NimishKashyap](https://github.com/NimishKashyap) | 2022-02-07 | 2022-02-07 | 1 | 1.0 | 🌐 1 | Top 75% |
+| 62 | [@MaxCkett](https://github.com/MaxCkett) | 2022-02-06 | 2022-02-06 | 1 | 1.0 | 🌐 1 | Top 77% |
+| 63 | [@kenhorlador](https://github.com/kenhorlador) | 2022-02-02 | 2022-02-02 | 1 | 1.0 | 🌐 1 | Top 78% |
+| 64 | [@novalramdhani](https://github.com/novalramdhani) | 2022-01-18 | 2022-01-18 | 1 | 1.0 | 🌐 1 | Top 79% |
+| 65 | [@maurobalades-contributions](https://github.com/maurobalades-contributions) | 2021-12-30 | 2021-12-30 | 1 | 1.0 | 🌐 1 | Top 80% |
+| 66 | [@hariket-sheth1](https://github.com/hariket-sheth1) | 2021-12-30 | 2021-12-30 | 1 | 1.0 | 🌐 1 | Top 81% |
+| 67 | [@Favourene](https://github.com/Favourene) | 2021-10-30 | 2021-10-30 | 1 | 1.0 | 🌐 1 | Top 83% |
+| 68 | [@HammedBabatunde](https://github.com/HammedBabatunde) | 2021-10-10 | 2021-10-10 | 1 | 1.0 | 🌐 1 | Top 84% |
+| 69 | [@NS007-dev](https://github.com/NS007-dev) | 2021-09-11 | 2021-09-11 | 1 | 1.0 | 🌐 1 | Top 85% |
+| 70 | [@koolamusic](https://github.com/koolamusic) | 2021-08-30 | 2021-08-30 | 1 | 1.0 | 🌐 1 | Top 86% |
+| 71 | [@ierfaaan](https://github.com/ierfaaan) | 2021-08-06 | 2021-08-06 | 1 | 1.0 | 🌐 1 | Top 88% |
+| 72 | [@hunainanis](https://github.com/hunainanis) | 2021-06-25 | 2021-06-25 | 1 | 1.0 | 🌐 1 | Top 89% |
+| 73 | [@JayantGoel001](https://github.com/JayantGoel001) | 2021-06-25 | 2021-06-25 | 1 | 1.0 | 🌐 1 | Top 90% |
+| 74 | [@gakramx](https://github.com/gakramx) | 2021-06-19 | 2021-06-19 | 1 | 1.0 | 🌐 1 | Top 91% |
+| 75 | [@ra1nbow1](https://github.com/ra1nbow1) | 2021-06-18 | 2021-06-18 | 1 | 1.0 | 🌐 1 | Top 93% |
+| 76 | [@prio101](https://github.com/prio101) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 94% |
+| 77 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 95% |
+| 78 | [@Majalian](https://github.com/Majalian) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 96% |
+| 79 | [@majidabdulred](https://github.com/majidabdulred) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 98% |
+| 80 | [@enimiste](https://github.com/enimiste) | 2021-06-15 | 2021-06-15 | 1 | 1.0 | 🌐 1 | Top 99% |
+| 81 | [@Muriturca](https://github.com/Muriturca) | 2021-06-14 | 2021-06-14 | 1 | 1.0 | 🌐 1 | Top 100% |
 
 > 🌐 = site commits · ⚙️ = .github commits · 📁 = other repos
 
