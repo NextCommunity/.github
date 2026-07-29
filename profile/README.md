@@ -38,7 +38,7 @@
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
 | 1 🥇 | [@jbampton](https://github.com/jbampton) | 📜 Lv.381 Vivec's Poet | 🟧 legendary | ✏️ 200 · 🤝 181 · 📦 2 | `[██████░░]` 81% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,280 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🕯️ Lv.191 Ethereal Guide | 🟦 rare | ✏️ 182 · 🤝 9 · 📦 1 | `[██████░░]` 82% → 200 | ⚡ 2d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,305 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🕯️ Lv.191 Ethereal Guide | 🟦 rare | ✏️ 182 · 🤝 9 · 📦 1 | `[██████░░]` 82% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,305 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🏅×4 🎯 ✋ ⬜ 🟩 | 130 |
