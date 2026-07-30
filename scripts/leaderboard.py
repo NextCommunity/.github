@@ -1,9 +1,11 @@
 """Fetch contributor stats from all NextCommunity repos and update the leaderboard."""
 
+import html
 import os
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 import json
 from bisect import bisect_right
@@ -16,6 +18,9 @@ README_PATH = os.path.join(os.path.dirname(__file__), "..", "profile", "README.m
 LEADERBOARD_START = "<!-- LEADERBOARD:START -->"
 LEADERBOARD_END = "<!-- LEADERBOARD:END -->"
 SITE_REPO_NAME = "NextCommunity.github.io"
+
+# GitHub usernames: 1-39 alphanumeric chars, interior single hyphens only (no consecutive hyphens).
+_GITHUB_LOGIN_RE = re.compile(r"^(?=.{1,39}$)[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$")
 DOTGITHUB_REPO_NAME = ".github"
 
 # Self-documenting record for each commit entry collected across all repos.
@@ -707,6 +712,26 @@ def build_leaderboard(token=None):
     return sorted_contributors, had_errors, levels_data
 
 
+def _contributor_cell(login):
+    """Return a pure-HTML table cell with avatar and username link.
+
+    ``login`` is validated against GitHub's username pattern before use.
+    Returns ``None`` and logs a warning if the login contains unexpected
+    characters, so callers can skip the row rather than crashing.
+    """
+    if not _GITHUB_LOGIN_RE.match(login):
+        print(f"WARNING: skipping contributor with invalid GitHub login: {login!r}")
+        return None
+    safe_login = urllib.parse.quote(login, safe="")
+    escaped_login = html.escape(login)
+    return (
+        f'<a href="https://github.com/{safe_login}">'
+        f'<img src="https://avatars.githubusercontent.com/{safe_login}?s=64"'
+        f' width="32" height="32" alt="{escaped_login}\'s avatar"><br>'
+        f"@{escaped_login}</a>"
+    )
+
+
 def generate_markdown(contributors, levels_data):
     """Generate a gamified markdown leaderboard from contributor data."""
     rank_badges = {1: "🥇", 2: "🥈", 3: "🥉"}
@@ -767,8 +792,11 @@ def generate_markdown(contributors, levels_data):
             commits_display += f" · 🤝 {coauthored}"
         commits_display += f" · 📦 {repos_count}"
 
+        contributor_cell = _contributor_cell(login)
+        if contributor_cell is None:
+            continue
         lines.append(
-            f"| {rank} | [@{login}](https://github.com/{login})"
+            f"| {rank} | {contributor_cell}"
             f" | {level} | {rarity_display} | {commits_display}"
             f" | {prog} | {streak_display}"
             f" | {badges} | {points_display} |"
@@ -812,8 +840,11 @@ def generate_markdown(contributors, levels_data):
             breakdown_parts.append(f"📁 {other_c}")
         breakdown = " · ".join(breakdown_parts) if breakdown_parts else "—"
 
+        contributor_cell = _contributor_cell(login)
+        if contributor_cell is None:
+            continue
         lines.append(
-            f"| {i} | [@{login}](https://github.com/{login})"
+            f"| {i} | {contributor_cell}"
             f" | {first_date} | {last_date}"
             f" | {days_active} | {cpd}"
             f" | {breakdown} | Top {pctile}% |"
