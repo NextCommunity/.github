@@ -37,7 +37,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 💎 Lv.390 Azura's Wisdom | 🟧 legendary | ✏️ 200 · 🤝 190 · 📦 2 | `[███████░]` 90% → 400 | ⚡ 2d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,370 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🐙 Lv.391 Hermaeus Mora's Knowledge | 🟥 mythic | ✏️ 200 · 🤝 191 · 📦 2 | `[███████░]` 91% → 400 | ⚡ 2d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,380 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🏛️ Lv.196 Avatar of Mortis | 🟥 mythic | ✏️ 185 · 🤝 11 · 📦 1 | `[███████░]` 92% → 200 | ⚡ 2d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,355 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
@@ -126,7 +126,7 @@
 
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
-| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-09-26 | 66 | 5.9 | 🌐 293 · ⚙️ 97 | Top 1% |
+| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-09-26 | 66 | 5.9 | 🌐 294 · ⚙️ 97 | Top 1% |
 | 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-09-26 | 71 | 2.8 | 🌐 196 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 4% |
 | 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 5% |
