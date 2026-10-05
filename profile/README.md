@@ -13,7 +13,7 @@
     <a href="https://github.com/sponsors/jbampton">
       <img src="https://img.shields.io/github/sponsors/jbampton?style=for-the-badge&label=Sponsor%20John%20Bampton&labelColor=orange&color=pink" alt="Sponsor John Bampton"></a>
     <a href="https://github.com/sponsors/BaseMax">
-      <img src="https://img.shields.io/github/sponsors/BaseMax?style=for-the-badge&label=Sponsor%20Max%20Base&labelColor=lightgreen&color=lightblue" alt="Sponsor Max Base"></a>    
+      <img src="https://img.shields.io/github/sponsors/BaseMax?style=for-the-badge&label=Sponsor%20Max%20Base&labelColor=lightgreen&color=lightblue" alt="Sponsor Max Base"></a>  
   </p>  
 </div>
 
