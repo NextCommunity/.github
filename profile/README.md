@@ -37,8 +37,8 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🦴 Lv.396 Namira's Hunger | 🟦 rare | ✏️ 202 · 🤝 194 · 📦 2 | `[███████░]` 96% → 400 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,430 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🐂 Lv.197 Bendu's Wisdom | 🟥 mythic | ✏️ 185 · 🤝 12 · 📦 1 | `[███████░]` 94% → 200 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,365 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🦴 Lv.396 Namira's Hunger | 🟦 rare | ✏️ 202 · 🤝 194 · 📦 2 | `[███████░]` 96% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,430 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🐂 Lv.197 Bendu's Wisdom | 🟥 mythic | ✏️ 185 · 🤝 12 · 📦 1 | `[███████░]` 94% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,365 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 2d | 🏅×4 🎯 ✋ ⬜ 🟩 | 130 |
