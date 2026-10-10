@@ -38,7 +38,7 @@
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
 | 1 🥇 | [@jbampton](https://github.com/jbampton) | 🦴 Lv.396 Namira's Hunger | 🟦 rare | ✏️ 202 · 🤝 194 · 📦 2 | `[███████░]` 96% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,430 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👁️ Lv.199 The Whills | 🟥 mythic | ✏️ 186 · 🤝 13 · 📦 1 | `[███████░]` 98% → 200 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,385 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👁️ Lv.199 The Whills | 🟥 mythic | ✏️ 186 · 🤝 13 · 📦 1 | `[███████░]` 98% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,385 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 🛠️ Lv.6 Sys Admin | 🟦 rare | ✏️ 6 · 📦 2 | `[████░░░░]` 60% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 205 |
