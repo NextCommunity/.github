@@ -37,8 +37,8 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🐺 Lv.397 Hircine's Hunt | 🟧 legendary | ✏️ 202 · 🤝 195 · 📦 2 | `[███████░]` 97% → 400 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,440 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 👁️ Lv.199 The Whills | 🟥 mythic | ✏️ 186 · 🤝 13 · 📦 1 | `[███████░]` 98% → 200 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,385 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🐺 Lv.397 Hircine's Hunt | 🟧 legendary | ✏️ 202 · 🤝 195 · 📦 2 | `[███████░]` 97% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,440 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌌 Lv.200 One With The Force | 🟥 mythic | ✏️ 186 · 🤝 14 · 📦 1 | `[░░░░░░░░]` 0% → 250 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,395 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 🛠️ Lv.6 Sys Admin | 🟦 rare | ✏️ 6 · 📦 2 | `[████░░░░]` 60% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 205 |
@@ -134,7 +134,7 @@
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
 | 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-10-10 | 68 | 5.8 | 🌐 300 · ⚙️ 97 | Top 1% |
-| 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-10-08 | 73 | 2.7 | 🌐 199 | Top 2% |
+| 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-10-11 | 74 | 2.7 | 🌐 200 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 3% |
 | 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 5% |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-10-07 | 4 | 1.5 | 🌐 5 · ⚙️ 1 | Top 6% |
