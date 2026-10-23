@@ -53,7 +53,7 @@
 | 14 | [@eugene4545](https://github.com/eugene4545) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 15 | [@anufdo](https://github.com/anufdo) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 17 | [@itsjoniur](https://github.com/itsjoniur) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 17 | [@amourri](https://github.com/amourri) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 18 | [@0xMRTT](https://github.com/0xMRTT) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 20 | [@rtewari056](https://github.com/rtewari056) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
@@ -150,7 +150,7 @@
 | 14 | [@eugene4545](https://github.com/eugene4545) | 2024-06-02 | 2024-08-19 | 2 | 1.0 | 🌐 2 | Top 16% |
 | 15 | [@anufdo](https://github.com/anufdo) | 2024-05-18 | 2024-07-13 | 2 | 1.0 | 🌐 2 | Top 17% |
 | 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 2022-11-02 | 2022-11-02 | 1 | 2.0 | 🌐 2 | Top 18% |
-| 17 | [@itsjoniur](https://github.com/itsjoniur) | 2022-09-03 | 2022-09-03 | 1 | 2.0 | 🌐 2 | Top 19% |
+| 17 | [@amourri](https://github.com/amourri) | 2022-09-03 | 2022-09-03 | 1 | 2.0 | 🌐 2 | Top 19% |
 | 18 | [@0xMRTT](https://github.com/0xMRTT) | 2022-08-07 | 2022-08-07 | 1 | 2.0 | 🌐 2 | Top 20% |
 | 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 2022-01-23 | 2022-01-23 | 1 | 2.0 | 🌐 2 | Top 21% |
 | 20 | [@rtewari056](https://github.com/rtewari056) | 2021-10-11 | 2021-10-11 | 1 | 2.0 | 🌐 2 | Top 22% |
