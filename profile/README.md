@@ -37,7 +37,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🌌 Lv.398 CHIM Awakener | 🟥 mythic | ✏️ 203 · 🤝 195 · 📦 2 | `[███████░]` 98% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,450 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 💤 Lv.399 The Amaranth | 🟥 mythic | ✏️ 203 · 🤝 196 · 📦 2 | `[███████░]` 99% → 400 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,460 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌌 Lv.200 One With The Force | 🟥 mythic | ✏️ 186 · 🤝 14 · 📦 1 | `[░░░░░░░░]` 0% → 250 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,395 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
@@ -47,22 +47,22 @@
 | 8 | [@ayushrana182](https://github.com/ayushrana182) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
 | 9 | [@rjphares](https://github.com/rjphares) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
 | 10 | [@Anekenonso](https://github.com/Anekenonso) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
-| 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 14 | [@eugene4545](https://github.com/eugene4545) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 15 | [@anufdo](https://github.com/anufdo) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 17 | [@amourri](https://github.com/amourri) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 18 | [@0xMRTT](https://github.com/0xMRTT) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 20 | [@rtewari056](https://github.com/rtewari056) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 21 | [@yhdesai](https://github.com/yhdesai) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 22 | [@ps-19](https://github.com/ps-19) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 23 | [@abdorah](https://github.com/abdorah) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 24 | [@VictorAraica](https://github.com/VictorAraica) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 25 | [@ajakov](https://github.com/ajakov) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 26 | [@koushik4475](https://github.com/koushik4475) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 11 | [@koushik4475](https://github.com/koushik4475) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 12 | [@sm4rtdev](https://github.com/sm4rtdev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 13 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 14 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 15 | [@eugene4545](https://github.com/eugene4545) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 16 | [@anufdo](https://github.com/anufdo) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 17 | [@alifiroozidev](https://github.com/alifiroozidev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 18 | [@amourri](https://github.com/amourri) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 19 | [@0xMRTT](https://github.com/0xMRTT) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 20 | [@SushantAdh07](https://github.com/SushantAdh07) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 21 | [@rtewari056](https://github.com/rtewari056) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 22 | [@yhdesai](https://github.com/yhdesai) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 23 | [@ps-19](https://github.com/ps-19) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 24 | [@abdorah](https://github.com/abdorah) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 25 | [@VictorAraica](https://github.com/VictorAraica) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 26 | [@ajakov](https://github.com/ajakov) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 27 | [@rohit-singh121](https://github.com/rohit-singh121) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 28 | [@quantumchain-core](https://github.com/quantumchain-core) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 29 | [@Prathamesh-Singh](https://github.com/Prathamesh-Singh) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
@@ -134,7 +134,7 @@
 
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
-| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-10-17 | 69 | 5.8 | 🌐 301 · ⚙️ 97 | Top 1% |
+| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-10-26 | 70 | 5.7 | 🌐 302 · ⚙️ 97 | Top 1% |
 | 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-10-11 | 74 | 2.7 | 🌐 200 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 3% |
 | 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 4% |
@@ -144,22 +144,22 @@
 | 8 | [@ayushrana182](https://github.com/ayushrana182) | 2021-06-17 | 2021-08-24 | 2 | 1.5 | 🌐 3 | Top 9% |
 | 9 | [@rjphares](https://github.com/rjphares) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 10% |
 | 10 | [@Anekenonso](https://github.com/Anekenonso) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 11% |
-| 11 | [@sm4rtdev](https://github.com/sm4rtdev) | 2025-04-01 | 2025-04-01 | 1 | 2.0 | 🌐 2 | Top 12% |
-| 12 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 2024-11-08 | 2024-11-08 | 1 | 2.0 | 🌐 2 | Top 13% |
-| 13 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 2024-09-20 | 2024-09-20 | 1 | 2.0 | 🌐 2 | Top 15% |
-| 14 | [@eugene4545](https://github.com/eugene4545) | 2024-06-02 | 2024-08-19 | 2 | 1.0 | 🌐 2 | Top 16% |
-| 15 | [@anufdo](https://github.com/anufdo) | 2024-05-18 | 2024-07-13 | 2 | 1.0 | 🌐 2 | Top 17% |
-| 16 | [@alifiroozidev](https://github.com/alifiroozidev) | 2022-11-02 | 2022-11-02 | 1 | 2.0 | 🌐 2 | Top 18% |
-| 17 | [@amourri](https://github.com/amourri) | 2022-09-03 | 2022-09-03 | 1 | 2.0 | 🌐 2 | Top 19% |
-| 18 | [@0xMRTT](https://github.com/0xMRTT) | 2022-08-07 | 2022-08-07 | 1 | 2.0 | 🌐 2 | Top 20% |
-| 19 | [@SushantAdh07](https://github.com/SushantAdh07) | 2022-01-23 | 2022-01-23 | 1 | 2.0 | 🌐 2 | Top 21% |
-| 20 | [@rtewari056](https://github.com/rtewari056) | 2021-10-11 | 2021-10-11 | 1 | 2.0 | 🌐 2 | Top 22% |
-| 21 | [@yhdesai](https://github.com/yhdesai) | 2021-08-31 | 2021-08-31 | 1 | 2.0 | 🌐 2 | Top 24% |
-| 22 | [@ps-19](https://github.com/ps-19) | 2021-08-06 | 2021-08-06 | 1 | 2.0 | 🌐 2 | Top 25% |
-| 23 | [@abdorah](https://github.com/abdorah) | 2021-06-19 | 2021-06-23 | 2 | 1.0 | 🌐 2 | Top 26% |
-| 24 | [@VictorAraica](https://github.com/VictorAraica) | 2021-06-18 | 2021-06-18 | 1 | 2.0 | 🌐 2 | Top 27% |
-| 25 | [@ajakov](https://github.com/ajakov) | 2021-06-17 | 2021-06-17 | 1 | 2.0 | 🌐 2 | Top 28% |
-| 26 | [@koushik4475](https://github.com/koushik4475) | 2026-10-17 | 2026-10-17 | 1 | 1.0 | 🌐 1 | Top 29% |
+| 11 | [@koushik4475](https://github.com/koushik4475) | 2026-10-17 | 2026-10-26 | 2 | 1.0 | 🌐 2 | Top 12% |
+| 12 | [@sm4rtdev](https://github.com/sm4rtdev) | 2025-04-01 | 2025-04-01 | 1 | 2.0 | 🌐 2 | Top 13% |
+| 13 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 2024-11-08 | 2024-11-08 | 1 | 2.0 | 🌐 2 | Top 15% |
+| 14 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 2024-09-20 | 2024-09-20 | 1 | 2.0 | 🌐 2 | Top 16% |
+| 15 | [@eugene4545](https://github.com/eugene4545) | 2024-06-02 | 2024-08-19 | 2 | 1.0 | 🌐 2 | Top 17% |
+| 16 | [@anufdo](https://github.com/anufdo) | 2024-05-18 | 2024-07-13 | 2 | 1.0 | 🌐 2 | Top 18% |
+| 17 | [@alifiroozidev](https://github.com/alifiroozidev) | 2022-11-02 | 2022-11-02 | 1 | 2.0 | 🌐 2 | Top 19% |
+| 18 | [@amourri](https://github.com/amourri) | 2022-09-03 | 2022-09-03 | 1 | 2.0 | 🌐 2 | Top 20% |
+| 19 | [@0xMRTT](https://github.com/0xMRTT) | 2022-08-07 | 2022-08-07 | 1 | 2.0 | 🌐 2 | Top 21% |
+| 20 | [@SushantAdh07](https://github.com/SushantAdh07) | 2022-01-23 | 2022-01-23 | 1 | 2.0 | 🌐 2 | Top 22% |
+| 21 | [@rtewari056](https://github.com/rtewari056) | 2021-10-11 | 2021-10-11 | 1 | 2.0 | 🌐 2 | Top 24% |
+| 22 | [@yhdesai](https://github.com/yhdesai) | 2021-08-31 | 2021-08-31 | 1 | 2.0 | 🌐 2 | Top 25% |
+| 23 | [@ps-19](https://github.com/ps-19) | 2021-08-06 | 2021-08-06 | 1 | 2.0 | 🌐 2 | Top 26% |
+| 24 | [@abdorah](https://github.com/abdorah) | 2021-06-19 | 2021-06-23 | 2 | 1.0 | 🌐 2 | Top 27% |
+| 25 | [@VictorAraica](https://github.com/VictorAraica) | 2021-06-18 | 2021-06-18 | 1 | 2.0 | 🌐 2 | Top 28% |
+| 26 | [@ajakov](https://github.com/ajakov) | 2021-06-17 | 2021-06-17 | 1 | 2.0 | 🌐 2 | Top 29% |
 | 27 | [@rohit-singh121](https://github.com/rohit-singh121) | 2026-10-10 | 2026-10-10 | 1 | 1.0 | 🌐 1 | Top 30% |
 | 28 | [@quantumchain-core](https://github.com/quantumchain-core) | 2026-10-08 | 2026-10-08 | 1 | 1.0 | 🌐 1 | Top 31% |
 | 29 | [@Prathamesh-Singh](https://github.com/Prathamesh-Singh) | 2026-10-04 | 2026-10-04 | 1 | 1.0 | 🌐 1 | Top 33% |
