@@ -37,17 +37,17 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 💤 Lv.399 The Amaranth | 🟥 mythic | ✏️ 203 · 🤝 196 · 📦 2 | `[███████░]` 99% → 400 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,460 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🌌 Lv.200 One With The Force | 🟥 mythic | ✏️ 186 · 🤝 14 · 📦 1 | `[░░░░░░░░]` 0% → 250 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,395 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🛠️ Lv.400 Reality Modder | 🟥 mythic | ✏️ 203 · 🤝 197 · 📦 2 | `[░░░░░░░░]` 0% → 500 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,470 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 🦾 Lv.201 Chrome Junkie | ⬜ common | ✏️ 186 · 🤝 15 · 📦 1 | `[░░░░░░░░]` 2% → 250 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,405 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 🛠️ Lv.6 Sys Admin | 🟦 rare | ✏️ 6 · 📦 2 | `[████░░░░]` 60% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 205 |
 | 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🏅×4 🎯 ✋ ⬜ 🟩 | 125 |
-| 7 | [@tanverified](https://github.com/tanverified) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
-| 8 | [@ayushrana182](https://github.com/ayushrana182) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
-| 9 | [@rjphares](https://github.com/rjphares) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
-| 10 | [@Anekenonso](https://github.com/Anekenonso) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
-| 11 | [@koushik4475](https://github.com/koushik4475) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
+| 7 | [@koushik4475](https://github.com/koushik4475) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
+| 8 | [@tanverified](https://github.com/tanverified) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
+| 9 | [@ayushrana182](https://github.com/ayushrana182) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
+| 10 | [@rjphares](https://github.com/rjphares) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
+| 11 | [@Anekenonso](https://github.com/Anekenonso) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
 | 12 | [@sm4rtdev](https://github.com/sm4rtdev) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 13 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 14 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
@@ -134,17 +134,17 @@
 
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
-| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-10-26 | 70 | 5.7 | 🌐 302 · ⚙️ 97 | Top 1% |
-| 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-10-11 | 74 | 2.7 | 🌐 200 | Top 2% |
+| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-11-06 | 71 | 5.6 | 🌐 303 · ⚙️ 97 | Top 1% |
+| 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-11-06 | 75 | 2.7 | 🌐 201 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 3% |
 | 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 4% |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-10-07 | 4 | 1.5 | 🌐 5 · ⚙️ 1 | Top 6% |
 | 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 2021-06-14 | 2026-01-26 | 2 | 2.5 | 🌐 5 | Top 7% |
-| 7 | [@tanverified](https://github.com/tanverified) | 2025-07-23 | 2025-07-23 | 1 | 3.0 | 🌐 3 | Top 8% |
-| 8 | [@ayushrana182](https://github.com/ayushrana182) | 2021-06-17 | 2021-08-24 | 2 | 1.5 | 🌐 3 | Top 9% |
-| 9 | [@rjphares](https://github.com/rjphares) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 10% |
-| 10 | [@Anekenonso](https://github.com/Anekenonso) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 11% |
-| 11 | [@koushik4475](https://github.com/koushik4475) | 2026-10-17 | 2026-10-26 | 2 | 1.0 | 🌐 2 | Top 12% |
+| 7 | [@koushik4475](https://github.com/koushik4475) | 2026-10-17 | 2026-11-06 | 3 | 1.0 | 🌐 3 | Top 8% |
+| 8 | [@tanverified](https://github.com/tanverified) | 2025-07-23 | 2025-07-23 | 1 | 3.0 | 🌐 3 | Top 9% |
+| 9 | [@ayushrana182](https://github.com/ayushrana182) | 2021-06-17 | 2021-08-24 | 2 | 1.5 | 🌐 3 | Top 10% |
+| 10 | [@rjphares](https://github.com/rjphares) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 11% |
+| 11 | [@Anekenonso](https://github.com/Anekenonso) | 2021-06-15 | 2021-06-15 | 1 | 3.0 | 🌐 3 | Top 12% |
 | 12 | [@sm4rtdev](https://github.com/sm4rtdev) | 2025-04-01 | 2025-04-01 | 1 | 2.0 | 🌐 2 | Top 13% |
 | 13 | [@MichaelHinrichs](https://github.com/MichaelHinrichs) | 2024-11-08 | 2024-11-08 | 1 | 2.0 | 🌐 2 | Top 15% |
 | 14 | [@TheGuyDangerous](https://github.com/TheGuyDangerous) | 2024-09-20 | 2024-09-20 | 1 | 2.0 | 🌐 2 | Top 16% |
