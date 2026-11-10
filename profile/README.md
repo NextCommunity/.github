@@ -38,7 +38,7 @@
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
 | 1 🥇 | [@jbampton](https://github.com/jbampton) | 👊 Lv.401 Street Vigilante | ⬜ common | ✏️ 203 · 🤝 198 · 📦 2 | `[░░░░░░░░]` 1% → 500 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,480 |
-| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 💾 Lv.202 Data Courier | ⬜ common | ✏️ 186 · 🤝 16 · 📦 1 | `[░░░░░░░░]` 4% → 250 | ⚡ 1d / 🏆 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,415 |
+| 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 💾 Lv.202 Data Courier | ⬜ common | ✏️ 186 · 🤝 16 · 📦 1 | `[░░░░░░░░]` 4% → 250 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,415 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 🛠️ Lv.6 Sys Admin | 🟦 rare | ✏️ 6 · 📦 2 | `[████░░░░]` 60% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 205 |
@@ -63,7 +63,7 @@
 | 24 | [@abdorah](https://github.com/abdorah) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 25 | [@VictorAraica](https://github.com/VictorAraica) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
 | 26 | [@ajakov](https://github.com/ajakov) | 🕵️‍♂️ Lv.2 Code Breaker | ⬜ common | ✏️ 2 · 📦 1 | `[█░░░░░░░]` 20% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 55 |
-| 27 | [@AlexanderCrafting](https://github.com/AlexanderCrafting) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 27 | [@flowerzing](https://github.com/flowerzing) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 28 | [@rohit-singh121](https://github.com/rohit-singh121) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 29 | [@quantumchain-core](https://github.com/quantumchain-core) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 30 | [@Prathamesh-Singh](https://github.com/Prathamesh-Singh) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
@@ -161,7 +161,7 @@
 | 24 | [@abdorah](https://github.com/abdorah) | 2021-06-19 | 2021-06-23 | 2 | 1.0 | 🌐 2 | Top 27% |
 | 25 | [@VictorAraica](https://github.com/VictorAraica) | 2021-06-18 | 2021-06-18 | 1 | 2.0 | 🌐 2 | Top 28% |
 | 26 | [@ajakov](https://github.com/ajakov) | 2021-06-17 | 2021-06-17 | 1 | 2.0 | 🌐 2 | Top 29% |
-| 27 | [@AlexanderCrafting](https://github.com/AlexanderCrafting) | 2026-11-09 | 2026-11-09 | 1 | 1.0 | 🌐 1 | Top 30% |
+| 27 | [@flowerzing](https://github.com/flowerzing) | 2026-11-09 | 2026-11-09 | 1 | 1.0 | 🌐 1 | Top 30% |
 | 28 | [@rohit-singh121](https://github.com/rohit-singh121) | 2026-10-10 | 2026-10-10 | 1 | 1.0 | 🌐 1 | Top 31% |
 | 29 | [@quantumchain-core](https://github.com/quantumchain-core) | 2026-10-08 | 2026-10-08 | 1 | 1.0 | 🌐 1 | Top 32% |
 | 30 | [@Prathamesh-Singh](https://github.com/Prathamesh-Singh) | 2026-10-04 | 2026-10-04 | 1 | 1.0 | 🌐 1 | Top 33% |
