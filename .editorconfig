@@ -1,0 +1,27 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.py]
+indent_size = 4
+
+[*.md]
+# Preserve Markdown hard line breaks, matching the trailing-whitespace hook.
+trim_trailing_whitespace = false
+
+[LICENSE]
+# Preserve the standard license's fixed-layout indentation.
+indent_size = unset
+indent_style = unset
+
+[Makefile]
+indent_style = tab
