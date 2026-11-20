@@ -37,11 +37,11 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 👊 Lv.401 Street Vigilante | ⬜ common | ✏️ 203 · 🤝 198 · 📦 2 | `[░░░░░░░░]` 1% → 500 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,480 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🤢 Lv.402 Gamma Radiated | 🟩 uncommon | ✏️ 203 · 🤝 199 · 📦 2 | `[░░░░░░░░]` 2% → 500 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,490 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 💾 Lv.202 Data Courier | ⬜ common | ✏️ 186 · 🤝 16 · 📦 1 | `[░░░░░░░░]` 4% → 250 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,415 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
-| 4 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
-| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 🛠️ Lv.6 Sys Admin | 🟦 rare | ✏️ 6 · 📦 2 | `[████░░░░]` 60% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 205 |
+| 4 | [@Subham-KRLX](https://github.com/Subham-KRLX) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 2 | `[█████░░░]` 70% → 10 | ⚡ 1d / 🏆 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 215 |
+| 5 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🏅×4 🎯 ✋ ⬜ 🟩 | 125 |
 | 7 | [@koushik4475](https://github.com/koushik4475) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
 | 8 | [@tanverified](https://github.com/tanverified) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
@@ -136,11 +136,11 @@
 
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
-| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-11-09 | 72 | 5.6 | 🌐 304 · ⚙️ 97 | Top 1% |
+| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-11-20 | 73 | 5.5 | 🌐 304 · ⚙️ 98 | Top 1% |
 | 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-11-08 | 76 | 2.7 | 🌐 202 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 3% |
-| 4 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 4% |
-| 5 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-10-07 | 4 | 1.5 | 🌐 5 · ⚙️ 1 | Top 5% |
+| 4 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-11-20 | 5 | 1.4 | 🌐 5 · ⚙️ 2 | Top 4% |
+| 5 | [@iabdr](https://github.com/iabdr) | 2021-08-04 | 2021-08-04 | 1 | 7.0 | 🌐 7 | Top 5% |
 | 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 2021-06-14 | 2026-01-26 | 2 | 2.5 | 🌐 5 | Top 7% |
 | 7 | [@koushik4475](https://github.com/koushik4475) | 2026-10-17 | 2026-11-06 | 3 | 1.0 | 🌐 3 | Top 8% |
 | 8 | [@tanverified](https://github.com/tanverified) | 2025-07-23 | 2025-07-23 | 1 | 3.0 | 🌐 3 | Top 9% |
