@@ -37,10 +37,10 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🤢 Lv.402 Gamma Radiated | 🟩 uncommon | ✏️ 203 · 🤝 199 · 📦 2 | `[░░░░░░░░]` 2% → 500 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,490 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🤢 Lv.402 Gamma Radiated | 🟩 uncommon | ✏️ 203 · 🤝 199 · 📦 2 | `[░░░░░░░░]` 2% → 500 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,490 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 💾 Lv.202 Data Courier | ⬜ common | ✏️ 186 · 🤝 16 · 📦 1 | `[░░░░░░░░]` 4% → 250 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,415 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
-| 4 | [@Subham-KRLX](https://github.com/Subham-KRLX) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 2 | `[█████░░░]` 70% → 10 | ⚡ 1d / 🏆 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 215 |
+| 4 | [@Subham-KRLX](https://github.com/Subham-KRLX) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 2 | `[█████░░░]` 70% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 215 |
 | 5 | [@iabdr](https://github.com/iabdr) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 1 | `[█████░░░]` 70% → 10 | ⚡ 1d | 🏅×5 🎯 ✋ ⬜ 🟩 🟦 | 175 |
 | 6 | [@basalumutgazi](https://github.com/basalumutgazi) | 💎 Lv.5 Data Miner | 🟩 uncommon | ✏️ 5 · 📦 1 | `[████░░░░]` 50% → 10 | ⚡ 1d | 🏅×4 🎯 ✋ ⬜ 🟩 | 125 |
 | 7 | [@koushik4475](https://github.com/koushik4475) | 🌌 Lv.3 Void Walker | 🟩 uncommon | ✏️ 3 · 📦 1 | `[██░░░░░░]` 30% → 10 | ⚡ 1d | 🏅×3 🎯 ⬜ 🟩 | 90 |
