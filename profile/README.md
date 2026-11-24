@@ -120,7 +120,7 @@
 | 81 | [@ierfaaan](https://github.com/ierfaaan) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 82 | [@hunainanis](https://github.com/hunainanis) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 0 · 🤝 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 83 | [@JayantGoel001](https://github.com/JayantGoel001) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
-| 84 | [@gakramx](https://github.com/gakramx) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
+| 84 | [@gakrx](https://github.com/gakrx) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 85 | [@ra1nbow1](https://github.com/ra1nbow1) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 86 | [@prio101](https://github.com/prio101) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
 | 87 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 🛹 Lv.1 Script Kid | ⬜ common | ✏️ 1 · 📦 1 | `[░░░░░░░░]` 10% → 10 | ⚡ 1d | 🏅×2 🎯 ⬜ | 45 |
@@ -219,7 +219,7 @@
 | 81 | [@ierfaaan](https://github.com/ierfaaan) | 2021-08-06 | 2021-08-06 | 1 | 1.0 | 🌐 1 | Top 89% |
 | 82 | [@hunainanis](https://github.com/hunainanis) | 2021-06-25 | 2021-06-25 | 1 | 1.0 | 🌐 1 | Top 90% |
 | 83 | [@JayantGoel001](https://github.com/JayantGoel001) | 2021-06-25 | 2021-06-25 | 1 | 1.0 | 🌐 1 | Top 91% |
-| 84 | [@gakramx](https://github.com/gakramx) | 2021-06-19 | 2021-06-19 | 1 | 1.0 | 🌐 1 | Top 92% |
+| 84 | [@gakrx](https://github.com/gakrx) | 2021-06-19 | 2021-06-19 | 1 | 1.0 | 🌐 1 | Top 92% |
 | 85 | [@ra1nbow1](https://github.com/ra1nbow1) | 2021-06-18 | 2021-06-18 | 1 | 1.0 | 🌐 1 | Top 93% |
 | 86 | [@prio101](https://github.com/prio101) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 95% |
 | 87 | [@Anderson-Garcia](https://github.com/Anderson-Garcia) | 2021-06-17 | 2021-06-17 | 1 | 1.0 | 🌐 1 | Top 96% |
