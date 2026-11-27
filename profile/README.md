@@ -37,7 +37,7 @@
 
 | Rank | Contributor | Level | Rarity | Commits | Progress | Streak | Badges | Points |
 |------|-------------|:-----:|:------:|:-------:|----------|:------:|--------|-------:|
-| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🤢 Lv.402 Gamma Radiated | 🟩 uncommon | ✏️ 203 · 🤝 199 · 📦 2 | `[░░░░░░░░]` 2% → 500 | ⚡ 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,490 |
+| 1 🥇 | [@jbampton](https://github.com/jbampton) | 🦾 Lv.404 Genius Billionaire | 🟦 rare | ✏️ 203 · 🤝 201 · 📦 2 | `[░░░░░░░░]` 4% → 500 | ⚡ 1d / 🏆 5d | 🏅×15 🎯 ✋ 🌟 🌐 💪 🚀 🛡️ 🌱 📆 ⬜ 🟩 🟦 🟪 🟧 🟥 | 4,510 |
 | 2 🥈 | [@BaseMax](https://github.com/BaseMax) | 💾 Lv.202 Data Courier | ⬜ common | ✏️ 186 · 🤝 16 · 📦 1 | `[░░░░░░░░]` 4% → 250 | ⚡ 3d | 🏅×12 🎯 ✋ 🌟 💪 🚀 🌱 ⬜ 🟩 🟦 🟪 🟧 🟥 | 2,415 |
 | 3 🥉 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 🦇 Lv.14 Flying Menace | 🟩 uncommon | ✏️ 14 · 📦 1 | `[███░░░░░]` 40% → 20 | ⚡ 2d | 🏅×6 🎯 ✋ ⬜ 🟩 🟦 🟪 | 290 |
 | 4 | [@Subham-KRLX](https://github.com/Subham-KRLX) | ⌨️ Lv.7 Terminal Pro | 🟦 rare | ✏️ 7 · 📦 2 | `[█████░░░]` 70% → 10 | ⚡ 2d | 🏅×6 🎯 ✋ 🌐 ⬜ 🟩 🟦 | 215 |
@@ -136,7 +136,7 @@
 
 | Rank | Contributor | First Commit | Last Active | Days Active | Commits/Day | Repo Breakdown | Percentile |
 |------|-------------|:------------:|:-----------:|:-----------:|:-----------:|----------------|:----------:|
-| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-11-20 | 73 | 5.5 | 🌐 304 · ⚙️ 98 | Top 1% |
+| 1 | [@jbampton](https://github.com/jbampton) | 2021-06-14 | 2026-11-27 | 74 | 5.5 | 🌐 306 · ⚙️ 98 | Top 1% |
 | 2 | [@BaseMax](https://github.com/BaseMax) | 2021-06-13 | 2026-11-08 | 76 | 2.7 | 🌐 202 | Top 2% |
 | 3 | [@Passion-Over-Pain](https://github.com/Passion-Over-Pain) | 2025-03-16 | 2025-03-17 | 2 | 7.0 | 🌐 14 | Top 3% |
 | 4 | [@Subham-KRLX](https://github.com/Subham-KRLX) | 2026-01-26 | 2026-11-20 | 5 | 1.4 | 🌐 5 · ⚙️ 2 | Top 4% |
